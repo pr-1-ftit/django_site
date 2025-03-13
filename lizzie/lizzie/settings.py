@@ -73,7 +73,7 @@ JAZZMIN_SETTINGS = {
     "site_title": "Lizzie Admin",
     "site_header": "Lizzie Mental Health Support",
     "welcome_sign": "Ласкаво просимо в панель керування!",
-    "login_logo": "images/logo1.jpg",
+    "login_logo": "images/logo2.jpg",
     "site_brand": "Lizzie",
     "show_sidebar": True,
     "navigation_expanded": True,
@@ -173,5 +173,6 @@ STATICFILES_DIRS = [
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
