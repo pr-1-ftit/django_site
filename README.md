@@ -50,7 +50,7 @@ python install.py
 
 The installer will add the following libraries to your computer:
 - django 5.1.7
-- django-jazzmin 3.0.1"
+- django-jazzmin 3.0.1
 
 
 After installing all the necessary libraries we need to start the server. In the terminal you need to write the following command:
