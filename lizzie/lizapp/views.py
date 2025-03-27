@@ -3,3 +3,7 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, 'lizapp/home.html')
+
+def auth(request):
+    return render(request, 'lizapp/auth.html')
+    

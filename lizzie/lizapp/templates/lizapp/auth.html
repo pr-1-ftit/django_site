@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/logo2.jpg' %}" type="image/x-icon">
+    <title>Односторінковий сайт</title>
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+</head>
+<body>
+    <!-- Floating Bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <div class="container">
+        <!-- Sign Up Form -->
+        <div id="signupForm" class="form-container">
+            <div class="form-logo">
+                <img src="{% static 'images/logo2.jpg' %}" alt="Logo" style="width: 50px;">
+            </div>
+            <h2 data-lang="signupTitle">Sign Up</h2>
+            <form id="signupFormElement" action="#" method="POST">
+                <div class="form-group">
+                    <label for="username" data-lang="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-lang="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" data-lang="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" data-lang="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <div id="errorMessage" class="error-message" data-lang="passwordMismatch"></div>
+                <div class="form-group">
+                    <button type="submit" data-lang="signupButton">Sign Up</button>
+                </div>
+                <div class="switch-links">
+                    <a id="switchToLogin" data-lang="switchToLogin">Already signed up? Log in</a>
+                </div>
+            </form>
+        </div>
+    
+        <!-- Login Form -->
+        <div id="loginForm" class="form-container">
+            <div class="form-logo">
+                <img src="{% static 'images/logo2.jpg' %}" alt="Logo" style="width: 50px;">
+            </div>
+            <h2 data-lang="loginTitle">Log In</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="emailLogin" data-lang="email">Email</label>
+                    <input type="email" id="emailLogin" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="passwordLogin" data-lang="password">Password</label>
+                    <input type="password" id="passwordLogin" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" data-lang="loginButton">Log In</button>
+                </div>
+                <div class="switch-links">
+                    <a id="switchToSignup" data-lang="switchToSignup">Don't have an account? Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2025 Girl Lizzie - 
+            <a href="#" data-lang="privacyPolicy">Privacy Policy</a> | 
+            <a href="#" data-lang="terms">Terms & Conditions</a>
+        </p>
+    </footer>
+
+    <script src="{% static 'js/auth.js' %}"></script>
+        
+</body>
+</html>

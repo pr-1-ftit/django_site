@@ -6,4 +6,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('lizapp.urls')),  # Include urls from lizapp
 ]
-
