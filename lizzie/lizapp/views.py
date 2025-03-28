@@ -6,15 +6,17 @@ def home(request):
 
 def account_view(request):
     """
-    Представлення для базового макету авторизації за адресою /account/.
+    View for the base account layout at the URL /account/.
     """
     return render(request, 'lizapp/account.html')
 
 def signup_view(request):
     """
-    Представлення для підвантаження форми реєстрації за адресою /account/signup/.
-    Якщо запит є AJAX (з заголовком "X-Requested-With": "XMLHttpRequest"), повертається лише HTML‑фрагмент форми (signup_form.html).
-    Інакше повертається повний макет (account.html) із вставленим фрагментом форми.
+    View for loading the signup form at the URL /account/signup/.
+    
+    If the request is AJAX (with the header "X-Requested-With": "XMLHttpRequest"),
+    only an HTML snippet of the form (signup_form.html) is returned.
+    Otherwise, the full layout (account.html) with the inserted form snippet is returned.
     """
     if request.headers.get("x-requested-with") == "XMLHttpRequest":
         snippet = render(request, 'lizapp/forms/signup_form.html').content.decode('utf-8')
@@ -25,9 +27,11 @@ def signup_view(request):
 
 def login_view(request):
     """
-    Представлення для підвантаження форми входу за адресою /account/login/.
-    Якщо запит є AJAX (з заголовком "X-Requested-With": "XMLHttpRequest"), повертається лише HTML‑фрагмент форми (login_form.html).
-    Інакше повертається повний макет (account.html) із вставленим фрагментом форми.
+    View for loading the login form at the URL /account/login/.
+    
+    If the request is AJAX (with the header "X-Requested-With": "XMLHttpRequest"),
+    only an HTML snippet of the form (login_form.html) is returned.
+    Otherwise, the full layout (account.html) with the inserted form snippet is returned.
     """
     if request.headers.get("x-requested-with") == "XMLHttpRequest":
         snippet = render(request, 'lizapp/forms/login_form.html').content.decode('utf-8')

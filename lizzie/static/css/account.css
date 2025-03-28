@@ -1,0 +1,85 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: gradientAnimation 15s ease infinite;
+    background: linear-gradient(135deg, #ff7eb9, #ff65a3);
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(135deg, #ff7eb9, #ff65a3);
+    }
+    50% {
+        background: linear-gradient(135deg, #a3c4fc, #5e4b8b);
+    }
+    100% {
+        background: linear-gradient(135deg, #ff7eb9, #ff65a3);
+    }
+}
+
+/* Animating Bubbles */
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    animation: bubbleAnimation 10s infinite;
+}
+
+@keyframes bubbleAnimation {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Floating bubbles of different sizes */
+.bubble:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    animation-duration: 8s;
+    animation-delay: 0s;
+    left: 20%;
+}
+.bubble:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    animation-duration: 10s;
+    animation-delay: 2s;
+    left: 40%;
+}
+.bubble:nth-child(3) {
+    width: 120px;
+    height: 120px;
+    animation-duration: 7s;
+    animation-delay: 3s;
+    left: 60%;
+}
+.bubble:nth-child(4) {
+    width: 60px;
+    height: 60px;
+    animation-duration: 9s;
+    animation-delay: 1s;
+    left: 80%;
+}

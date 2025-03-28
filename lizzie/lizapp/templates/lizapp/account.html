@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{% static 'images/logo2.jpg' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/logo2-removebg-preview.png' %}" type="image/x-icon">
     <title>Account</title>
-    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
-    <script src="{% static 'js/auth.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <script src="{% static 'js/account.js' %}"></script>
+    <script src="{% static 'js/buttons.js' %}"></script>
 </head>
 <body>
     <!-- Floating Bubbles -->
@@ -17,7 +20,7 @@
     <div class="bubble"></div>
     <div class="container">
         <main>
-            <div id="form-container" class="form-container">
+            <div id="form-container" class="form-container active">
               {% block form_content %}{{ form_content|default:"" | safe }}{% endblock %}
             </div>
           </main>

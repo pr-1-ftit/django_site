@@ -1,0 +1,96 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.form-container {
+    display: none;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+.form-container.active {
+    display: block;
+}
+.form-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-logo img {
+    width: 50px;
+    height: auto;
+}
+/* Оформлення контейнера форми */
+.form-group {
+    position: relative; /* Для абсолютного позиціонування label всередині .form-group */
+    margin-bottom: 15px; /* Відступ між групами полів */
+}
+
+/* Оформлення поля вводу */
+.form-group input {
+    width: 100%;
+    padding: 16px 10px; /* Внутрішні відступи для тексту і місця під label */
+    border: 1px solid #ccc; /* Стандартний бордер поля вводу */
+    border-radius: 4px; /* Закруглення куточків */
+    font-size: 16px; /* Розмір тексту в input */
+    box-sizing: border-box; /* Враховувати бордер і padding */
+}
+
+/* Початкова позиція label: всередині поля вводу, посередині зліва */
+.form-group label {
+    position: absolute; /* Відносно .form-group */
+    top: 50%; /* Посередині по вертикалі */
+    left: 10px; /* Відступ зліва */
+    transform: translateY(-50%); /* Центрування вертикально */
+    color: #888; /* Початковий колір тексту */
+    font-size: 16px; /* Початковий розмір тексту */
+    pointer-events: none; /* Заборона взаємодії миші */
+    transition: all 0.2s ease-in-out; /* Плавний перехід */
+    background: #fff;
+}
+
+/* Підняти label вгору при фокусі або якщо поле вводу заповнене */
+.form-group input:focus + label {
+    top: 0;                    /* Position the label on the top border of the input */
+    left: 12px;                /* Retain horizontal alignment */
+    transform: translateY(-50%); /* Adjust so that the label's center is aligned with the top border */
+    font-size: 12px;           /* Reduce font size in the floating state */
+    color: green;              /* Change color to indicate active state */
+  }
+
+  .form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.form-group button:hover {
+    background-color: #0056b3;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+.switch-links {
+    margin-top: 15px;
+    text-align: center;
+}
+.switch-links a {
+    color: #007BFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+.switch-links a:hover {
+    text-decoration: underline;
+}
