@@ -1,8 +1,9 @@
-# lizapp/urls.py
 from django.urls import path
-from . import views
+from .views import home, account_view, signup_view, login_view
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('auth/', views.auth, name='auth'),
+    path('', home, name='home'),
+    path('account/', account_view, name='account'),
+    path('account/signup/', signup_view, name='signup'),
+    path('account/login/', login_view, name='login'),
 ]

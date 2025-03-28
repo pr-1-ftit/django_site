@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/logo2.jpg' %}" type="image/x-icon">
+    <title>Account</title>
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+    <script src="{% static 'js/auth.js' %}"></script>
+</head>
+<body>
+    <!-- Floating Bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="container">
+        <main>
+            <div id="form-container" class="form-container">
+              {% block form_content %}{{ form_content|default:"" | safe }}{% endblock %}
+            </div>
+          </main>
+    </div>
+      <footer>
+        <p>&copy; 2025 Girl Lizzie - 
+            <a href="#" data-lang="privacyPolicy">Privacy Policy</a> | 
+            <a href="#" data-lang="terms">Terms & Conditions</a>
+        </p>
+    </footer>
+</body>
+</html>

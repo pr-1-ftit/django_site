@@ -1,0 +1,24 @@
+{% load static %}
+<div id="signupForm">
+    <div class="form-logo">
+        <img src="{% static 'images/logo2.jpg' %}" alt="Logo" style="width: 50px;">
+    </div>
+    <h2 data-lang="loginTitle">Log In</h2>
+    <form action="#" method="POST">
+        <div class="form-group">
+            <label for="emailLogin" data-lang="email">Email</label>
+            <input type="email" id="emailLogin" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="passwordLogin" data-lang="password">Password</label>
+            <input type="password" id="passwordLogin" name="password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" data-lang="loginButton">Log In</button>
+        </div>
+        <div class="switch-links">
+            <a id="switchToSignup" data-lang="switchToSignup">Don't have an account? Sign Up</a>
+        </div>
+    </form>
+</div>
+  
