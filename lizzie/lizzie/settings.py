@@ -122,8 +122,14 @@ WSGI_APPLICATION = 'lizzie.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'lissie_db',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'MySQL-8.2',
+        'PORT': '3306',
     }
 }
 

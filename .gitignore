@@ -79,3 +79,9 @@ env.bak/
 # Additional tools
 .mypy_cache/
 .pytest_cache/ 
+
+# MySQL database dump file
+dump.sql
+
+# SQLite database file (if used)
+db.sqlite3
