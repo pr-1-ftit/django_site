@@ -80,8 +80,8 @@
     <div class="carousel-container">
         <button class="prev-btn">❮</button>
         <div class="carousel" >
-            <div class="outter-container card" id="slaid1">
-                <div class="inner-container transparent-box">
+            <div class="card" id="slaid1">
+                <div class="transparent-box">
                     <h1>Чому Лізі краща за інші чат-боти для спілкування?</h1>
                     <p>Лізі спеціалізується на емоційній підтримці, що робить її унікальною серед інших чат-ботів:</p>
                     <div>
@@ -91,8 +91,8 @@
                     </div>
                 </div>
             </div>
-            <div class="outter-container card" id="slaid2">
-                <div class="inner-container transparent-box">
+            <div class="card" id="slaid2">
+                <div class="transparent-box">
                     <h1>Чим Лізі відрізняється від інших чат-ботів?</h1>
                     <div>
                         <p>Реалістичність: 70% функціоналу — це продумані діалоги, які імітують спілкування з реальною людиною.</p>
@@ -102,8 +102,8 @@
                 </div>
             </div>
             
-            <div class="outter-container card" id="slaid3">
-                <div class="inner-container transparent-box">
+            <div class="card" id="slaid3">
+                <div class="transparent-box">
                     <h1>Чому Лізі важлива саме зараз?</h1>
                     <p>У сучасному світі багато людей почуваються самотніми через велику зайнятість, соціальну ізоляцію чи інші причини. Лізі стає для них тим, хто завжди поруч:</p>
                     <div>
@@ -113,8 +113,8 @@
                     </div>
                 </div>
             </div>
-            <div class="outter-container card" id="slaid4">
-                <div class="inner-container transparent-box">
+            <div class="card" id="slaid4">
+                <div class=" transparent-box">
                     <h1>Як Лізі обробляє запити користувачів?</h1>
                     <div>
                         <p>Користувач починає діалог, наприклад, ділиться своїми думками чи почуттями. </p>
@@ -125,7 +125,7 @@
                 </div>
             </div>
             <div class="card" id="slaid5">
-                <div class="transparent-box">
+                <div class=" transparent-box">
                     <h1>Як Лізі розуміє емоції користувачів?</h1>
                     <p>Лізі використовує комбінацію технологій:</p>
                     <div>
@@ -135,8 +135,8 @@
                     </div>
                 </div>
             </div>
-            <div class="outter-container card" id="slaid6">
-                <div class="inner-container transparent-box">
+            <div class="card" id="slaid6">
+                <div class=" transparent-box">
                     <h1>Як Лізі вдосконалюється?</h1>
                     <p>Лізі постійно вчиться завдяки:</p>
                     <div>
@@ -170,9 +170,20 @@
         <div class="social-media">
             <span>Соціальні мережі</span>
             <div class="social-icons">
-                <img src="facebook-icon.png" alt="Facebook">
-                <img src="twitter-icon.png" alt="Twitter">
-                <img src="linkedin-icon.png" alt="LinkedIn">
+            <img src="/static/images/x-logo.png" alt="X" onclick="goToX()" style="cursor: pointer;">
+<script>
+    function goToX() {
+        console.log("Function called");
+        window.location.href = "https://x.com/lizzieofficiall?s=11";
+    }
+</script>
+                <img src="{% static 'images/insta-logo.png' %}" alt="Instagram" onclick="goToInstagram()" style="cursor: pointer;">
+<script>
+    function goToInstagram() {
+        console.log("Function called");
+        window.location.href = "https://www.instagram.com/lizzie.officiall?igsh=MWhscDlmbTN0OG82cA%3D%3D&utm_source=qr";
+    }
+</script>
             </div>
         </div>
     </footer>
