@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профіль</title>
+    <link rel="stylesheet" href="{% static 'css/profile_styles.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="#services">Послуги</a></li>
+            <li><a href="#technews">Техно-новини</a></li>
+            <li><a href="#resources">Ресурси</a></li>
+            <li><a href="#more">Більше</a></li>
+            <li><a href="#ai-tools">AI-Набір</a></li>
+            <li><a href="#updates">Оновлення</a></li>
+        </ul>
+        <div class="actions">
+            <button onclick="goToSite()" id="start-chat">Почати чат</button>
+            <button  id="login">Увійти</button>
+            <div class="user-icon">&#128100;</div>
+            <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        </div>
+        
+    </nav>
+
+
+    <main>
+        <section class="profile-container">
+            <div class="profile-box">
+                <label>Ім'я користувача</label>
+                <input type="text" value="">
+                <label>Електронна пошта</label>
+                <input type="email" value="">
+                <button class="edit-btn">Редагувати профіль</button>
+            </div>
+
+            <div class="profile-box">
+                <h3>Оплата преміума</h3>
+                <ul>
+                    <li>Історія оплат</li>
+                    <li>Збережені платіжні картки</li>
+                    <li>Скасувати</li>
+                </ul>
+            </div>
+
+            <div class="profile-box">
+                <h3>Історія чатів</h3>
+                <p>Переглянути історію чатів</p>
+            </div>
+
+            <div class="profile-box">
+                <h3>Обрані платні налаштування бота</h3>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-column">
+            <a href="#">AI-Набір</a>
+            <a href="#">Послуги</a>
+            <a href="#">Оновлення</a>
+            <a href="#">Техно-новини</a>
+        </div>
+        <div class="footer-column">
+            <a href="#">Ком'юніті</a>
+            <a href="#">Кукі</a>
+            <a href="#">О нас</a>
+            <a href="#">FAQ</a>
+        </div>
+        <div class="footer-column">
+            <a href="#">Ресурси</a>
+            <a href="#">Преміум</a>
+            <a href="#">Налаштування</a>
+        </div>
+        <div class="social-media">
+            <span>Соціальні мережі</span>
+            <div class="social-icons">
+                <img src="facebook-icon.png" alt="Facebook">
+                <img src="twitter-icon.png" alt="Twitter">
+                <img src="linkedin-icon.png" alt="LinkedIn">
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
