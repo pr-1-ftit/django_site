@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
+  <title>Lizzie</title>
+  <!-- Link to external CSS file -->
+
+  <link rel="stylesheet" href="{% static 'css/header.css' %}">
+  <link rel="stylesheet" href="{% static 'css/search.css' %}">
+  <link rel="stylesheet" href="{% static 'css/cards.css' %}">
+  <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/start-chatting.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  <script src="{% static 'js/scripts.js' %}"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6fnik61nJn+6aOvsQv7jhyM0jV9tzbDlSG8or6G1F9wodelTRdG+IyLfb3NnC1chg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{% static 'css/coming-soon.css' %}">
+</head>
+<body>
+  {% include 'include/header.html' %}
+  <main>
+    <div >
+      {% block content %}
+
+      {% endblock %}
+    </div>
+  </main>
+  {% include 'include/footer.html' %}
+</body>
+</html>
+
+<script>
+  // Отримуємо всі елементи, за які відповідає інтерактивне перетягування
+document.querySelectorAll('.slider').forEach(function(card) {
+let isDragging = false;
+let startX;
+let initialScroll;
+// Знаходимо батьківський контейнер зі скролом
+const scrollContainer = card.closest('.sliders-scroll-container');
+
+card.addEventListener('mousedown', function(e) {
+  e.preventDefault(); // відміняємо стандартне виділення тексту або інших елементів
+  isDragging = true;
+  // Додаємо клас, що збільшує елемент (scale 1.2)
+  card.classList.add('active');
+  // Записуємо початкову координату миші
+  startX = e.pageX;
+  // Запам'ятовуємо початкову позицію скролу батьківського контейнера
+  initialScroll = scrollContainer.scrollLeft;
+
+  // Прив'язуємо обробники руху та відпускання миші до документу
+  document.addEventListener('mousemove', onMouseMove);
+  document.addEventListener('mouseup', onMouseUp);
+});
+
+function onMouseMove(e) {
+  if (!isDragging) return;
+  // Обчислюємо відхилення по горизонталі
+  const dx = e.pageX - startX;
+  // Оновлюємо горизонтальне прокручування контейнера
+  scrollContainer.scrollLeft = initialScroll - dx;
+}
+
+function onMouseUp() {
+  isDragging = false;
+  // Видаляємо клас активного стану
+  card.classList.remove('active');
+  document.removeEventListener('mousemove', onMouseMove);
+  document.removeEventListener('mouseup', onMouseUp);
+}
+});
+</script>

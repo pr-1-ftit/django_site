@@ -1,0 +1,139 @@
+/* Контейнер секції з картками, включаючи заголовок */
+.sliders-section {
+    width: 100%;
+    max-width: 1200px; /* Обмеження максимальної ширини */
+    margin: 300px auto; /* Відступи зверху та знизу, центрування */
+    padding: 0 20px;
+  }
+  
+  /* Заголовок спільного контейнера */
+  .sliders-section-header {
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #000000; /* Колір заголовка */
+    margin-bottom: 20px; /* Відступ знизу */
+  }
+
+  
+/* Загальні стилі для всіх слайдерів */
+.slider {
+    flex: 0 0 auto;
+    width: 450px;
+    height: 600px;
+    border-radius: 40px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    cursor: grab;
+    will-change: transform;
+    box-sizing: border-box;
+  }
+  
+  /* Активний стан (при натисканні) */
+  .slider.active {
+    cursor: grabbing;
+    transform: scale(0.95);
+  }
+  
+  /* Унікальні атрибути для кожного слайдера */
+  .slider-1 {
+    background-image: url('../images/slider/slider-1.png');
+  }
+  
+  .slider-2 {
+    background-image: url('../images/slider/slider-2.png');
+  }
+  
+  .slider-3 {
+    background-image: url('../images/slider/slider-3.png');
+  }
+  
+  .slider-4 {
+    background-image: url('../images/slider/slider-4.png');
+  }
+  
+  .slider-5 {
+    background-image: url('../images/slider/slider-5.png');
+  }
+  
+  .slider-6 {
+    background-image: url('../images/slider/slider-6.png');
+  }
+  
+  
+  /* Внутрішній контейнер кожного слайдера */
+  .slider-inner {
+    background: rgba(255, 255, 255, 0.1); /* Напівпрозорий фон */
+    backdrop-filter: blur(10px);          /* Ефект розмиття */
+    border-radius: 40px;                  /* Закруглення країв */
+    padding: 20px;
+    width: 65%;                           /* Ширина внутрішнього контейнера */
+    height: 60%;                          /* Висота внутрішнього контейнера */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    border: 0.1px solid rgba(255, 255, 255, 0.8);
+
+  }
+  
+  /* Заголовок всередині слайдера */
+  .slider-title {
+    font-family: Lato, sans-serif;
+    font-weight: 750;
+    font-size: 19px;
+    margin: 0 0 10px;
+  }
+  
+  /* Горизонтальна лінія між заголовком і текстом */
+  .slider-divider {
+    width: 114%;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    margin: 0 0 20px 0; /* Відступ знизу */
+    padding-top: 1px;   /* Відступ зверху */
+    padding-bottom: 10px;
+  }
+  
+  /* Текст у слайдері */
+  .slider-description {
+    font-family: Lato, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0 0 10px;
+    text-align: left; /* Вирівнювання по лівому краю */
+  }
+  
+  /* Декоративна крапочка для абзаців */
+  .slider-description.bullet::before {
+    content: "• ";
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+    color: #ffffff;
+    vertical-align: middle;
+  }
+  
+/* Контейнер, що забезпечує горизонтальну прокрутку слайдерів */
+.sliders-scroll-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  
+
+
+  

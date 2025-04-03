@@ -1,0 +1,112 @@
+  /* Верхній блок (при потребі, приклад) */
+.top-header {
+  width: 100%;
+  height: 100px; /* Приклад висоти */
+  background: #f0f0f0;
+}
+
+/* Основний контейнер */
+.main-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 150px auto; /* Верхній і нижній відступи */
+  padding: 0 20px;
+}
+
+/* Текстовий блок */
+.text-container {
+  flex: 1;
+  margin-right: 200px;
+  font-family: Lato, sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+  text-align: left;
+  color: #000000;
+}
+
+/* Круглий елемент */
+.circle-element {
+  width: 567px;
+  height: 567px;
+  position: relative;
+}
+
+/* Обгортка для внутрішнього вмісту кола */
+.circle-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Фоновий круг з картинкою */
+.circle-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../images/start-chatting.png") no-repeat center center;
+  background-size: cover;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+}
+
+/* Центрування вмісту всередині круга */
+.circle-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%; /* Опційно; дозволяє елементам займати всю ширину для кращого вирівнювання */
+}
+
+/* Текст заголовку */
+.headline-text {
+  font-family: Lato, sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  color: #1100FF;
+  margin-bottom: 20px;
+}
+
+/* Обгортка для кнопки */
+.button-wrapper {
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Стилі кнопки */
+.action-button {
+  background: #1100FF;
+  border: 4px solid #9482FF;
+  border-radius: 14px;
+  padding: 9px 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.action-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Ефект натискання для елемента <a> */
+a.action-button:active {
+  transform: scale(0.95);          /* Зменшуємо до 95% від початкового розміру */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* Додаємо легку тінь */
+}
+
+.action-button-text {
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #FFFFFF;
+}
+

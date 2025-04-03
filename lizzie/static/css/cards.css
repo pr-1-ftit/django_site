@@ -1,0 +1,126 @@
+/* Зовнішній контейнер секції з картками (додаємо зовнішній відступ) */
+.cards-section {
+    width: 1056px;
+    margin: 300px auto;  /* Відступ зверху/знизу та центрування по горизонталі */
+  }
+  
+  /* Заголовок секції карток */
+  .cards-header {
+    font-family: Lato, sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #000000; /* Колір можна коригувати */
+    margin-bottom: 20px; /* Відступ знизу для візуального розділення від карток */
+  }
+  
+  /* Контейнер для всіх карток (розміри згідно з Figma: 1056px x 445px) */
+  .cards-container {
+    position: relative;
+    width: 1056px;
+    height: 445px;
+    margin: 0 auto;        /* Центрування контейнера всередині секції */
+    display: flex;
+    flex-wrap: wrap;       /* Розташування карток у декілька рядків */
+    row-gap: 15px;              /* Відступ між рядами */
+    column-gap: 100px;           /* Відступ між стовпцями */
+    justify-content: space-evenly;  /* Розподіл карток рівномірно по горизонталі */
+    align-content: space-evenly;     /* Розподіл рядків з картками рівномірно по вертикалі */
+  }
+  
+  /* Текст всередині картки */
+  .card-text {
+    font-family: Lato, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    vertical-align: middle;
+    color: #ffffff;   /* Білий текст для контрасту з фоном */
+    margin: 0;
+    padding: 0 10px;
+  }
+  
+  /* Окрема картка з фоновою картинкою */
+  .card-1 {
+    width: 282px;  /* Ширина картки згідно з Figma */
+    height: 150px; /* Висота картки згідно з Figma */
+    background: url('../images/cards/card-1.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+        
+  .card-2 {
+    width: 282px;
+    height: 150px;
+    background: url('../images/cards/card-2.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+  
+  .card-3 {
+    width: 282px;
+    height: 150px;
+    background: url('../images/cards/card-3.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+          
+  .card-4 {
+    width: 282px;
+    height: 150px;
+    background: url('../images/cards/card-4.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+  
+  .card-5 {
+    width: 282px;
+    height: 150px;
+    background: url('../images/cards/card-5.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+  
+  .card-6 {
+    width: 282px;
+    height: 150px;
+    background: url('../images/cards/card-6.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+  
+/* Ефект виділення при наведенні */
+.card-1:hover,
+.card-2:hover,
+.card-3:hover,
+.card-4:hover,
+.card-5:hover,
+.card-6:hover {
+  transform: scale(1.05);  /* Невелике збільшення */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);  /* Яскрава тінь */
+}
+
+
