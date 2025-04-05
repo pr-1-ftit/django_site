@@ -10,18 +10,11 @@
   <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
   <title>Lizzie</title>
   <!-- Link to external CSS file -->
-
-  <link rel="stylesheet" href="{% static 'css/header.css' %}">
-  <link rel="stylesheet" href="{% static 'css/search.css' %}">
-  <link rel="stylesheet" href="{% static 'css/cards.css' %}">
-  <link rel="stylesheet" href="{% static 'css/slider.css' %}">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  <link rel="stylesheet" href="{% static 'css/start-chatting.css' %}">
-  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-  <script src="{% static 'js/scripts.js' %}"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6fnik61nJn+6aOvsQv7jhyM0jV9tzbDlSG8or6G1F9wodelTRdG+IyLfb3NnC1chg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="{% static 'css/coming-soon.css' %}">
+  <link rel="stylesheet" href="{% static 'css/in-development.css' %}">
+
+  <script src="{% static 'js/scripts.js' %}"></script>
 </head>
 <body>
   {% include 'include/header.html' %}
@@ -35,6 +28,18 @@
   {% include 'include/footer.html' %}
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
   // Отримуємо всі елементи, за які відповідає інтерактивне перетягування
@@ -76,4 +81,97 @@ function onMouseUp() {
   document.removeEventListener('mouseup', onMouseUp);
 }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const hamburger = document.querySelector('.hamburger-menu');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const menuClose = document.querySelector('.menu-close');
+
+  const ellipseBtn = document.querySelector('.mobile-ellipse');
+  const rightMenu = document.querySelector('.mobile-menu-right');
+  const rightMenuClose = document.querySelector('.menu-close-right');
+
+  const pageOverlay = document.createElement('div');
+  pageOverlay.className = 'page-overlay';
+  document.body.appendChild(pageOverlay);
+
+  // Відкриття лівого меню
+  hamburger.addEventListener('click', function(event) {
+    event.stopPropagation();
+    mobileMenu.classList.add("open");
+    rightMenu.classList.remove("open");
+    pageOverlay.classList.add("active");
+    document.body.classList.add("no-scroll");
+  });
+
+  // Відкриття правого меню
+  ellipseBtn.addEventListener('click', function(event) {
+    event.stopPropagation();
+    rightMenu.classList.add("open");
+    mobileMenu.classList.remove("open");
+    pageOverlay.classList.add("active");
+    document.body.classList.add("no-scroll");
+  });
+
+  // Закриття меню через кнопки
+  menuClose.addEventListener('click', function() {
+    mobileMenu.classList.remove("open");
+    pageOverlay.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+  });
+
+  rightMenuClose.addEventListener('click', function() {
+    rightMenu.classList.remove("open");
+    pageOverlay.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+  });
+
+  // Закриття меню при кліці поза ними
+  pageOverlay.addEventListener('click', function() {
+    mobileMenu.classList.remove("open");
+    rightMenu.classList.remove("open");
+    pageOverlay.classList.remove("active");
+    document.body.classList.remove("no-scroll");
+  });
+
+  // Запобігання закриттю при кліці всередині меню
+  mobileMenu.addEventListener('click', function(event) {
+    event.stopPropagation();
+  });
+
+  rightMenu.addEventListener('click', function(event) {
+    event.stopPropagation();
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.onbeforeunload = function () {
+            window.scrollTo(0, 0); // Повертаємо скрол на початок
+        };
+
+
+
+
 </script>

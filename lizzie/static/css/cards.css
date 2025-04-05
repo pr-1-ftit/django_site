@@ -1,35 +1,28 @@
 /* Зовнішній контейнер секції з картками (додаємо зовнішній відступ) */
 .cards-section {
-    width: 1056px;
-    margin: 300px auto;  /* Відступ зверху/знизу та центрування по горизонталі */
-  }
+  width: 100%;
+  margin: 300px auto;  /* Відступ зверху/знизу та центрування по горизонталі */
+}
   
-  /* Заголовок секції карток */
-  .cards-header {
-    font-family: Lato, sans-serif;
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 120%;
-    letter-spacing: 0%;
-    text-align: center;
-    vertical-align: middle;
-    color: #000000; /* Колір можна коригувати */
-    margin-bottom: 20px; /* Відступ знизу для візуального розділення від карток */
-  }
+/* Заголовок секції карток */
+.cards-header {
+  font-family: Lato, sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
+}
   
-  /* Контейнер для всіх карток (розміри згідно з Figma: 1056px x 445px) */
-  .cards-container {
-    position: relative;
-    width: 1056px;
-    height: 445px;
-    margin: 0 auto;        /* Центрування контейнера всередині секції */
-    display: flex;
-    flex-wrap: wrap;       /* Розташування карток у декілька рядків */
-    row-gap: 15px;              /* Відступ між рядами */
-    column-gap: 100px;           /* Відступ між стовпцями */
-    justify-content: space-evenly;  /* Розподіл карток рівномірно по горизонталі */
-    align-content: space-evenly;     /* Розподіл рядків з картками рівномірно по вертикалі */
-  }
+/* Контейнер для всіх карток */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Дозволяє переходити на новий рядок */
+  gap: 20px; /* Відстань між картками */
+  justify-content: space-between; /* Рівномірно розподіляє картки */
+  width: 1056px; /* Встановлено для десктопів */
+  margin: 0 auto; /* Центрування */
+}
   
   /* Текст всередині картки */
   .card-text {
@@ -124,3 +117,85 @@
 }
 
 
+
+
+
+
+/* Контейнер для всіх карток */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap; /* Дозволяє переходити на новий рядок */
+  gap: 20px; /* Відстань між картками */
+  justify-content: space-between; /* Рівномірно розподіляє картки */
+  width: 1056px; /* Встановлено для десктопів */
+  margin: 0 auto; /* Центрування */
+}
+
+/* Окрема картка */
+.card-1, .card-2, .card-3, .card-4, .card-5, .card-6 {
+  width: 282px; /* Фіксована ширина картки */
+  height: 150px; /* Фіксована висота картки */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+/* Текст всередині картки */
+.card-text {
+  font-family: Lato, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: #ffffff;
+  padding: 0 10px;
+}
+
+/* Адаптивність для середніх екранів (2 стовпці) */
+@media (max-width: 1100px) {
+  .cards-container {
+    width: 90%; /* Зменшена ширина контейнера */
+  }
+    /* Ефект виділення при наведенні */
+.card-1:hover,
+.card-2:hover,
+.card-3:hover,
+.card-4:hover,
+.card-5:hover,
+.card-6:hover {
+  transform: none;
+  box-shadow: none;
+}
+.cards-header {
+  font-size: 28px; /* Зменшений розмір заголовка */
+}
+}
+
+/* Адаптивність для мобільних пристроїв (1 стовпець) */
+@media (max-width: 768px) {
+
+  .cards-container {
+    width: 100%; /* Контейнер заповнює всю ширину */
+  }
+
+  .card-1, .card-2, .card-3, .card-4, .card-5, .card-6 {
+    margin: 0 auto; /* Центрування карток */
+  
+  }
+
+  /* Ефект виділення при наведенні */
+.card-1:hover,
+.card-2:hover,
+.card-3:hover,
+.card-4:hover,
+.card-5:hover,
+.card-6:hover {
+  transform: none;
+  box-shadow: none;
+}
+.cards-header {
+  font-size: 24px; /* Ще менший розмір заголовка */
+}
+}

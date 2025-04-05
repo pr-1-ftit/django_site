@@ -1,0 +1,220 @@
+/* -------------------------------------------------------
+   Файл: typography.css
+   Опис: Глобальні налаштування типографії для всього сайту.
+         Визначені базові параметри шрифту, розміри заголовків,
+         параметри тексту та стилі для кнопок.
+   ------------------------------------------------------- */
+
+/* 
+  Встановлюємо базові параметри типографії у кореневому селекторі.
+  Використання CSS-перемінних дозволяє централізовано змінювати
+  значення для всіх елементів, яким ці параметри потрібні.
+*/
+:root {
+    /* Основний шрифт */
+    --font-family-base: 'Lato', sans-serif;
+    --font-size-base: 16px;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+    --line-height-base: 1.5;
+    
+    /* Заголовки */
+    --font-size-h1: 2.5rem;  /* 40px */
+    --font-size-h2: 2rem;    /* 32px */
+    --font-size-h3: 1.75rem; /* 28px */
+    --font-size-h4: 1.5rem;  /* 24px */
+    --font-size-h5: 1.25rem; /* 20px */
+    --font-size-h6: 1rem;    /* 16px */
+    
+    /* Додаткові розміри тексту */
+    --font-size-small: 0.875rem;  /* 14px */
+    --font-size-large: 1.125rem;  /* 18px */
+    --font-size-xlarge: 1.25rem;   /* 20px */
+    
+    /* Відступи для заголовків */
+    --heading-margin-top: 1rem;
+    --heading-margin-bottom: 0.5rem;
+  }
+  
+  /* Стандартне оформлення всіх текстових елементів */
+  body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-base);
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ---------------------- Заголовки ---------------------- */
+  
+  /* Заголовок H1 */
+  h1, .title-h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--heading-margin-top);
+    margin-bottom: var(--heading-margin-bottom);
+  }
+  
+  /* Заголовок H2 */
+  h2, .title-h2 {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--heading-margin-top);
+    margin-bottom: var(--heading-margin-bottom);
+  }
+  
+  /* Заголовок H3 */
+  h3, .title-h3 {
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--heading-margin-top);
+    margin-bottom: var(--heading-margin-bottom);
+  }
+  
+  /* Заголовок H4 */
+  h4, .title-h4 {
+    font-size: var(--font-size-h4);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--heading-margin-top);
+    margin-bottom: var(--heading-margin-bottom);
+  }
+  
+  /* Заголовок H5 */
+  h5, .title-h5 {
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--heading-margin-top);
+    margin-bottom: var(--heading-margin-bottom);
+  }
+  
+  /* Заголовок H6 */
+  h6, .title-h6 {
+    font-size: var(--font-size-h6);
+    font-weight: var(--font-weight-bold);
+    margin-top: var(--heading-margin-top);
+    margin-bottom: var(--heading-margin-bottom);
+  }
+  
+  /* ------------------- Основний текст ------------------- */
+  
+  /* Стандартні параграфи */
+  .p-base, p {
+    font-size: var(--font-size-base);
+    margin-bottom: 1rem;
+  }
+  
+  /* Малий текст */
+  .text-small {
+    font-size: var(--font-size-small);
+  }
+  
+  /* Великий текст */
+  .text-large {
+    font-size: var(--font-size-large);
+  }
+  
+  /* Дуже великий текст */
+  .text-xlarge {
+    font-size: var(--font-size-xlarge);
+  }
+  
+  /* ------------------------- Посилання ------------------------- */
+  
+  a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover,
+  a:focus {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  /* ------------------------- Кнопки ------------------------- */
+  
+  /* Базова кнопка */
+  .btn {
+    font-family: var(--font-family-base);
+    font-weight: var(--font-weight-bold);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  /* Стандартна кнопка */
+  .btn-standard {
+    font-size: var(--font-size-base);
+    background-color: #007BFF;
+    color: #fff;
+  }
+  
+  .btn-standard:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Маленька кнопка */
+  .btn-small {
+    font-size: var(--font-size-small);
+    padding: 8px 16px;
+  }
+  
+  /* Велика кнопка */
+  .btn-large {
+    font-size: var(--font-size-large);
+    padding: 12px 24px;
+  }
+  
+  /* ---------------------- Допоміжні класи ---------------------- */
+  
+  /* Вирівнювання тексту */
+  .text-center {
+    text-align: center;
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .text-left {
+    text-align: left;
+  }
+  
+  /* Єдиний відступ за допомогою допоміжних класів */
+  .mt-1 { margin-top: 0.25rem; }
+  .mt-2 { margin-top: 0.5rem; }
+  .mt-3 { margin-top: 1rem; }
+  .mt-4 { margin-top: 1.5rem; }
+  .mt-5 { margin-top: 3rem; }
+  
+  .mb-1 { margin-bottom: 0.25rem; }
+  .mb-2 { margin-bottom: 0.5rem; }
+  .mb-3 { margin-bottom: 1rem; }
+  .mb-4 { margin-bottom: 1.5rem; }
+  .mb-5 { margin-bottom: 3rem; }
+  
+  /* -------------------- Media Queries -------------------- */
+  /* Адаптація типографії для мобільних пристроїв */
+  @media (max-width: 768px) {
+    :root {
+      --font-size-base: 14px;
+      --font-size-h1: 2rem;
+      --font-size-h2: 1.75rem;
+      --font-size-h3: 1.5rem;
+      --font-size-h4: 1.25rem;
+      --font-size-h5: 1rem;
+      --font-size-h6: 0.875rem;
+      --font-size-small: 0.75rem;
+      --font-size-large: 1rem;
+      --font-size-xlarge: 1.125rem;
+    }
+  }
+  

@@ -1,6 +1,6 @@
 /* Фон футера */
 .footer-bg {
-    position: relative; /* Відкріплюємо футер */
+    position: relative;
     width: 100%;
     background: #000000;
     color: #ffffff;
@@ -9,88 +9,129 @@
     font-size: 16px;
     line-height: 100%;
     letter-spacing: 0%;
-    padding: 25px; /* Рівні відступи всередині футера: зверху/знизу 30px, зліва/справа 20px */
-    margin-top: 50px; /* Відступ від верхніх елементів */
-}
-
-/* Контейнер футера */
-.footer-container {
+    padding: 25px;
+    margin-top: 50px;
+    box-sizing: border-box;
+  }
+  
+  /* Контейнер футера */
+  .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-around; /* Рівний розподіл стовпців */
+    flex-wrap: wrap; /* Дозволяємо перенос елементів */
+    justify-content: space-between;
     align-items: center;
-    gap: 150px; /* Збільшений простір між стовпцями */
-    padding: 0 20px; /* Відступи всередині контейнера */
-}
-
+    gap: 20px; /* Менший проміжок для адаптивності */
+    padding: 0 20px;
+  }
+  
 /* Стовпці футера */
 .footer-column {
-    flex: 1;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px; /* Рівні внутрішні відступи для кожного стовпця */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрування дочірніх елементів по горизонталі */
+  text-align: center;  /* Центрування тексту в елементах */
+  padding: 10px;
+  min-width: 200px;
 }
 
-
+/* Заголовок стовпця */
 .footer-column h3 {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #ffffff;
 }
 
 /* Список посилань */
 .footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .footer-column ul li {
-    margin-bottom: 20px; /* Збільшений відступ між посиланнями */
+  margin-bottom: 20px;
 }
 
+/* Посилання */
 .footer-column ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    transition: color 0.3s ease;
+  display: block;       /* Блочний елемент, займає всю ширину батьківського елемента */
+  width: 100%;          /* Переконуємося, що елемент посилання розтягується */
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.3s ease;
 }
 
 .footer-column ul li a:hover {
-    color: #FFD700; /* Колір при наведенні */
+  color: #FFD700;
 }
 
-/* Іконки соціальних мереж */
-.social-icons {
+  
+  /* Іконки соціальних мереж */
+  .social-icons {
     display: flex;
-    gap: 10px; /* Відстань між іконками */
-    justify-content: center; /* Центрування іконок всередині стовпця */
-}
-
-.social-icons a {
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .social-icons a {
     display: inline-block;
     width: 32px;
     height: 32px;
     background-size: cover;
     background-position: center;
-    transition: transform 0.3s ease; /* Плавний ефект збільшення */
-}
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Іконки для конкретних соцмереж */
+  .icon-telegram {
+    background-image: url('../images/icons/telegram-icon.png');
+  }
+  
+  .icon-x {
+    background-image: url('../images/icons/x-icon.png');
+  }
+  
+  .icon-instagram {
+    background-image: url('../images/icons/instagram-icon.png');
+  }
+  
+  .icon-gmail {
+    background-image: url('../images/icons/gmail-icon.png');
+  }
 
-.social-icons a:hover {
-    transform: scale(1.2); /* Збільшення іконки при наведенні */
-}
-
-/* Іконки для конкретних соцмереж */
-.icon-telegram {
-    background-image: url('../images/icons/telegram-icon.png'); /* Шлях до іконки Telegram */
-}
-
-.icon-x {
-    background-image: url('../images/icons/x-icon.png'); /* Шлях до іконки X (Twitter) */
-}
-
-.icon-instagram {
-    background-image: url('../images/icons/instagram-icon.png'); /* Шлях до іконки Instagram */
-}
+  /* Медіа запити */
+  /* Для телефонів - 1 стовпець */
+  @media only screen and (max-width: 425px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .footer-column {
+      width: 100%;
+      max-width: 400px; /* За потреби можна регулювати */
+    }
+  }
+  
+  /* Для планшетів - 2 стовпці */
+  @media only screen and (min-width: 425px) and (max-width: 1023px) {
+    .footer-container {
+      justify-content: center;
+      gap: 20px;
+    }
+    .footer-column {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  /* За замовчуванням (дексоп) – 4 стовпці */
+  /* Можна не прописувати додаткових налаштувань, оскільки початкове
+     розташування з flex і flex: 1 забезпечує 4 стовпці при достатньому просторі */
+  

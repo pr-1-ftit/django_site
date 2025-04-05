@@ -1,0 +1,60 @@
+.in-dev {
+    position: relative;
+    /* display: inline-block; – видаляємо це правило */
+}
+.in-dev::after {
+    content: "In dev"; /* текст, який буде вставлено */
+    position: absolute;
+    font-family: Lato, sans-serif;
+    top: 0;
+    right: 0;
+    background-color: #FFD700;
+    color: black;
+    padding: 2px 5px;
+    font-size: 13px;  /* рекомендую збільшити шрифт для кращої читабельності */
+    border-radius: 9999px;
+    transform: translate(30%, -90%);
+    font-weight: 600;
+}
+
+.in-dev-search::after {
+    content: "In dev";
+    position: absolute;
+    font-family: Lato, sans-serif;
+    top: 20%;      /* розміщення нижче контейнера */
+    right: -20px;
+    background-color: #FFD700;
+    color: black;
+    padding: 2px 5px;
+    font-size: 13px;  /* рекомендується встановити читабельний розмір шрифту */
+    border-radius: 9999px;
+    transform: translateY(5px); /* невеликий зсув вниз, можна відрегулювати */
+    font-weight: 600;
+}
+
+.in-dev-mobile {
+    position: relative; /* обов’язково для позиціонування ::after */
+}
+
+.in-dev-mobile::after {
+    content: "In dev";
+    position: absolute;
+    font-family: Lato, sans-serif;
+    top: 20%;      /* або скоригуйте для бажаного вертикального розташування */
+    left: 50%;     /* базове центроване вирівнювання по горизонталі */
+    background-color: #FFD700;
+    color: black;
+    padding: 2px 5px;
+    font-size: 13px;
+    border-radius: 9999px;
+    transform: translate(100%, 5px); /* зміщення правіше: замість -50% використовується -40% */
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 761px) {
+.in-dev-search::after {
+    top: 2%;      /* розміщення нижче контейнера */
+    right: -5px;
+}
+  }
+  
