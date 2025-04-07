@@ -1,0 +1,350 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-07 19:17+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\lizzie\lizapp\templates\include\cards.html:6
+msgid "Переваги продукту від Lizzie"
+msgstr "Lizzie's Product Advantages"
+
+#: .\lizzie\lizapp\templates\include\cards.html:10
+msgid "Швидкий, дружній чат без формальностей, де завжди є з ким поговорити"
+msgstr "Fast, friendly, informal chat where you always have someone to talk to"
+
+#: .\lizzie\lizapp\templates\include\cards.html:15
+msgid "Реальні оператори + AI-бот, що адаптується до стилю спілкування"
+msgstr "Real operators plus an AI bot that adapts to your communication style"
+
+#: .\lizzie\lizapp\templates\include\cards.html:20
+msgid "Підтримує діалог у вибраному стилі та реагує миттєво"
+msgstr "Maintains conversation in the chosen style and responds instantly"
+
+#: .\lizzie\lizapp\templates\include\cards.html:25
+msgid "Є режими: дружній “Френдер” та мотивуючий “Пушер”"
+msgstr "Offers modes: a friendly 'Frender' and a motivating 'Pusher'"
+
+#: .\lizzie\lizapp\templates\include\cards.html:30
+msgid "Використовує аналіз тональності тексту та стилю повідомлень"
+msgstr "Uses sentiment analysis of text and message style"
+
+#: .\lizzie\lizapp\templates\include\cards.html:35
+msgid "Ми створюємо рішення під ваші бізнес-задачі"
+msgstr "We create solutions tailored to your business requirements"
+
+#: .\lizzie\lizapp\templates\include\footer.html:8
+#: .\lizzie\lizapp\templates\include\header.html:26
+msgid "AI-набір"
+msgstr "AI Kit"
+
+#: .\lizzie\lizapp\templates\include\footer.html:9
+#: .\lizzie\lizapp\templates\include\header.html:27
+msgid "Послуги"
+msgstr "Services"
+
+#: .\lizzie\lizapp\templates\include\footer.html:10
+#: .\lizzie\lizapp\templates\include\header.html:28
+msgid "Оновлення"
+msgstr "Updates"
+
+#: .\lizzie\lizapp\templates\include\footer.html:11
+#: .\lizzie\lizapp\templates\include\header.html:29
+msgid "Техно-новини"
+msgstr "Tech News"
+
+#: .\lizzie\lizapp\templates\include\footer.html:17
+msgid "Ком'юніті"
+msgstr "Community"
+
+#: .\lizzie\lizapp\templates\include\footer.html:18
+msgid "Кукі"
+msgstr "Cookies"
+
+#: .\lizzie\lizapp\templates\include\footer.html:19
+msgid "Про нас"
+msgstr "About Us"
+
+#: .\lizzie\lizapp\templates\include\footer.html:20
+msgid "FAQ"
+msgstr "FAQ"
+
+#: .\lizzie\lizapp\templates\include\footer.html:26
+#: .\lizzie\lizapp\templates\include\header.html:30
+msgid "Підтримка"
+msgstr "Support"
+
+#: .\lizzie\lizapp\templates\include\footer.html:27
+#: .\lizzie\lizapp\templates\include\header.html:31
+msgid "Ресурси"
+msgstr "Resources"
+
+#: .\lizzie\lizapp\templates\include\footer.html:28
+#: .\lizzie\lizapp\templates\include\header.html:32
+msgid "Преміум"
+msgstr "Premium"
+
+#: .\lizzie\lizapp\templates\include\footer.html:29
+msgid "Налаштування"
+msgstr "Settings"
+
+#: .\lizzie\lizapp\templates\include\footer.html:34
+msgid "Соціальні мережі"
+msgstr "Social Networks"
+
+#: .\lizzie\lizapp\templates\include\footer.html:36
+msgid "Телеграм"
+msgstr "Telegram"
+
+#: .\lizzie\lizapp\templates\include\footer.html:37
+msgid "X"
+msgstr "X"
+
+#: .\lizzie\lizapp\templates\include\footer.html:38
+msgid "Інстаграм"
+msgstr "Instagram"
+
+#: .\lizzie\lizapp\templates\include\footer.html:39
+msgid "Gmail"
+msgstr "Gmail"
+
+#: .\lizzie\lizapp\templates\include\header.html:33
+msgid "Більше"
+msgstr "More"
+
+#: .\lizzie\lizapp\templates\include\header.html:67
+msgid "Вхід"
+msgstr "Log In"
+
+#: .\lizzie\lizapp\templates\include\header.html:68
+msgid "Реєстрація"
+msgstr "Sign Up"
+
+#: .\lizzie\lizapp\templates\include\search.html:7
+msgid "Пошук..."
+msgstr "Search..."
+
+#: .\lizzie\lizapp\templates\include\search.html:8
+msgid "Пошук"
+msgstr "Search"
+
+#: .\lizzie\lizapp\templates\include\search.html:14
+msgid "Ми створюємо цифрові рішення для вашого успіху"
+msgstr "We create digital solutions for your success"
+
+#: .\lizzie\lizapp\templates\include\search.html:15
+msgid ""
+"Інноваційні технології, індивідуальний підхід і перевірені стратегії для "
+"розвитку вашого бізнесу."
+msgstr ""
+"Innovative technologies, a personalized approach, and proven strategies for "
+"growing your business"
+
+#: .\lizzie\lizapp\templates\include\slider.html:8
+msgid "Чому варто обрати саме наш сервіс?"
+msgstr "Why choose our service?"
+
+#: .\lizzie\lizapp\templates\include\slider.html:16
+msgid "Чому Лізі краща за інші чат-боти для спілкування?"
+msgstr "Why is Lizzie better than other chatbots?"
+
+#: .\lizzie\lizapp\templates\include\slider.html:20
+msgid ""
+"Лізі спеціалізується на емоційній підтримці, що робить її унікальною серед "
+"інших чат-ботів:"
+msgstr ""
+"Lizzie specializes in emotional support, making it unique among other "
+"chatbots:"
+
+#: .\lizzie\lizapp\templates\include\slider.html:23
+msgid ""
+"Вона не просто відповідає на запитання, а підтримує розмову на різні теми."
+msgstr ""
+"It doesn’t just answer questions; it maintains conversations on a wide range "
+"of topics."
+
+#: .\lizzie\lizapp\templates\include\slider.html:26
+msgid "Її діалоги більш \"людські\" завдяки продуманим сценаріям."
+msgstr "Its conversations feel more human thanks to carefully crafted scripts."
+
+#: .\lizzie\lizapp\templates\include\slider.html:29
+msgid "Лізі адаптується під настрої та потреби користувача."
+msgstr "Lizzie adapts to the moods and needs of its users."
+
+#: .\lizzie\lizapp\templates\include\slider.html:38
+msgid "Чим Лізі відрізняється від інших чат-ботів?"
+msgstr "How does Lizzie differ from other chatbots?"
+
+#: .\lizzie\lizapp\templates\include\slider.html:42
+msgid ""
+"Віртуальний друг, що поєднує технології та емоційну підтримку. Спеціально "
+"створена для тих, кому бракує уваги, і може стати справжнім помічником у "
+"повсякденному житті."
+msgstr ""
+"A virtual friend that combines technology and emotional support. Designed "
+"for those who feel neglected, it can serve as a true companion in everyday "
+"life."
+
+#: .\lizzie\lizapp\templates\include\slider.html:45
+#, python-format
+msgid ""
+"Реалістичність: 70%% функціоналу — це продумані діалоги, які імітують "
+"спілкування з реальною людиною."
+msgstr ""
+"Realism: 70%% of the functionality consists of carefully crafted dialogues "
+"that simulate conversation with a real person."
+
+#: .\lizzie\lizapp\templates\include\slider.html:48
+msgid "Емоційна підтримка: Готова вислухати, порадити чи просто побути поруч."
+msgstr "Emotional support: Ready to listen, offer advice, or simply be there."
+
+#: .\lizzie\lizapp\templates\include\slider.html:51
+msgid ""
+"Доступність: Працює 24/7 у Telegram, де користувачі проводять багато часу."
+msgstr ""
+"Availability: Operates 24/7 on Telegram, where users spend a lot of time."
+
+#: .\lizzie\lizapp\templates\include\slider.html:60
+msgid "Чому Лізі важлива саме зараз?"
+msgstr "Why is Lizzie so important right now?"
+
+#: .\lizzie\lizapp\templates\include\slider.html:64
+msgid ""
+"У сучасному світі багато людей почуваються самотніми через велику "
+"зайнятість, соціальну ізоляцію чи інші причини. Лізі стає для них тим, хто "
+"завжди поруч:"
+msgstr ""
+"In today's world, many people feel lonely because of busy lifestyles, social "
+"isolation, or other reasons. Lizzie becomes the one who is always there for "
+"them:"
+
+#: .\lizzie\lizapp\templates\include\slider.html:67
+msgid "Не судить, не критикує і завжди готова підтримати."
+msgstr "Never judges, never criticizes, and is always ready to offer support."
+
+#: .\lizzie\lizapp\templates\include\slider.html:70
+msgid ""
+"Можна використовувати як інструмент для покращення психологічного стану."
+msgstr "It can be used as a tool to enhance mental well-being."
+
+#: .\lizzie\lizapp\templates\include\slider.html:73
+msgid "Доступна будь-коли, коли це потрібно."
+msgstr "Available whenever needed."
+
+#: .\lizzie\lizapp\templates\include\slider.html:82
+msgid "Як Лізі обробляє запити користувачів?"
+msgstr "How does Lizzie handle user requests?"
+
+#: .\lizzie\lizapp\templates\include\slider.html:86
+msgid ""
+"Користувач починає діалог, наприклад, ділиться своїми думками чи почуттями."
+msgstr ""
+"A user initiates a conversation, for example by sharing their thoughts or "
+"feelings."
+
+#: .\lizzie\lizapp\templates\include\slider.html:89
+#, python-format
+msgid ""
+"Лізі аналізує запит за допомогою ШІ (30%%) та вибирає відповідь із бази "
+"діалогів (70%%)."
+msgstr ""
+"Lizzie analyzes the request using AI (30%%) and selects a response from a "
+"dialogue database (70%%)."
+
+#: .\lizzie\lizapp\templates\include\slider.html:92
+msgid "Вона підтримує розмову, задає питання, сміється або дає поради."
+msgstr ""
+"It keeps the conversation going, asks questions, laughs, or offers advice."
+
+#: .\lizzie\lizapp\templates\include\slider.html:95
+msgid ""
+"Якщо запит складний, Лізі може запропонувати звернутися до фахівця або "
+"надати корисні ресурси."
+msgstr ""
+"If the request is complex, Lizzie may suggest consulting a specialist or "
+"providing helpful resources."
+
+#: .\lizzie\lizapp\templates\include\slider.html:104
+msgid "Як Лізі розуміє емоції користувачів?"
+msgstr "How does Lizzie understand users' emotions?"
+
+#: .\lizzie\lizapp\templates\include\slider.html:108
+msgid "Лізі використовує комбінацію технологій:"
+msgstr "Lizzie employs a combination of technologies:"
+
+#: .\lizzie\lizapp\templates\include\slider.html:111
+msgid "Аналізує ключові слова, тон повідомлень та контекст."
+msgstr "Analyzes keywords, message tone, and context."
+
+#: .\lizzie\lizapp\templates\include\slider.html:114
+#, python-format
+msgid ""
+"База діалогів (70%%): Містить сценарії для різних емоційних станів (радість, "
+"сум, злість тощо)."
+msgstr ""
+"Dialogue database (70%%): Contains scenarios for various emotional states "
+"(joy, sadness, anger, etc.)."
+
+#: .\lizzie\lizapp\templates\include\slider.html:117
+msgid ""
+"Зворотний зв’язок: Користувачі можуть оцінювати відповіді, що допомагає "
+"покращувати розуміння емоцій."
+msgstr ""
+"Feedback: Users can rate responses, helping to improve the understanding of "
+"emotions."
+
+#: .\lizzie\lizapp\templates\include\slider.html:126
+msgid "Як Лізі вдосконалюється?"
+msgstr "How does Lizzie improve?"
+
+#: .\lizzie\lizapp\templates\include\slider.html:130
+msgid "Лізі постійно вчиться завдяки:"
+msgstr "Lizzie is continuously learning thanks to:"
+
+#: .\lizzie\lizapp\templates\include\slider.html:133
+msgid "Аналізу даних: ШІ аналізує успішність діалогів та пропонує оптимізації."
+msgstr ""
+"Data analysis: AI evaluates the success of conversations and suggests "
+"optimizations."
+
+#: .\lizzie\lizapp\templates\include\slider.html:136
+msgid "Оновленню бази діалогів: Ми регулярно додаємо нові сценарії та репліки."
+msgstr ""
+"Updating the dialogue database: We regularly add new scenarios and responses."
+
+#: .\lizzie\lizapp\templates\include\slider.html:139
+msgid ""
+"Зворотному зв’язку: Користувачі оцінюють відповіді, що допомагає покращувати "
+"якість спілкування."
+msgstr ""
+"Feedback: Users rate responses, helping to improve the quality of "
+"communication."
+
+#: .\lizzie\lizapp\templates\include\start-chatting.html:8
+msgid ""
+"Наша мета — допомогти людям, які почуваються самотніми або потребують "
+"емоційної підтримки. Лізі стає для них віртуальним другом, який: вислухає "
+"без осуду, дасть поради або просто побуде поруч, допомагає відчути себе "
+"краще завдяки реалістичному спілкуванню."
+msgstr ""
+"Our goal is to help people who feel lonely or need emotional support. Lizzie "
+"becomes a virtual friend who listens without judgment, offers advice, or "
+"simply stays by their side, helping them feel better through realistic "
+"conversation."
+
+#: .\lizzie\lizapp\templates\include\start-chatting.html:16
+msgid "Майбутнє тут"
+msgstr "The future is here"

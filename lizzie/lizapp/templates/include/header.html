@@ -1,132 +1,88 @@
 {% load static %}
+{% load static i18n %}
 <link rel="stylesheet" href="{% static 'css/header.css' %}"> 
 <link rel="stylesheet" href="{% static 'css/footer.css' %}"> 
+
+
 
 <div class="header-wrapper">
   <!-- Фіксований Nav Bar -->
   <header class="rectangle-14">
-    <!-- Кнопка-гамбургер (мобільна, зліва) -->
-    <button class="hamburger-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    
-    <!-- Єдиний логотип (для десктопу) -->
-    <a href="/" class="logo-link">
-      <img src="{% static 'images/logo/logo.png' %}" alt="Лого">
-    </a>
-    
-    <!-- Кнопка UA для мобільної версії -->
-    <a href="#" class="ua-button mobile-ua">UA</a>
-    
-    <!-- Кнопка-еліпс (мобільна, справа) -->
-    <button class="ellipse-1 mobile-ellipse"></button>
-    
-    <!-- Десктопна навігація (лише на великих екранах) -->
-    <div class="desktop-nav">
-      <nav class="nav-left">
-        <ul class="nav-items">
-          <li class="in-dev"><a href="/#">AI-набір</a></li>
-          <li class="in-dev"><a href="/#">Послуги</a></li>
-          <li class="in-dev"><a href="/#">Оновлення</a></li>
-          <li class="in-dev"><a href="/#">Техно-новини</a></li>
-          <li class="in-dev"><a href="/#">Підтримка</a></li>
-          <li class="in-dev"><a href="/#">Ресурси</a></li>
-          <li class="in-dev"><a href="/#">Преміум</a></li>
-          <li class="in-dev"><a href="/#">Більше</a></li>
-        </ul>
-      </nav>
-      <div class="nav-right">
-        <ul class="nav-items">
-          <li><a href="/">UA</a></li>
-          <li>
-            <a href="https://t.me/LizesBot" target="_blank" class="rectangle-23-first">
-              Start Chatting
-            </a>
-          </li>
-          <li class="in-dev"><a href="#">Увійти</a></li>
-          <li class="in-dev"><a href="#">Реєстрація</a></li>
-        </ul>
-      </div>
+    <div class="nav-left">
+      <!-- Кнопка hamburger-menu (відкриває ліве меню для мобільних) -->
+      <button class="hamburger-menu" aria-label="Відкрити ліве меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <!-- Логотип (завжди показується; для десктопів залишається в лівому куті) -->
+      <a href="/" class="logo-link logo-link-main">
+        <img src="{% static 'images/logo/logo.png' %}" alt="Лого">
+      </a>
     </div>
+    <!-- Контейнер десктопної навігації -->
+    <nav class="main-nav desktop-nav">
+      <ul class="nav-items nav-items-left">
+        <li class="in-dev"><a href="{% url 'ai_kit' %}">{% trans "AI-набір" %}</a></li>
+        <li class="in-dev"><a href="{% url 'services' %}">{% trans "Послуги" %}</a></li>
+        <li class="in-dev"><a href="{% url 'updates' %}">{% trans "Оновлення" %}</a></li>
+        <li class="in-dev"><a href="{% url 'tech_news' %}">{% trans "Техно-новини" %}</a></li>
+        <li class="in-dev"><a href="{% url 'support' %}">{% trans "Підтримка" %}</a></li>
+        <li class="in-dev"><a href="{% url 'resources' %}">{% trans "Ресурси" %}</a></li>
+        <li class="in-dev"><a href="{% url 'premium' %}">{% trans "Преміум" %}</a></li>
+        <li class="in-dev"><a href="{% url 'more' %}">{% trans "Більше" %}</a></li>
+      </ul>
+      <ul class="nav-items nav-items-right">
+        <li >
+          <div class="lang-dropdown">
+            {% get_current_language as LANGUAGE_CODE %}
+            <!-- Активатор меню -->
+            <a href="#" id="lang-btn">{{ LANGUAGE_CODE|upper }}</a>
+        
+            <!-- Форма для перемикання мови -->
+            <form id="langForm" action="{% url 'set_language' %}" method="post" class="lang-menu">
+              {% csrf_token %}
+              <input name="next" type="hidden" value="{{ request.get_full_path }}">
+              <input type="hidden" name="language" id="langInput" value="">
+              <ul class="lang-list">
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                  <li{% if language.code == LANGUAGE_CODE %} class="active-lang"{% endif %}>
+                    <a href="#" class="lang-option" data-lang="{{ language.code }}">
+                      {{ language.name_local }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </form>
+          </div>
+        </li>
+        <li>
+          <a href="https://t.me/LizesBot" target="_blank" class="rectangle-23-first">
+            Start Chatting
+          </a>
+        </li>
+        <li class="in-dev"><a href="{% url 'login' %}">{% trans 'Вхід' %}</a></li>
+        <li class="in-dev"><a href="{% url 'signup' %}">{% trans 'Реєстрація' %}</a></li> 
+        <!-- Кнопка ellipse (відкриває праве меню для мобільних) -->
+         <li><button class="ellipse-1" aria-label="Відкрити праве меню"></button></li>
+      </ul>
+    </nav>
   </header>
-
-  <!-- Ліве мобільне меню -->
-  <nav class="mobile-menu">
-    <div class="mobile-menu-logo">
-      <a href="/">
-        <img src="{% static 'images/logo/logo.png' %}" alt="Лого">
-      </a>
-    </div>
-    <button class="menu-close">&times;</button>
-    <ul class="mobile-nav-items">
-      <li class="in-dev-mobile"><a href="/#">AI-набір</a></li>
-      <li class="in-dev-mobile"><a href="/#">Послуги</a></li>
-      <li class="in-dev-mobile"><a href="/#">Оновлення</a></li>
-      <li class="in-dev-mobile"><a href="/#">Техно-новини</a></li>
-      <li class="in-dev-mobile"><a href="/#">Підтримка</a></li>
-      <li class="in-dev-mobile"><a href="/#">Ресурси</a></li>
-      <li class="in-dev-mobile"><a href="/#">Преміум</a></li>
-      <li class="in-dev-mobile"><a href="/#">Більше</a></li>
-    </ul>
-    <div class="footer-column">
-      <h3>Соціальні мережі</h3>
-      <div class="social-icons">
-        <a href="https://t.me/lizzie_officiall" class="icon-telegram" target="_blank" title="Telegram"></a>
-        <a href="https://x.com/lizzieofficiall" class="icon-x" target="_blank" title="X"></a>
-        <a href="https://www.instagram.com/lizzie.officiall" class="icon-instagram" target="_blank" title="Instagram"></a>
-        <a href="mailto:liz.zie19424@gmail.com" class="icon-gmail" target="_blank" title="Gmail"></a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Праве мобільне меню -->
-  <nav class="mobile-menu-right">
-    <div class="mobile-menu-logo-right">
-      <a href="/" class="menu-logo">
-        <img src="{% static 'images/logo/logo.png' %}" alt="Лого">
-      </a>
-    </div>
-    <button class="menu-close-right">&times;</button>
-    <ul class="mobile-nav-items-right">
-      <li>
-        <a href="https://t.me/LizesBot" target="_blank" class="rectangle-23-first">
-          Start Chatting
-        </a>
-      </li>
-      <li class="in-dev-mobile"><a href="#">Увійти</a></li>
-      <li class="in-dev-mobile"><a href="#">Реєстрація</a></li>
-    </ul>
-    <div class="footer-column">
-      <h3>Соціальні мережі</h3>
-      <div class="social-icons">
-        <a href="https://t.me/lizzie_officiall" class="icon-telegram" target="_blank" title="Telegram"></a>
-        <a href="https://x.com/lizzieofficiall" class="icon-x" target="_blank" title="X"></a>
-        <a href="https://www.instagram.com/lizzie.officiall" class="icon-instagram" target="_blank" title="Instagram"></a>
-        <a href="mailto:liz.zie19424@gmail.com" class="icon-gmail" target="_blank" title="Gmail"></a>
-      </div>
-    </div>
-  </nav>
+</div>
+<!-- Контейнер для лівого мобільного меню -->
+<div class="mobile-menu left-menu" id="mobileMenuLeft">
+  <a href="/" class="logo-link logo-link-menu logo-link-left">
+    <img src="{% static 'images/logo/logo.png' %}" alt="Лого">
+  </a>
+  <button class="close-btn close-btn-left" aria-label="Закрити меню">&times;</button>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- Контейнер для правого мобільного меню -->
+<div class="mobile-menu right-menu" id="mobileMenuRight">
+  <a href="/" class="logo-link logo-link-menu logo-link-right">
+    <img src="{% static 'images/logo/logo.png' %}" alt="Лого">
+  </a>
+  <button class="close-btn close-btn-right" aria-label="Закрити меню">&times;</button>
+</div>
