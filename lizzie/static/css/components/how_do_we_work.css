@@ -1,0 +1,463 @@
+.work-container {
+  max-width: 1200px;
+  margin: 140px auto;         /* Відцентровує контейнер і додає відступ зверху/знизу */
+
+}
+.outer {
+  width: 1198px;
+  height: 517px;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+
+
+/* Стилі для блоків (box) */
+.box {
+  width: auto;
+  height: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
+  border-radius: 20px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: Lato , sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  box-sizing: border-box; /* Щоб розміри враховували межі */
+  z-index: 2;
+  border: 1px solid white;
+}
+
+/* Розташування блоків */
+.outer .box:nth-child(1) {
+  top: 89px;
+  left: 0;
+}
+.outer .box:nth-child(2) {
+  top: 169px;
+  left: 140px;
+
+}
+.outer .box:nth-child(3) {
+  top: 249px;
+  left: 460px;
+}
+.outer .box:nth-child(4) {
+  top: 329px;
+  left: 590px;
+}
+.outer .box:nth-child(5) {
+  top: 409px;
+  right: 0;
+}
+
+
+/* Стиль для заголовка */
+.container-header {
+    
+    text-align: center;
+    margin-bottom: -50px;
+  }
+  .container-header h2 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: white;
+  }
+/* Стилі для контейнерів стрілок */
+.arrow {
+  position: relative;
+  width: var(--corner-horizontal);
+  height: var(--corner-vertical);
+}
+
+    /* Спільний стиль для відрізків кута */
+    .corner-side {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        /* Фон задається однаковим градієнтом для всіх відрізків */
+        background: linear-gradient(180deg, #EA00FF -0.07%, #2600FF 100%);
+        background-size: 100% 320px;
+        background-repeat: no-repeat;
+      }
+  
+      /* Налаштування для контейнерів із куточком у нижньому лівому куті */
+      .bottom-left .left-side {
+        left: 0;
+        bottom: 0;
+        width: 3px; /* Товщина вертикального відрізка */
+        height: var(--corner-vertical);
+      }
+      .bottom-left .bottom-side {
+        left: 0;
+        bottom: 0;
+        height: 3px; /* Товщина горизонтального відрізка */
+        width: var(--corner-horizontal);
+      }
+  
+      /* Налаштування для контейнерів із куточком у верхньому правому куті */
+      .top-right .top-side {
+        right: 0;
+        top: 0;
+        height: 3px;
+        width: var(--corner-horizontal);
+      }
+      .top-right .right-side {
+        right: 0;
+        top: 0;
+        width: 3px;
+        height: var(--corner-vertical);
+      }
+
+  
+  /* Класи розміру кута для нижнього лівого */
+  .bottom-left.corner-2 .left-side {
+    background-position: 0 -20px;
+}
+  .bottom-left.corner-2 .bottom-side { 
+    background-position: 0 -80px;
+}
+
+  .bottom-left.corner-4 .left-side { 
+    background-position: 0 -140px;
+}
+  .bottom-left.corner-4 .bottom-side { 
+    background-position: 0 -180px;
+}
+
+  .bottom-left.corner-6 .left-side {
+    background-position: 0 -220px;
+}
+  .bottom-left.corner-6 .bottom-side {
+    background-position: 0 -260px;
+}
+
+  .bottom-left.corner-8 .left-side {
+    background-position: 0 -260px;
+}
+  .bottom-left.corner-8 .bottom-side {
+    background-position: 0 -280px;
+}
+  
+  /* Класи розміру кута для верхнього правого */
+  .top-right.corner-1 .top-side {
+    background-position: 0 0;
+}
+  .top-right.corner-1 .right-side {
+    background-position: 0 -20px;
+}
+
+  .top-right.corner-3 .top-side {
+    background-position: 0 -80px;
+}
+  .top-right.corner-3 .right-side {
+    background-position: 0 -100px;
+}
+
+  .top-right.corner-5 .top-side {
+    background-position: 0 -160px;
+}
+  .top-right.corner-5 .right-side {
+    background-position: 0 -180px;
+}
+
+  .top-right.corner-7 .top-side {
+    background-position: 0 -240px;
+}
+  .top-right.corner-7 .right-side {
+    background-position: 0 -260px;
+}
+      /* Визначення розмірів відрізків кута через CSS‑змінні.
+       Назва класу форматується як .container-1ical>-<horizontal> */
+       .corner-1 { 
+        --corner-vertical: 53px; 
+        --corner-horizontal: 50px; 
+      }
+       .corner-2 { 
+        --corner-vertical: 42px;  /* висота вертикального відрізка */
+        --corner-horizontal: 65px;/* ширина горизонтального відрізка */
+      }
+      .corner-3 { 
+        --corner-vertical: 41px; 
+        --corner-horizontal: 15px; 
+      }
+      .corner-4 { 
+        --corner-vertical: 42px; 
+        --corner-horizontal: 100px; 
+      }
+      .corner-5 { 
+        --corner-vertical: 38px; 
+        --corner-horizontal: 40px; 
+      }
+      .corner-6 { 
+        --corner-vertical: 43px; 
+        --corner-horizontal: 81px; 
+      }
+      .corner-7 { 
+        --corner-vertical: 42px; 
+        --corner-horizontal: 95px; 
+      }
+      .corner-8 { 
+        --corner-vertical: 41px; 
+        --corner-horizontal: 75px; 
+      }
+
+
+
+
+
+/* Розміщення контейнерів стрілок */
+.arrow-1 {
+  top: -50px;
+  left: 312px;
+}
+.arrow-2 {
+  top: 168px;
+  left: 76px;
+}
+.arrow-3 {
+  top: -11px;
+  left: 667px;
+}
+.arrow-4 {
+  top: 206px;
+  left: 361px;
+}
+.arrow-5 {
+  top: 31px;
+  left: 719px;
+}
+.arrow-6 {
+  top: 244px;
+  left: 510px;
+}
+.arrow-7 {
+  top: 69px;
+  left: 1025px;
+}
+.arrow-8 {
+  top: 282px;
+  left: 637px;
+
+}
+
+/* Псевдоелементи для наконечників горизонтальних стрілок 
+   (arrow-2, arrow-4, arrow-6, arrow-8) 
+   Обидва відрізки виходять із правого нижнього кута контейнера. */
+   .arrow.arrow-2::before,
+   .arrow.arrow-4::before,
+   .arrow.arrow-6::before,
+   .arrow.arrow-8::before,
+   .arrow.arrow-2::after,
+   .arrow.arrow-4::after,
+   .arrow.arrow-6::after,
+   .arrow.arrow-8::after,
+   .arrow.arrow-1::before,
+   .arrow.arrow-3::before,
+   .arrow.arrow-5::before,
+   .arrow.arrow-7::before,
+   .arrow.arrow-1::after,
+   .arrow.arrow-3::after,
+   .arrow.arrow-5::after,
+   .arrow.arrow-7::after {
+     content: "";
+     position: absolute;
+     width: 16px; /* довжина відрізка */
+     height: 3px; /* товщина відрізка */
+     border-radius: 2px;
+     background: linear-gradient(180deg, #EA00FF -0.07%, #2600FF 100%);
+     background-size: 100% 320px;
+     background-repeat: no-repeat;
+     right: 0;
+     bottom: 0;
+     transform-origin: right bottom;
+     z-index: 5;
+   }
+   .arrow.arrow-1::before,
+   .arrow.arrow-3::before,
+   .arrow.arrow-5::before,
+   .arrow.arrow-7::before,
+   .arrow.arrow-1::after,
+   .arrow.arrow-3::after,
+   .arrow.arrow-5::after,
+   .arrow.arrow-7::after {
+
+
+     bottom: 0;
+
+   }
+   .arrow.arrow-2::before,
+   .arrow.arrow-4::before,
+   .arrow.arrow-6::before,
+   .arrow.arrow-8::before {
+     transform: rotate(45deg);
+     
+   }
+   .arrow.arrow-2::after,
+   .arrow.arrow-4::after,
+   .arrow.arrow-6::after,
+   .arrow.arrow-8::after {
+     transform: rotate(-48deg);
+     bottom: 1px;
+     right: -1px;
+   }
+   
+
+   .arrow.arrow-1::before,
+   .arrow.arrow-3::before,
+   .arrow.arrow-5::before,
+   .arrow.arrow-7::before {
+     transform: rotate(135deg);
+     right: 2.5px;
+     bottom: 1.5px;
+   }
+   .arrow.arrow-1::after,
+   .arrow.arrow-3::after,
+   .arrow.arrow-5::after,
+   .arrow.arrow-7::after {
+     transform: rotate(39deg);
+     right: 1.5px;
+    
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   .arrow.arrow-1::before,
+   .arrow.arrow-1::after
+ {
+    background-position: 0 -40px;
+   }
+
+
+   .arrow.arrow-2::before,
+   .arrow.arrow-2::after
+ {
+    background-position: 0 -80px;
+   }
+
+   .arrow.arrow-3::before,
+   .arrow.arrow-3::after
+ {
+    background-position: 0 -80px;
+   }
+
+   .arrow.arrow-4::before,
+   .arrow.arrow-4::after
+ {
+    background-position: 0 -180px;
+   }
+
+   .arrow.arrow-5::before,
+   .arrow.arrow-5::after
+ {
+    background-position: 0 -160px;
+   }
+
+   .arrow.arrow-6::before,
+   .arrow.arrow-6::after
+ {
+    background-position: 0 -260px;
+   }
+
+   .arrow.arrow-7::before,
+   .arrow.arrow-7::after
+ {
+    background-position: 0 -220px;
+   }
+
+   .arrow.arrow-8::before,
+   .arrow.arrow-8::after
+ {
+    background-position: 0 -280px;
+   }
+
+    /* Спільний клас для всіх 5 контейнерів */
+    .box-details {
+        width: auto;
+        height: 44px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        font-family: Lato , sans-serif;
+        font-weight: 600;
+        line-height: 100%;
+        letter-spacing: 0%;
+        font-size: 16px;
+    }
+    
+    /* Унікальні класи для кожного контейнера */
+    .detail-1 {
+    /* Наприклад, можна задати інший фон */
+    top: 55px;
+    left: 50px;
+    }
+    
+    .detail-2 {
+        top: 135px;
+        left: 390px;
+    }
+    
+    .detail-3 {
+        position: absolute;
+        width: 220px;
+        top: 225px;
+        left: 680px;
+    }
+    
+    .detail-4 {
+        top: 295px;
+        left: 780px;
+    }
+    
+    .detail-5 {
+        bottom: 0;
+        left: 830px;
+        align-items: flex-end;
+        padding-bottom: 4px;
+    }
+
+        /* Спільний стиль для абзаців */
+        .detail-3 p {
+            margin: 0;
+          }
+        /* Абзац у лівому верхньому куті */
+        .top-left-text {
+            position: absolute;
+            top: 5px;
+            left: 15px;
+          }
+      
+          /* Абзац у правому нижньому куті */
+          .bottom-right-text {
+            position: absolute;
+            bottom: 5px;
+            right: 20px;
+          }

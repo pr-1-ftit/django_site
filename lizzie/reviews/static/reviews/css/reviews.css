@@ -1,0 +1,33 @@
+
+  
+  /* Глобальні стилі для всіх SVG-зірок */
+  .star {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* За замовчуванням: біла заливка (fill) та білий контур (stroke) */
+  .star polygon {
+    fill: white;
+    stroke-width: 1;
+    transition: fill 0.3s ease;
+  }
+  
+  /* Активний стан зірок */
+  .star.active polygon {
+    fill: #FF00FF;
+  }
+  
+  /* Інтерактивні стилі для зірок в контейнері #add-rating */
+  
+  /* Курсор pointer лише для зірок всередині #add-rating */
+  #add-rating .star {
+    cursor: pointer;
+  }
+  
+  /* Ефект hover для зірок в контейнері #add-rating */
+  #add-rating .star:hover polygon,
+  #add-rating .star.hovered polygon {
+    fill: #FF00FF;
+  }
+  

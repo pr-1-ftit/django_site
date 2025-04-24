@@ -5,3 +5,4 @@ class PostAdmin(admin.ModelAdmin):
     pass  # Ваші налаштування адміністрування
 
 admin.site.register(Post, PostAdmin)
+

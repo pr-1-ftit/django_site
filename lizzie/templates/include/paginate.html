@@ -1,0 +1,51 @@
+{% load static i18n %}
+<link rel="stylesheet" href="{% static 'css/include/paginate.css' %}">
+
+<ul class="pagination">
+    {# Кнопка переходу на першу сторінку з текстом "First" – завжди присутня #}
+    <li class="pagination__item pagination__arrow {% if page_obj.number == 1 %}disabled{% endif %}">
+        {% if page_obj.number == 1 %}
+            <span class="pagination__link" aria-label="First">First</span>
+        {% else %}
+            <a class="pagination__link" href="?page=1" aria-label="First">First</a>
+        {% endif %}
+    </li>
+
+    {# Кнопка для переходу на попередню сторінку – завжди присутня #}
+    <li class="pagination__item pagination__arrow {% if not page_obj.has_previous %}disabled{% endif %}">
+        {% if page_obj.has_previous %}
+            <a class="pagination__link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                &laquo;
+            </a>
+        {% else %}
+            <span class="pagination__link" aria-label="Previous">&laquo;</span>
+        {% endif %}
+    </li>
+
+    {# Елемент для активної сторінки – завжди відображається як окремий елемент списку #}
+    <li class="pagination__item active onit">
+        <span class="pagination__link">{{ page_obj.number }}</span>
+    </li>
+
+    {# Кнопка для переходу на наступну сторінку – завжди присутня #}
+    <li class="pagination__item pagination__arrow {% if not page_obj.has_next %}disabled{% endif %}">
+        {% if page_obj.has_next %}
+            <a class="pagination__link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                &raquo;
+            </a>
+        {% else %}
+            <span class="pagination__link" aria-label="Next">&raquo;</span>
+        {% endif %}
+    </li>
+
+    {# Кнопка переходу на останню сторінку з текстом "Last" – завжди присутня #}
+    <li class="pagination__item pagination__arrow {% if page_obj.number == paginator.num_pages %}disabled{% endif %}">
+        {% if page_obj.number == paginator.num_pages %}
+            <span class="pagination__link" aria-label="Last">Last</span>
+        {% else %}
+            <a class="pagination__link" href="?page={{ paginator.num_pages }}" aria-label="Last">Last</a>
+        {% endif %}
+    </li>
+</ul>
+
+

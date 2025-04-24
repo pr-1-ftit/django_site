@@ -1,0 +1,103 @@
+/* Контейнер для форми, щоб забезпечити базове позиціювання */
+.email-container {
+  position: relative;
+  max-width: 943px;                /* відповідно до ширини інпут бара */
+  margin: 0 auto;              /* центрування по горизонталі */
+  bottom: 140px; 
+}
+
+/* Поле введення пошти (input bar) */
+.feedback-email-bar {
+  position: absolute;
+  top: 200px;                  /* розташування input bar відносно контейнера */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 943px;
+  height: 73px;
+  background: #FFFFFF;
+  border-radius: 23px;
+  z-index: 2;
+}
+
+/* Кнопка */
+.email-feedback-btn {
+  /* Ваші існуючі стилі кнопки */
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 41.15%;
+  height: 73px;
+  background: linear-gradient(180deg, #000000 0%, #002394 100%);
+  border: 1px solid #FFFFFF;
+  border-radius: 23px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.email-feedback-btn:hover {
+  transform: scale(1.05);
+}
+
+.email-feedback-btn:active {
+  transform: scale(0.95);
+}
+
+/* Поле введення email */
+.email-input {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(58.85% - 23px);
+  height: 33px;
+  border-radius: 23px;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 20px;
+}
+
+/* Placeholder для поля email */
+.email-input::placeholder {
+  color: #808080;
+}
+
+/* Стиль повідомлення про помилку */
+.error-message {
+  color: red;
+  font-size: 14px;
+  font-family: Lato, sans-serif;
+  font-weight: 600;
+  text-align: left;
+  margin: 3px;
+  margin-left: 20px;
+  margin-right: auto;
+}
+
+/* Блок для помилок, розташований точно під input bar:
+ Висота input bar – 73px, розташування відносно контейнера – top:200px,
+ тому повідомлення розташовуємо на top: (200 + 73 + 10)px = 283px, де 10px – це відступ */
+.error-messages {
+  position: absolute;
+  top: calc(200px + 73px + 1px);  /* 283px */
+  left: 40%;
+  transform: translateX(-50%);
+  width: 770px;
+  z-index: 1;    /* нижче input bar */
+}
+

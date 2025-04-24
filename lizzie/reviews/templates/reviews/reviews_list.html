@@ -1,0 +1,52 @@
+{% load static i18n %}
+
+<link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
+<link rel="stylesheet" href="{% static 'reviews/css/reviews_list.css' %}">
+
+
+
+<!-- Контейнер для вертикальної прокрутки -->
+<div class="reviews-container {{ reviews_style }} {{ services_style }}">
+    <!-- Напис перед контейнером -->
+    <div class="container-title {{ reviews_style }} {{ services_style }}">
+        <h2>Відгуки</h2>
+    </div>
+    <div class="reviews-content {{ reviews_style }} {{ services_style }}">
+        {% for review in reviews %}
+            <div class="review-item">
+                <div class="user-info">
+                    <h5>{{ review.name }}</h5>
+                </div>
+                <div class="avatar" style="background-color: {{ review.avatar_color }};">
+                    {{ review.name|slice:":1" }}
+                </div>
+                <div class="feedback-container">
+                    <p>{{ review.text }}</p>
+                </div>
+                <div class="rating-container-view">
+                    {% for i in review.range_rating %}
+                        <svg class="star star_list active" width="24" height="24" viewBox="0 0 24 24">
+                            <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+                        </svg>
+                    {% endfor %}
+                    {% for i in review.range_remaining %}
+                        <svg class="star star_list" width="24" height="24" viewBox="0 0 24 24">
+                            <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+                        </svg>
+                    {% endfor %}
+                </div>
+            </div>
+        {% empty %}
+            <p class="no-reviews">Відгуків поки що немає.</p>
+        {% endfor %}
+    </div>
+
+        {% if request.resolver_match.url_name == 'services' %}
+            <a href="{% url 'reviews' %}" class="view-all-reviews">Передивитися всі відгуки...</a>
+        {% endif %}
+
+</div>
+
+
+<!-- {% include "include/paginate.html" %} -->
+

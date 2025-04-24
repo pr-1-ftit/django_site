@@ -1,0 +1,185 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+/* Контейнер, який містить обидва блоки */
+.container-row {
+  display: flex;                   /* Використання Flexbox для розташування елементів */
+  flex-direction: row-reverse;      /* Якщо потрібен зворотний порядок елементів */
+  justify-content: center;         /* За потреби центрування по горизонталі */
+  
+  gap: 26px; 
+  margin-top: 40px;
+}
+
+
+.target-container {
+
+  margin-top: 100px;
+}
+
+
+
+
+
+
+.services-top-background {
+  position: relative;
+  width: 100vw; /* або можете використати 100% */
+  min-height: 1080px;
+  background-color: black;
+  background-image: 
+    /* Загальне затемнення для всього зображення */
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    /* Градієнт для нижнього ефекту:
+       - прозорий до calc(100% - 250px),
+       - плавний перехід до чорного від calc(100% - 250px) до calc(100% - 150px),
+       - суцільний чорний від calc(100% - 150px) до 100% (нижні 150px) */
+    linear-gradient(
+      to bottom, 
+      transparent 0%, 
+      transparent calc(100% - 250px), 
+      black calc(100% - 150px), 
+      black 100%
+    ),
+    /* Фонове зображення */
+    url('../../images/services_top_background.png');
+  
+  background-size: cover;  /* адаптує фон по розміру блоку */
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center, top, center -80px;
+  box-sizing: border-box;
+  display: flow-root;
+  z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.services-services_details {
+  position: relative;
+  width: 100vw; /* або width: 100%; якщо виникають проблеми з горизонтальним скролінгом */
+  min-height: 1200px;
+  background-color: black;
+  /* Першим шаром задаємо затемнення (градієнт), другим - зображення */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../../images/services_details_background.png');
+  /* Для затемнення задаємо розмір, наприклад, на весь контейнер, а для зображення бажаний розмір */
+  background-size: cover;  /* адаптує фон по розміру блоку */
+  /* Аналогічно для повторення */
+  background-repeat: no-repeat, no-repeat;
+  /* Для першого шару (градієнт) позиція за замовчуванням, а для зображення - зсув */
+  background-position: center, center -250px;
+  box-sizing: border-box;
+  display: flow-root;
+  z-index: 1;
+  
+}
+
+
+.services-services_details::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;  /* Загальна висота затемнення зменшена до 200px */
+  background: linear-gradient(to top, 
+    black 0%, 
+    black 75px,    /* 75px чистого чорного (приблизно 37.5% від 200px) */
+    transparent 200px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+  .services-details-background {
+    position: relative;
+    width: 100vw; /* або width: 100%; якщо виникають проблеми з горизонтальним скролінгом */
+    min-height: 2100px;
+    background-color: black;
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../../images/services_details_backgrounf.png');
+    background-size: cover;  /* адаптує фон по розміру блоку */
+    background-repeat: no-repeat;
+    background-position: center top;
+    box-sizing: border-box;
+    display: flow-root;
+    z-index: 1;
+  }
+
+
+/* Верхня накладка: 300px повністю чорного, далі градієнт до прозорості за 100px */
+.services-details-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px; /* 300px чорного + 100px плавного переходу */
+  background: linear-gradient(to bottom, 
+  black 0%, 
+  black 150px, 
+  transparent 400px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Нижня накладка: 300px повністю чорного, далі градієнт до прозорості за 100px */
+.services-details-background::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;  /* 300px чорного + 100px плавного переходу */
+  background: linear-gradient(to top, 
+  black 0%, 
+  black 150px, 
+  transparent 400px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+.services-bottom-background {
+  width: 100%;
+  min-height: 1345px;
+  background-color: black;
+  background-image: url('../../images/services_bottom_background.png');
+  background-size: cover;  /* адаптує фон по розміру блоку */
+  background-repeat: no-repeat;
+  background-position: center -600px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  /* Запобігаємо злипанню margin-в */
+  display: flow-root;  /* або overflow: auto; */
+}

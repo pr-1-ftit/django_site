@@ -13,10 +13,12 @@
     padding: 2px 5px;
     font-size: 13px;  /* рекомендую збільшити шрифт для кращої читабельності */
     border-radius: 9999px;
-    transform: translate(30%, -90%);
+    transform: translate(75%, -90%);
     font-weight: 600;
-    width: 39px;
+    width: 40px;
 }
+
+
 
 .in-dev-search::after {
     content: "In dev";
@@ -40,23 +42,26 @@
     top: 2%;      /* розміщення нижче контейнера */
     right: -5px;
 }
-.in-dev {
-    position: relative; /* обов’язково для позиціонування ::after */
-}
 
-.in-dev::after {
+.in-dev {
+    position: relative; /* Псевдоелемент позиціонується відносно цього контейнера */
+  }
+  
+  .in-dev::after {
     content: "In dev";
     position: absolute;
+    left: calc(100% + 10px); /* Відстань від лівої межі псевдоелемента до правої межі батьківського елемента становитиме 5px */
+    top: 50%;             /* Вертикальне позиціонування: 50% висоти батьківського елемента */
+    transform: translateY(-50%);  /* Для точного центровання по вертикалі */
+    
     font-family: Lato, sans-serif;
-    top: 20%;      /* або скоригуйте для бажаного вертикального розташування */
-    left: 50%;     /* базове центроване вирівнювання по горизонталі */
     background-color: #FFD700;
     color: black;
     padding: 2px 5px;
     font-size: 13px;
     border-radius: 9999px;
-    transform: translate(100%, 5px); /* зміщення правіше: замість -50% використовується -40% */
     font-weight: 600;
-}
   }
   
+  
+}

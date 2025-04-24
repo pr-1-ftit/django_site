@@ -11,4 +11,11 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path("", include("lizapp.urls")),
+    path("", include("reviews.urls")),
+
+    
 )
+
+
+
+

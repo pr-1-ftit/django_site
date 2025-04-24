@@ -1,11 +1,13 @@
 # lizapp/urls.py
 from django.urls import path
-from . import views
+from . import views 
+
+
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', views.index, name='index'),
     path('ai_kit/', views.ai_kit_view, name='ai_kit'),
-    path('services/', views.services_view, name='services'),
+    
     path('updates/', views.updates_view, name='updates'),
     path('tech_news/', views.tech_news_view, name='tech_news'),
     path('support/', views.support_view, name='support'),
@@ -21,4 +23,12 @@ urlpatterns = [
     path('support/', views.support_view, name='support'),
     path('resources/', views.resources_view, name='resources'),
     path('settings/', views.settings_view, name='settings'),
+
+
+
+
+
+    path('services/', views.ServicesListView.as_view(), name='services'),
+
+
 ]

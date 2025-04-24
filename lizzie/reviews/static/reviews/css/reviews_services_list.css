@@ -1,0 +1,26 @@
+.reviews-container.services_style {
+    max-width: calc(280px * 4 + (26px * 3)); /* Максимальна ширина: 4 відгуки + проміжки */
+    margin-top: 110px;
+}
+
+.container-title.services_style h2 {
+    color: rgb(255, 255, 255);
+}
+.container-title {
+    margin-bottom: 100px;
+    
+}
+/* Стилі для посилання "Передивитися всі відгуки..." */
+.view-all-reviews {
+    position: relative;
+    left: 975px;
+    bottom: -15px;
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+    text-decoration: none;
+    /* За потребою додайте hover-ефекти */
+}

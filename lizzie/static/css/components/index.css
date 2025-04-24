@@ -1,0 +1,51 @@
+/* Забезпечуємо, що кореневі елементи займають всю площу */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Основний блок фону */
+.main_page_background {
+    position: relative; /* для позиціювання псевдоелементів */
+    width: 100%;
+    height: 3400px;
+    background-image: url('../../images/main_page_background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;  /* адаптує фон по розміру блоку */
+    z-index: 1;
+}
+
+/* Верхня накладка: 150px повністю чорного, далі градієнт до прозорості за 50px */
+.main_page_background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px; /* Змінено висоту затемнення */
+    background: linear-gradient(to bottom, 
+        black 0%, 
+        black 50px, 
+        transparent 500px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Нижня накладка: 150px повністю чорного, далі градієнт до прозорості за 50px */
+.main_page_background::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 500px; /* Змінено висоту затемнення */
+    background: linear-gradient(to top, 
+        black 0%, 
+        black 50px, 
+        transparent 500px);
+    pointer-events: none;
+    z-index: -1;
+}

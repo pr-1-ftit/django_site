@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %} Services {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/components/services.css' %}">
+<link rel="stylesheet" href="{% static 'reviews/css/reviews_services_list.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="services-top-background">
+        {% include "components/serveces_header.html" %}
+    </div>
+    <div class="services-services_details">
+        {% include "components/services_details.html" %}
+    </div>
+    <div class="services-details-background">
+        {% include "components/advantages.html" %}
+        {% include "components/how_do_we_work.html" %}
+        {% include "components/order_a_consultation.html" %}
+    </div>
+
+    <div  class="services-bottom-background">
+
+        {% include "reviews/reviews_list.html" with services_style="services_style" %}
+        <div class="target-container ">
+            <div id="target" class="container-row">
+            
+            
+            {% include "components/contact_us.html" %}
+            <div id="review-form-container">
+                {% include "reviews/reviews_add.html"  %}
+            </div>
+            
+    
+            </div>
+
+        </div>
+    </div>
+
+
+
+    
+    {% if form.errors %}
+    <script>
+        window.addEventListener("load", function() {
+          const target = document.getElementById("target");
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            console.error("Елемент з id 'target' не знайдено!");
+          }
+        });
+      </script>
+      
+  {% endif %}
+  
+
+{% endblock %}
+

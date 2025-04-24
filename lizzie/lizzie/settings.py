@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lizapp',
+    'reviews',
+    'newsletter',
 ]
 
 MIDDLEWARE = [
@@ -126,8 +128,14 @@ WSGI_APPLICATION = 'lizzie.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'lizzie_db',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'MySQL-8.2',
+        'PORT': '3306',
     }
 }
 
@@ -160,7 +168,10 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+TIME_ZONE = 'Europe/Kiev'
 USE_TZ = True
+
+
 
 gettext = lambda s: s
 LANGUAGES = (
@@ -175,17 +186,9 @@ LOCALE_PATHS = (
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-# Directory to store static files
-STATIC_URL = '/static/'
-
-# If you want to add custom static directories (like for images), use STATICFILES_DIRS
-STATICFILES_DIRS = [
-    BASE_DIR / "static",  # This is the default location
-    # You can add custom paths for additional folders, e.g. 'static/images'
-]
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

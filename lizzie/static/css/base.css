@@ -1,0 +1,29 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+
+.content {
+    min-height: calc(100vh - (72px + 214px)); /* Відняти висоту хедера та футера */
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+@media only screen and (min-width: 789px) and (max-width: 1029px) {
+    .content {
+        min-height: calc(100vh - (72px + 330px)); /* Відняти висоту хедера та футера */
+    }
+}
+
+@media only screen and (min-width: 549px) and (max-width: 789px) {
+    .content {
+        min-height: calc(100vh - (72px + 398px)); /* Відняти висоту хедера та футера */
+    }
+}
+
+@media only screen and (max-width: 549px) {
+    .content {
+        min-height: calc(100vh - (72px + 698px)); /* Відняти висоту хедера та футера */
+    }
+}

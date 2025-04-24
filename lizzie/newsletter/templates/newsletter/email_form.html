@@ -1,0 +1,31 @@
+{% load static i18n %}
+
+<link rel="stylesheet" href="{% static 'newsletter/css/email_form.css' %}">
+
+<div class="email-container">
+  <form method="POST" action="{% url 'services' %}" class="feedback-email-form">
+      {% csrf_token %}
+      
+      <!-- Input bar із полем email та кнопкою -->
+      <div class="feedback-email-bar">
+           {{ email_form.email }}
+           <button class="email-feedback-btn" type="submit" name="email_submit" value="true">
+               Отримати зворотній зв’язок
+           </button>
+      </div>
+  </form>
+  
+  <!-- Блок для помилок, який завжди розташовується прямо під input bar -->
+  {% if email_form.email.errors or email_form.non_field_errors %}
+     <div class="error-messages">
+         <ul>
+             {% for error in email_form.email.errors %}
+                 <li class="error-message">{{ error }}</li>
+             {% endfor %}
+             {% for error in email_form.non_field_errors %}
+                 <li class="error-message">{{ error }}</li>
+             {% endfor %}
+         </ul>
+     </div>
+  {% endif %}
+</div>

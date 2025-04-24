@@ -1,0 +1,8 @@
+.reviews-container.services_style {
+    max-width: calc(280px * 6 + (26px * 5)); /* Максимальна ширина: 4 відгуки + проміжки */
+}
+
+.container-title.reviews_style h2 {
+
+    color: rgb(0, 0, 0);
+}

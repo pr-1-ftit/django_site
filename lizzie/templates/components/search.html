@@ -1,0 +1,16 @@
+{% load static i18n %}
+<link rel="stylesheet" href="{% static 'css/components/search.css' %}">
+
+<!-- Додатковий блок input (за Figma: group-26-1) -->
+  <div class="group-26-1 in-dev-search">
+    <input type="text" class="header-input" placeholder="{% trans 'Пошук...' %}" />
+    <a href="/" class="search-icon" title="{% trans 'Пошук' %}"></a>
+  </div>
+
+<!-- Секція з зображенням header (ananas), розтягнута на всю ширину сторінки -->
+  <div class="header-ananas-1">
+    <div class="header-title-overlay">
+      <h1 class="main-title">{% trans 'Ми створюємо цифрові рішення для вашого успіху' %}</h1>
+      <h2 class="subtitle">{% trans 'Інноваційні технології, індивідуальний підхід і перевірені стратегії для розвитку вашого бізнесу.' %}</h2>
+    </div>
+  </div>

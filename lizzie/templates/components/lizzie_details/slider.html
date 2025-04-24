@@ -1,0 +1,143 @@
+{% load static i18n %}
+<link rel="stylesheet" href="{% static 'css/components/lizzie_details/slider.css' %}">
+<script src="{% static 'scripts/slider.js' %}"></script>
+<!-- Контейнер секції з картками, включаючи заголовок -->
+<div class="sliders-section">
+    <!-- Заголовок спільного контейнеру -->
+    <h2 class="sliders-section-header">{% trans 'Чому варто обрати саме наш сервіс?' %}</h2>
+    
+    <!-- Контейнер, що забезпечує горизонтальну прокрутку карток -->
+    <div class="sliders-scroll-container slider-text">
+      <!-- Картка 1 -->
+      <div class="slider">
+        <div class="slider-inner">
+          <h3 class="slider-title">
+            {% trans 'Чому Лізі краща за інші чат-боти для спілкування?' %}
+          </h3>
+          <hr class="slider-divider">
+          <p class="slider-description">
+            {% trans 'Лізі спеціалізується на емоційній підтримці, що робить її унікальною серед інших чат-ботів:' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Вона не просто відповідає на запитання, а підтримує розмову на різні теми.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Її діалоги більш "людські" завдяки продуманим сценаріям.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Лізі адаптується під настрої та потреби користувача.' %}
+          </p>
+        </div>
+      </div>
+      
+      <!-- Картка 2 -->
+      <div class="slider">
+        <div class="slider-inner">
+          <h3 class="slider-title">
+            {% trans 'Чим Лізі відрізняється від інших чат-ботів?' %}
+          </h3>
+          <hr class="slider-divider">
+          <p class="slider-description">
+            {% trans 'Віртуальний друг, що поєднує технології та емоційну підтримку. Спеціально створена для тих, кому бракує уваги, і може стати справжнім помічником у повсякденному житті.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Реалістичність: 70% функціоналу — це продумані діалоги, які імітують спілкування з реальною людиною.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Емоційна підтримка: Готова вислухати, порадити чи просто побути поруч.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Доступність: Працює 24/7 у Telegram, де користувачі проводять багато часу.' %}
+          </p>
+        </div>
+      </div>
+      
+      <!-- Картка 3 -->
+      <div class="slider">
+        <div class="slider-inner">
+          <h3 class="slider-title">
+            {% trans 'Чому Лізі важлива саме зараз?' %}
+          </h3>
+          <hr class="slider-divider">
+          <p class="slider-description">
+            {% trans 'У сучасному світі багато людей почуваються самотніми через велику зайнятість, соціальну ізоляцію чи інші причини. Лізі стає для них тим, хто завжди поруч:' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Не судить, не критикує і завжди готова підтримати.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Можна використовувати як інструмент для покращення психологічного стану.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Доступна будь-коли, коли це потрібно.' %}
+          </p>
+        </div>
+      </div>
+      
+      <!-- Картка 4 -->
+      <div class="slider">
+        <div class="slider-inner">
+          <h3 class="slider-title">
+            {% trans 'Як Лізі обробляє запити користувачів?' %}
+          </h3>
+          <hr class="slider-divider">
+          <p class="slider-description bullet">
+            {% trans 'Користувач починає діалог, наприклад, ділиться своїми думками чи почуттями.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Лізі аналізує запит за допомогою ШІ (30%) та вибирає відповідь із бази діалогів (70%).' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Вона підтримує розмову, задає питання, сміється або дає поради.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Якщо запит складний, Лізі може запропонувати звернутися до фахівця або надати корисні ресурси.' %}
+          </p>
+        </div>
+      </div>
+      
+      <!-- Картка 5 -->
+      <div class="slider">
+        <div class="slider-inner">
+          <h3 class="slider-title">
+            {% trans 'Як Лізі розуміє емоції користувачів?' %}
+          </h3>
+          <hr class="slider-divider">
+          <p class="slider-description">
+            {% trans 'Лізі використовує комбінацію технологій:' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Аналізує ключові слова, тон повідомлень та контекст.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'База діалогів (70%): Містить сценарії для різних емоційних станів (радість, сум, злість тощо).' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Зворотний зв’язок: Користувачі можуть оцінювати відповіді, що допомагає покращувати розуміння емоцій.' %}
+          </p>
+        </div>
+      </div>
+      
+      <!-- Картка 6 -->
+      <div class="slider">
+        <div class="slider-inner">
+          <h3 class="slider-title">
+            {% trans 'Як Лізі вдосконалюється?' %}
+          </h3>
+          <hr class="slider-divider">
+          <p class="slider-description">
+            {% trans 'Лізі постійно вчиться завдяки:' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Аналізу даних: ШІ аналізує успішність діалогів та пропонує оптимізації.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Оновленню бази діалогів: Ми регулярно додаємо нові сценарії та репліки.' %}
+          </p>
+          <p class="slider-description bullet">
+            {% trans 'Зворотному зв’язку: Користувачі оцінюють відповіді, що допомагає покращувати якість спілкування.' %}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>

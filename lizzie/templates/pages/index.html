@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %} Lizzie {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/components/index.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main_page_background">
+    {% include 'components/search.html' %}
+    {% include 'components/lizzie_details/start-chatting.html' %}
+    {% include 'components/lizzie_details/cards.html' %}
+    {% include 'components/lizzie_details/slider.html' %}
+</div>
+
+{% endblock %}

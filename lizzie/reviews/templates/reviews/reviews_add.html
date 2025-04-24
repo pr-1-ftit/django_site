@@ -1,0 +1,68 @@
+{% load static i18n %}
+
+<!-- Підключення зовнішніх CSS -->
+<link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
+<link rel="stylesheet" href="{% static 'reviews/css/reviews_add.css' %}">
+
+<!-- Підключення JS -->
+<script src="{% static 'reviews/scripts/review_form_validation.js' %}"></script>
+<script src="{% static 'reviews/scripts/rating_interaction.js' %}"></script>
+
+<div class="review-add-container">
+  <form action="{% url 'services' %}" method="post" id="reviewForm" novalidate>
+    {% csrf_token %}
+    <div>
+      <div class="feedback-title">
+        <label for="{{ form.text.id_for_label }}">Залишити відгук</label>
+      </div>
+      <div class="review-background">
+        
+          {{ form.name }}
+          <div class="error-message">
+            {{ form.name.errors }}
+          </div>
+        
+        <div class="inner_container">
+            
+
+            {{ form.text }}
+          
+
+          <!-- Блок для рейтингу -->
+          <div id="add-rating" class="rating-container">
+            {{ form.rating }}
+
+
+
+            <div class="stars-container">
+              <svg class="star star_add" data-value="1" width="24" height="24" viewBox="0 0 24 24">
+                <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+              </svg>
+              <svg class="star star_add" data-value="2" width="24" height="24" viewBox="0 0 24 24">
+                <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+              </svg>
+              <svg class="star star_add" data-value="3" width="24" height="24" viewBox="0 0 24 24">
+                <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+              </svg>
+              <svg class="star star_add" data-value="4" width="24" height="24" viewBox="0 0 24 24">
+                <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+              </svg>
+              <svg class="star star_add" data-value="5" width="24" height="24" viewBox="0 0 24 24">
+                <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="error-message">
+          {{ form.text.errors }}
+          {{ form.rating.errors }}
+        </div>
+        <button class="send-review-button">
+          <img src="{% static 'images/message-paper-plane.svg' %}" alt="Відправити">
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+

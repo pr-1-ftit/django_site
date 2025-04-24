@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %} Reviews {% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'reviews/css/reviews_reviews_list.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    {% include "reviews/reviews_list.html" with reviews_style="reviews_style"  %}
+    {% include "include/paginate.html" %}
+{% endblock %}

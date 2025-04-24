@@ -1,0 +1,160 @@
+.rating-container-view {
+    display: flex;
+    position: absolute;
+    gap: 5px;
+    margin-top: 10px;
+    bottom: 20px; /* Відступ від нижнього краю контейнера */
+    left: 25px;  /* Відступ від лівого краю контейнера */
+}
+
+
+
+
+
+
+
+
+
+.no-reviews {
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.review-item {
+    width: 280px;
+    height: 280px;
+    border-radius: 20px;
+    background-color: #fff;
+    background: linear-gradient(128.27deg, #4D47FF 13.35%, #FFADFE 93.51%);
+    position: relative; /* Встановлюємо відносне позиціонування для контейнера */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.star_list polygon {
+    stroke: white;
+
+  }
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%; /* Робимо аватар круглим */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    position: absolute; /* Абсолютне позиціонування */
+    top: 20px; /* Відступ від верхнього краю контейнера */
+    left: 20px; /* Відступ від лівого краю контейнера */
+    font-family: Lato, sans-serif;
+    font-weight: 600;
+}
+
+
+
+
+
+.user-info {
+    position: absolute; /* Абсолютне позиціонування для точного контролю розташування */
+    top: 20px; /* Вирівнюємо по верхньому краю аватара */
+    left: 85px; /* Відступ праворуч від аватара */
+    display: flex;
+    align-items: center; /* Вирівнювання тексту вертикально */
+    height: 48px; /* Висота блоку дорівнює висоті аватара */
+}
+.user-info h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0; /* Прибираємо зайві відступи */
+    line-height: 48px; /* Точно вирівнюємо текст вертикально по висоті аватара */
+
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #ffffff;
+}
+
+.feedback-container {
+    width: 240px; /* Ширина контейнера */
+    height: 125px;
+    padding: 10px 5px 10px 10px; /* Збільшено відступ праворуч до 20px */
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    overflow: auto;
+    word-wrap: break-word;
+    white-space: normal;
+    scrollbar-width: thin; /* Установлює тонкий скролбар */
+    scrollbar-color: #312929 transparent; /* Колір ручки скролбара та прозорий фон треку */
+    margin-right: 0;
+}
+
+.feedback-container p {
+    margin: 0;
+    color: #ffffff;
+    font-family: Lato, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.container-title {
+    text-align: center; /* Центрування заголовка */
+    
+}
+
+.container-title h2 {
+    font-family: Lato, sans-serif;
+    font-weight: 600;
+    font-size: 32px; /* Розмір тексту */
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.custom-textarea {
+    width: 530px; /* Ширина textarea */
+    height: 216px; /* Висота textarea */
+    border-radius: 20px; /* Закруглення країв */
+    border: 1px solid #ccc; /* Колір рамки */
+    font-family: Lato, sans-serif; /* Стиль шрифту */
+    font-size: 16px; /* Розмір тексту */
+    padding: 10px; /* Відступи всередині */
+    resize: none; /* Забороняє змінювати розмір вручну */
+}
+
+
+.reviews-container {
+
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.reviews-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 280px); /* Фіксована ширина кожного блоку */
+    gap: 25px;                                     /* Проміжки між блоками */
+    justify-content: space-evenly;                 /* Рівномірне розподілення простору по краях */
+}
