@@ -23,7 +23,7 @@
     <nav class="main-nav desktop-nav">
       <ul class="nav-items nav-items-left">
         <li class="{% if request.resolver_match.url_name == 'ai_kit' %}active{% endif %}"><a class="in-dev" href="{% url 'ai_kit' %}">{% trans "AI-набір" %}</a></li>
-        <li class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}"><a class="in-dev" href="{% url 'services' %}">{% trans "Послуги" %}</a></li>
+        <li class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}"><a class="in-dev testing" style="content: "ready for tset !important"" href="{% url 'services' %}">{% trans "Послуги" %}</a></li>
         <li class="{% if request.resolver_match.url_name == 'updates' %}active{% endif %}"><a class="in-dev" href="{% url 'updates' %}">{% trans "Оновлення" %}</a></li>
         <li class="{% if request.resolver_match.url_name == 'tech_news' %}active{% endif %}"><a class="in-dev" href="{% url 'tech_news' %}">{% trans "Техно-новини" %}</a></li>
         <li class="{% if request.resolver_match.url_name == 'support' %}active{% endif %}"><a class="in-dev" href="{% url 'support' %}">{% trans "Підтримка" %}</a></li>

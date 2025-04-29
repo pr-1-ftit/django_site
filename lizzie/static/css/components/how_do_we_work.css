@@ -15,6 +15,7 @@
 
 /* Стилі для блоків (box) */
 .box {
+  
   width: auto;
   height: 80px;
   padding-left: 50px;
@@ -24,6 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: #fff;
   font-family: Lato , sans-serif;
   font-weight: 600;
@@ -33,27 +35,34 @@
   box-sizing: border-box; /* Щоб розміри враховували межі */
   z-index: 2;
   border: 1px solid white;
+
+
 }
 
 /* Розташування блоків */
 .outer .box:nth-child(1) {
+  width: 313px;
   top: 89px;
   left: 0;
 }
 .outer .box:nth-child(2) {
+  width: 527px;
   top: 169px;
   left: 140px;
 
 }
 .outer .box:nth-child(3) {
+  width: 260px;
   top: 249px;
   left: 460px;
 }
 .outer .box:nth-child(4) {
+  width: 436px;
   top: 329px;
   left: 590px;
 }
 .outer .box:nth-child(5) {
+  width: 487px;
   top: 409px;
   right: 0;
 }
@@ -461,3 +470,10 @@
             bottom: 5px;
             right: 20px;
           }
+
+          @media only screen and (max-width: 1500px) {
+            .work-container {
+              display: none !important;
+            }
+          }
+          

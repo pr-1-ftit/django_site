@@ -1,11 +1,8 @@
 from django.db import models
 import dns.resolver
 from django.core.exceptions import ValidationError
-from django.utils.deconstruct import deconstructible
-
-import dns.resolver
-from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
+from django.utils.translation import gettext_lazy as _
 
 def validate_email_dns(value):
     """
@@ -15,41 +12,35 @@ def validate_email_dns(value):
     try:
         validate_email(value)
     except ValidationError:
-        raise ValidationError("Невірний формат електронної пошти.")
+        raise ValidationError(_("Невірний формат електронної пошти."))
     
     # Отримання домену з email
     try:
         domain = value.split('@')[1]
     except IndexError:
-        raise ValidationError("Невірний формат електронної пошти.")
+        raise ValidationError(_("Невірний формат електронної пошти."))
     
     # Спроба отримати MX записи домену
     try:
         answers = dns.resolver.resolve(domain, 'MX')
         if not answers:
-            raise ValidationError("Для вказаного домену не знайдено MX-записів.")
+            raise ValidationError(_("Для вказаного домену не знайдено MX-записів."))
     except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN):
-        raise ValidationError("Домен не містить необхідних MX-записів або не існує.")
+        raise ValidationError(_("Домен не містить необхідних MX-записів або не існує."))
     except dns.exception.DNSException as e:
-        raise ValidationError(f"Помилка при отриманні DNS-записів: {e}")
-
-
-
-
-
-
+        raise ValidationError(_("Помилка при отриманні DNS-записів: %(error)s") % {'error': e})
 
 class UserEmail(models.Model):
     email = models.EmailField(
-        max_length=254, 
-        unique=True, 
-        verbose_name="Поштова адреса",
-        help_text="Введіть дійсну електронну адресу",
-        validators=[validate_email_dns]  # додано валідатор
+        max_length=254,
+        unique=True,
+        verbose_name=_("Поштова адреса"),
+        help_text=_("Введіть дійсну електронну адресу"),
+        validators=[validate_email_dns]  # додано локалізований валідатор
     )
     created_at = models.DateTimeField(
-        auto_now_add=True, 
-        verbose_name="Дата створення"
+        auto_now_add=True,
+        verbose_name=_("Дата створення")
     )
 
     def save(self, *args, **kwargs):
@@ -59,8 +50,6 @@ class UserEmail(models.Model):
     def normalize_email(self, email):
         """
         Нормалізує email шляхом приведення всієї адреси до нижнього регістру.
-        Видалення пробілів не включається, оскільки Django за замовчуванням
-        видаляє зайві символи при обробці введення.
         """
         return email.lower()
 
@@ -68,5 +57,5 @@ class UserEmail(models.Model):
         return self.email
 
     class Meta:
-        verbose_name = "Користувацька пошта"
-        verbose_name_plural = "Користувацькі пошти"
+        verbose_name = _("Користувацька пошта")
+        verbose_name_plural = _("Користувацькі пошти")

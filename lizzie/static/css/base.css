@@ -1,4 +1,6 @@
 html {
+    overflow-y: scroll; /* Скролбар завжди буде видимим */
+  width: 100%ж;
     scroll-behavior: smooth;
   }
   

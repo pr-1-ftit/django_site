@@ -1,16 +1,21 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  
 }
 /* Контейнер, який містить обидва блоки */
 .container-row {
-  display: flex;                   /* Використання Flexbox для розташування елементів */
-  flex-direction: row-reverse;      /* Якщо потрібен зворотний порядок елементів */
+  display: grid;
+  /* Визначаємо сітку, яка будується за вмістом: 
+     мінімальна ширина колонки — 300px, 
+     максимальна — 329.16px (відповідає ширині .service-box) */
+  grid-template-columns: repeat(auto-fit, minmax(0, 586px));
   justify-content: center;         /* За потреби центрування по горизонталі */
   
   gap: 26px; 
   margin-top: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 
@@ -26,7 +31,7 @@ html, body {
 
 .services-top-background {
   position: relative;
-  width: 100vw; /* або можете використати 100% */
+  width: 100%; /* або можете використати 100% */
   min-height: 1080px;
   background-color: black;
   background-image: 
@@ -73,7 +78,7 @@ html, body {
 
 .services-services_details {
   position: relative;
-  width: 100vw; /* або width: 100%; якщо виникають проблеми з горизонтальним скролінгом */
+  width: 100%; /* або width: 100%; якщо виникають проблеми з горизонтальним скролінгом */
   min-height: 1200px;
   background-color: black;
   /* Першим шаром задаємо затемнення (градієнт), другим - зображення */
@@ -116,7 +121,7 @@ html, body {
 
   .services-details-background {
     position: relative;
-    width: 100vw; /* або width: 100%; якщо виникають проблеми з горизонтальним скролінгом */
+    width: 100%; /* або width: 100%; якщо виникають проблеми з горизонтальним скролінгом */
     min-height: 2100px;
     background-color: black;
     background: 
@@ -170,13 +175,13 @@ html, body {
 
 
 .services-bottom-background {
-  width: 100%;
+  width: 100%; /* або width: 100%; якщо виникають проблеми з горизонтальним скролінгом */
   min-height: 1345px;
   background-color: black;
   background-image: url('../../images/services_bottom_background.png');
   background-size: cover;  /* адаптує фон по розміру блоку */
   background-repeat: no-repeat;
-  background-position: center -600px;
+  background-position: center -650px;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;

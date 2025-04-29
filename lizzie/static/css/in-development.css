@@ -1,39 +1,47 @@
+/* Базовий клас для елемента */
 .in-dev {
     position: relative;
-    /* display: inline-block; – видаляємо це правило */
 }
-.in-dev::after {
-    content: "In dev"; /* текст, який буде вставлено */
+
+/* Спільні стилі для всіх псевдоелементів (як базових, так і додаткових) */
+.in-dev::after,
+.in-dev::before,
+.testing::after,
+.testing::before {
     position: absolute;
     font-family: Lato, sans-serif;
-    top: 0;
-    right: 0;
     background-color: #FFD700;
     color: black;
     padding: 2px 5px;
-    font-size: 13px;  /* рекомендую збільшити шрифт для кращої читабельності */
+    font-size: 13px;
     border-radius: 9999px;
-    transform: translate(75%, -90%);
     font-weight: 600;
     width: 40px;
 }
 
-
-
-.in-dev-search::after {
+/* Базовий псевдоелемент ::after для .in-dev */
+.in-dev::after {
     content: "In dev";
-    position: absolute;
-    font-family: Lato, sans-serif;
-    top: 20%;      /* розміщення нижче контейнера */
-    right: -20px;
-    background-color: #FFD700;
-    color: black;
-    padding: 2px 5px;
-    font-size: 13px;  /* рекомендується встановити читабельний розмір шрифту */
-    border-radius: 9999px;
-    transform: translateY(5px); /* невеликий зсув вниз, можна відрегулювати */
-    font-weight: 600;
+    top: 0;
+    right: 0;
+    transform: translate(75%, -90%);
 }
+
+
+
+/* Додатковий клас, який «наслідує» стилі від .in-dev::after,
+   але може мати власний контент або позиціювання */
+.testing::after {
+    background-color: #4CAF50;
+    width: 43px;
+    content: "testing"; /* або будь-який інший текст */
+    top: 0;
+    right: 0;
+    transform: translate(75%, -90%);
+    /* За необхідності можна перевизначити додаткові властивості */
+}
+
+
 
 
 
@@ -47,7 +55,8 @@
     position: relative; /* Псевдоелемент позиціонується відносно цього контейнера */
   }
   
-  .in-dev::after {
+  .in-dev::after,
+  .testing::after {
     content: "In dev";
     position: absolute;
     left: calc(100% + 10px); /* Відстань від лівої межі псевдоелемента до правої межі батьківського елемента становитиме 5px */
@@ -63,5 +72,39 @@
     font-weight: 600;
   }
   
-  
+  .testing::after {
+    background-color: #4CAF50;
+    width: 43px;
+    content: "testing"; /* або будь-який інший текст */
+    
+ 
+    /* За необхідності можна перевизначити додаткові властивості */
+
 }
+}
+
+
+
+/* Concept/Idea Етап формування первинної ідеї та визначення цілей.
+
+Wireframe Базовий макет (схематичне розташування елементів).
+
+Design Розробка візуального рішення, включаючи макети та фінальний вигляд.
+
+Prototype/MVP Функціональний базовий варіант з ключовими можливостями.
+
+In Dev Активна розробка та інтеграція коду.
+
+Testing Тестування функцій, UX/UI перевірка, виправлення багів.
+
+Review Перегляд та затвердження контенту і функціоналу.
+
+Staging Передрелізна версія для фінальних перевірок в умовах, схожих на live-середовище.
+
+Ready for Launch Сторінка готова до публікації після успішного тестування.
+
+Live Сторінка офіційно опублікована та доступна кінцевим користувачам.
+
+Maintenance Регулярні оновлення, оптимізація та підтримка після запуску.
+
+Archived Сторінка, яка більше не використовується, але зберігається для довідкових чи історичних цілей. */

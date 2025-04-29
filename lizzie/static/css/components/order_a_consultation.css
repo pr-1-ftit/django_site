@@ -1,74 +1,61 @@
 .image-container {
-    width: 1198px;
-    height: 274px;
-    border-radius: 50px;
-    background-size: 1229px 689px; /* Розміри зображення */
-    background-repeat: no-repeat; /* Забороняє повторення зображення */
-    margin: 0 auto; /* Центрування по горизонталі */
+    max-width: 1198px;
+    margin: 0 auto;
     margin-top: 185px;
-    position: relative; /* Щоб всередині працював "absolute" */
     border: 1px solid #ffffff;
+    border-radius: 50px;
     text-align: center;
-}
+    padding: 40px;  /* Внутрішні відступи, щоб контент не прилипав до країв */
 
+    
+    /* Flex налаштування */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
 
-
-.headline {
+  }
+  
+  .headline {
     font-family: Lato, sans-serif;
     font-weight: 600;
     font-size: 32px;
     line-height: 120%;
-    letter-spacing: 0%;
     color: #FFFFFF;
-    position: absolute; /* Дозволяє зміщувати headline всередині container */
-
-    transform: translateY(20px); /* Зміщує headline нижче на 20px */
-    width: 100%; /* Щоб headline залишався в центрі */
-    text-align: center; /* Центрування тексту */
-}
-
-
-.clickable-button {
-    width: 443px;
-    height: 84px;
+    margin-bottom: 20px; /* Відступ між заголовком і кнопкою */
+  }
+  
+  .clickable-button {
+    padding: 20px 40px;
     border: 1px solid #FFFFFF;
     border-radius: 20px;
-    /* Замовити консультацію */
-
     font-family: 'Lato', sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 32px;
-    line-height: 38px;
-    
     background: linear-gradient(90deg, #FF8FFD 0%, #C7B8FF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
     text-align: center;
-    cursor: pointer; /* Змінює курсор на "руку" */
-    display: flex;
-    align-items: center; /* Центрування тексту по вертикалі */
-    justify-content: center; /* Центрування тексту по горизонталі */
-    position: absolute;
-    top: 70%; /* Центрування по вертикалі */
-    left: 50%; /* Центрування по горизонталі */
-    transform: translate(-50%, -50%); /* Точне позиціювання */
-    cursor: pointer; /* Змінює курсор на "руку" */
-    transition: all 0.3s ease; /* Анімація для плавних змін стилів */
-}
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .clickable-button:hover {
+    transform: scale(1.03);
+  }
+  
+  .clickable-button:active {
+    transform: scale(0.98);
+  }
+  
 
-/* Ефекти при наведенні */
-.clickable-button:hover {
-    width: 450px; /* Збільшення ширини трохи */
-    height: 88px; /* Невелике збільшення висоти */
-
-}
-
-/* Ефекти при натисканні */
-.clickable-button:active {
-    width: 440px; /* Трохи зменшення ширини */
-    height: 82px; /* Невелике зменшення висоти */
-
-}
+  
+  @media only screen and (max-width: 1198px) {
+    .image-container {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+  

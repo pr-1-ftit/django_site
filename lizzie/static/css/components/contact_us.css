@@ -1,11 +1,20 @@
 /* Контейнер форми - зовнішні відступи для коректного розташування */
 .contact-us-container {
+
   margin: 0;
   margin-top: 40px;
   border: 1px solid white;
   border-radius: 50px;
-  width: 586px;
-  height: 288px;
+  max-width: 586px;
+  min-height: 288px;
+
+
+  
+      /* Flex налаштування */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
   
 }
 
@@ -48,29 +57,28 @@
   margin-top: 25px;
 }
 
-/* Контейнер для контактних блоків */
 .contacts-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  /* Якщо контакти мають переноситись, можна додати flex-wrap */
+  flex-wrap: wrap;
   width: 100%;
-  margin-top: 2px;
+  margin-bottom: 25px;
 }
 
-/* Окремий контакт (вертикальне вирівнювання) */
 .contact {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+  
 }
+
 
 /* Контейнер іконки контакту */
 .contact_icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
   margin-top: 30px;
   /* Негативний відступ опускає .contact_icon вниз і зменшує відстань до .contact-container */
   margin-bottom: -85px;
@@ -125,3 +133,12 @@
 .contacts-container .contact:first-child .contact_icon {
   margin-top: 34.5px;  /* 30px + 9px */
 }
+
+
+
+@media (min-width: 584px) {
+  /* Контейнер форми - зовнішні відступи для коректного розташування */
+.contact-us-container {
+  max-height: 288px;
+}
+} 

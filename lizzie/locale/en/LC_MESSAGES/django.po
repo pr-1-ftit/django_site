@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-07 19:17+0300\n"
+"POT-Creation-Date: 2025-04-28 19:36+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,150 +18,298 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\lizzie\lizapp\templates\include\cards.html:6
+#: .\lizzie\settings.py:178
+msgid "English"
+msgstr ""
+
+#: .\lizzie\settings.py:179
+msgid "Ukrainian"
+msgstr ""
+
+#: .\newsletter\forms.py:14
+msgid ""
+"Введена електронна адреса має некоректний формат. Будь ласка, перевірте "
+"правильність вводу."
+msgstr ""
+"The email address you entered is not in the correct format. Please check the "
+"format."
+
+#: .\newsletter\forms.py:15
+msgid "Ця пошта вже успішно записана."
+msgstr "This email has already been successfully recorded."
+
+#: .\newsletter\forms.py:21
+msgid "example@email.com"
+msgstr ""
+
+#: .\newsletter\models.py:15 .\newsletter\models.py:21
+msgid "Невірний формат електронної пошти."
+msgstr "Invalid email format."
+
+#: .\newsletter\models.py:27
+msgid "Для вказаного домену не знайдено MX-записів."
+msgstr "No MX records were found for the specified domain."
+
+#: .\newsletter\models.py:29
+msgid "Домен не містить необхідних MX-записів або не існує."
+msgstr "The domain does not contain the required MX records or does not exist."
+
+#: .\newsletter\models.py:31
+#, python-format
+msgid "Помилка при отриманні DNS-записів: %(error)s"
+msgstr "Error retrieving DNS records: %(error)s"
+
+#: .\newsletter\models.py:37
+msgid "Поштова адреса"
+msgstr "Mailing address"
+
+#: .\newsletter\models.py:38
+msgid "Введіть дійсну електронну адресу"
+msgstr "Please enter a valid email address."
+
+#: .\newsletter\models.py:43
+msgid "Дата створення"
+msgstr "Creation date"
+
+#: .\newsletter\models.py:60
+msgid "Користувацька пошта"
+msgstr "Custom mail"
+
+#: .\newsletter\models.py:61
+msgid "Користувацькі пошти"
+msgstr "Custom mails"
+
+#: .\newsletter\templates\newsletter\email_form.html:13
+msgid "Отримати зворотній зв’язок"
+msgstr "Get feedback"
+
+#: .\reviews\forms.py:12
+msgid "Ім’я користувача..."
+msgstr "User name..."
+
+#: .\reviews\forms.py:17
+msgid "Залиште своє враження від нашої роботи тут..."
+msgstr "Leave your impression of our work here..."
+
+#: .\reviews\forms.py:31
+msgid "Поле 'Ім’я' є обов'язковим."
+msgstr "The 'Name' field is required."
+
+#: .\reviews\forms.py:34
+msgid "Поле 'Текст' є обов'язковим."
+msgstr "The 'Text' field is required."
+
+#: .\reviews\forms.py:37
+msgid "Поле 'Рейтинг' є обов'язковим."
+msgstr "The 'Rating' field is required."
+
+#: .\reviews\forms.py:38
+msgid "Введіть коректне значення для рейтингу."
+msgstr "Please enter a valid rating value."
+
+#: .\reviews\models.py:22
+msgid "Ім’я не може бути порожнім."
+msgstr "The name cannot be empty."
+
+#: .\reviews\models.py:30
+msgid "Ім’я повинно містити принаймні 2 символи."
+msgstr "The name must contain at least 2 characters."
+
+#: .\reviews\models.py:37
+msgid "Ім’я може містити лише літери, пробіли, апострофи та дефіси."
+msgstr "The name can only contain letters, spaces, apostrophes, and hyphens."
+
+#: .\reviews\models.py:62
+msgid "Текст відгуку не може бути порожнім."
+msgstr "The response string cannot be empty."
+
+#: .\reviews\models.py:70
+msgid "Текст відгуку повинен містити щонайменше 10 символів."
+msgstr "The review text must contain at least 10 characters."
+
+#: .\reviews\models.py:77
+msgid "Текст відгуку повинен містити хоча б один символ з алфавіту."
+msgstr "The review text must contain at least one character from the alphabet."
+
+#: .\reviews\templates\reviews\reviews_add.html:16
+msgid "Залишити відгук"
+msgstr "Leave a review"
+
+#: .\reviews\templates\reviews\reviews_list.html:12
+msgid "Відгуки"
+msgstr "Reviews"
+
+#: .\reviews\templates\reviews\reviews_list.html:40
+msgid "Відгуків поки що немає."
+msgstr "There are no reviews yet."
+
+#: .\reviews\templates\reviews\reviews_list.html:43
+msgid "Передивитися всі відгуки..."
+msgstr "See all reviews..."
+
+#: .\templates\components\advantages.html:6
+msgid "Переваги"
+msgstr "Advantages"
+
+#: .\templates\components\advantages.html:11
+msgid "Гнучкість"
+msgstr "Flexibility"
+
+#: .\templates\components\advantages.html:13
+msgid "Налаштовуємо AI під ваші конкретні завдання"
+msgstr "We customize AI for your specific tasks"
+
+#: .\templates\components\advantages.html:18
+msgid "Економія"
+msgstr "Saving"
+
+#: .\templates\components\advantages.html:19
+msgid "Знижуємо витрати на персонал і ресурси"
+msgstr "We reduce personnel and resource costs"
+
+#: .\templates\components\advantages.html:24
+msgid "Інноваційність"
+msgstr "Innovation"
+
+#: .\templates\components\advantages.html:25
+msgid "Працюємо з найсучаснішими технологіями"
+msgstr "We work with the most modern technologies"
+
+#: .\templates\components\advantages.html:30
+msgid "Якість"
+msgstr "Quality"
+
+#: .\templates\components\advantages.html:31
+msgid "Забезпечуємо високу продуктивність AI-рішень"
+msgstr "We ensure high performance of AI solutions"
+
+#: .\templates\components\contact_us.html:10
+#: .\templates\components\order_a_consultation.html:8
+msgid "Готові покращити свій бізнес за допомогою AI?"
+msgstr "Ready to improve your business with AI?"
+
+#: .\templates\components\contact_us.html:11
+msgid ""
+"Залиште заявку, і ми допоможемо вам знайти найкраще рішення під ваші потреби."
+msgstr ""
+"Leave a request and we will help you find the best solution for your needs."
+
+#: .\templates\components\contact_us.html:16
+msgid "Зв'яжіться з нами"
+msgstr "Contact us"
+
+#: .\templates\components\contact_us.html:23
+#, fuzzy
+#| msgid "Gmail"
+msgid "mail"
+msgstr "Gmail"
+
+#: .\templates\components\contact_us.html:26
+msgid "liz.zie19424@gmail.com"
+msgstr ""
+
+#: .\templates\components\contact_us.html:32
+msgid "telegram"
+msgstr ""
+
+#: .\templates\components\contact_us.html:35
+msgid "t.me/lizzie_officiall"
+msgstr ""
+
+#: .\templates\components\contact_us.html:41
+msgid "phone"
+msgstr ""
+
+#: .\templates\components\contact_us.html:44
+msgid "+380000000000"
+msgstr ""
+
+#: .\templates\components\how_do_we_work.html:9
+msgid "Як ми працюємо?"
+msgstr "How do we work?"
+
+#: .\templates\components\how_do_we_work.html:15
+msgid "Консультація"
+msgstr "Advice"
+
+#: .\templates\components\how_do_we_work.html:16
+msgid "Розробка та налаштування"
+msgstr "Development and customization"
+
+#: .\templates\components\how_do_we_work.html:17
+msgid "Інтеграція"
+msgstr "Integration"
+
+#: .\templates\components\how_do_we_work.html:18
+msgid "Тестування та запуск"
+msgstr "Testing and launch"
+
+#: .\templates\components\how_do_we_work.html:19
+#: .\templates\components\services_details.html:52
+msgid "Підтримка та оновлення"
+msgstr "Support and updates"
+
+#: .\templates\components\how_do_we_work.html:21
+msgid "визначаємо ваші потреби"
+msgstr "we determine your needs"
+
+#: .\templates\components\how_do_we_work.html:22
+msgid "адаптуємо AI під ваші вимоги"
+msgstr "we adapt AI to your requirements"
+
+#: .\templates\components\how_do_we_work.html:24
+msgid "впроваджуємо рішення"
+msgstr "we implement solutions"
+
+#: .\templates\components\how_do_we_work.html:25
+msgid "у ваші системи"
+msgstr "into your systems"
+
+#: .\templates\components\how_do_we_work.html:27
+msgid "перевіряємо стабільність роботи"
+msgstr "we check the stability of work"
+
+#: .\templates\components\how_do_we_work.html:28
+msgid "забезпечуємо безперебійну роботу AI"
+msgstr "we ensure smooth operation of AI"
+
+#: .\templates\components\lizzie_details\cards.html:5
 msgid "Переваги продукту від Lizzie"
 msgstr "Lizzie's Product Advantages"
 
-#: .\lizzie\lizapp\templates\include\cards.html:10
+#: .\templates\components\lizzie_details\cards.html:9
 msgid "Швидкий, дружній чат без формальностей, де завжди є з ким поговорити"
 msgstr "Fast, friendly, informal chat where you always have someone to talk to"
 
-#: .\lizzie\lizapp\templates\include\cards.html:15
+#: .\templates\components\lizzie_details\cards.html:14
 msgid "Реальні оператори + AI-бот, що адаптується до стилю спілкування"
 msgstr "Real operators plus an AI bot that adapts to your communication style"
 
-#: .\lizzie\lizapp\templates\include\cards.html:20
+#: .\templates\components\lizzie_details\cards.html:19
 msgid "Підтримує діалог у вибраному стилі та реагує миттєво"
 msgstr "Maintains conversation in the chosen style and responds instantly"
 
-#: .\lizzie\lizapp\templates\include\cards.html:25
+#: .\templates\components\lizzie_details\cards.html:24
 msgid "Є режими: дружній “Френдер” та мотивуючий “Пушер”"
 msgstr "Offers modes: a friendly 'Frender' and a motivating 'Pusher'"
 
-#: .\lizzie\lizapp\templates\include\cards.html:30
+#: .\templates\components\lizzie_details\cards.html:29
 msgid "Використовує аналіз тональності тексту та стилю повідомлень"
 msgstr "Uses sentiment analysis of text and message style"
 
-#: .\lizzie\lizapp\templates\include\cards.html:35
+#: .\templates\components\lizzie_details\cards.html:34
 msgid "Ми створюємо рішення під ваші бізнес-задачі"
 msgstr "We create solutions tailored to your business requirements"
 
-#: .\lizzie\lizapp\templates\include\footer.html:8
-#: .\lizzie\lizapp\templates\include\header.html:26
-msgid "AI-набір"
-msgstr "AI Kit"
-
-#: .\lizzie\lizapp\templates\include\footer.html:9
-#: .\lizzie\lizapp\templates\include\header.html:27
-msgid "Послуги"
-msgstr "Services"
-
-#: .\lizzie\lizapp\templates\include\footer.html:10
-#: .\lizzie\lizapp\templates\include\header.html:28
-msgid "Оновлення"
-msgstr "Updates"
-
-#: .\lizzie\lizapp\templates\include\footer.html:11
-#: .\lizzie\lizapp\templates\include\header.html:29
-msgid "Техно-новини"
-msgstr "Tech News"
-
-#: .\lizzie\lizapp\templates\include\footer.html:17
-msgid "Ком'юніті"
-msgstr "Community"
-
-#: .\lizzie\lizapp\templates\include\footer.html:18
-msgid "Кукі"
-msgstr "Cookies"
-
-#: .\lizzie\lizapp\templates\include\footer.html:19
-msgid "Про нас"
-msgstr "About Us"
-
-#: .\lizzie\lizapp\templates\include\footer.html:20
-msgid "FAQ"
-msgstr "FAQ"
-
-#: .\lizzie\lizapp\templates\include\footer.html:26
-#: .\lizzie\lizapp\templates\include\header.html:30
-msgid "Підтримка"
-msgstr "Support"
-
-#: .\lizzie\lizapp\templates\include\footer.html:27
-#: .\lizzie\lizapp\templates\include\header.html:31
-msgid "Ресурси"
-msgstr "Resources"
-
-#: .\lizzie\lizapp\templates\include\footer.html:28
-#: .\lizzie\lizapp\templates\include\header.html:32
-msgid "Преміум"
-msgstr "Premium"
-
-#: .\lizzie\lizapp\templates\include\footer.html:29
-msgid "Налаштування"
-msgstr "Settings"
-
-#: .\lizzie\lizapp\templates\include\footer.html:34
-msgid "Соціальні мережі"
-msgstr "Social Networks"
-
-#: .\lizzie\lizapp\templates\include\footer.html:36
-msgid "Телеграм"
-msgstr "Telegram"
-
-#: .\lizzie\lizapp\templates\include\footer.html:37
-msgid "X"
-msgstr "X"
-
-#: .\lizzie\lizapp\templates\include\footer.html:38
-msgid "Інстаграм"
-msgstr "Instagram"
-
-#: .\lizzie\lizapp\templates\include\footer.html:39
-msgid "Gmail"
-msgstr "Gmail"
-
-#: .\lizzie\lizapp\templates\include\header.html:33
-msgid "Більше"
-msgstr "More"
-
-#: .\lizzie\lizapp\templates\include\header.html:67
-msgid "Вхід"
-msgstr "Log In"
-
-#: .\lizzie\lizapp\templates\include\header.html:68
-msgid "Реєстрація"
-msgstr "Sign Up"
-
-#: .\lizzie\lizapp\templates\include\search.html:7
-msgid "Пошук..."
-msgstr "Search..."
-
-#: .\lizzie\lizapp\templates\include\search.html:8
-msgid "Пошук"
-msgstr "Search"
-
-#: .\lizzie\lizapp\templates\include\search.html:14
-msgid "Ми створюємо цифрові рішення для вашого успіху"
-msgstr "We create digital solutions for your success"
-
-#: .\lizzie\lizapp\templates\include\search.html:15
-msgid ""
-"Інноваційні технології, індивідуальний підхід і перевірені стратегії для "
-"розвитку вашого бізнесу."
-msgstr ""
-"Innovative technologies, a personalized approach, and proven strategies for "
-"growing your business"
-
-#: .\lizzie\lizapp\templates\include\slider.html:8
+#: .\templates\components\lizzie_details\slider.html:7
 msgid "Чому варто обрати саме наш сервіс?"
 msgstr "Why choose our service?"
 
-#: .\lizzie\lizapp\templates\include\slider.html:16
+#: .\templates\components\lizzie_details\slider.html:15
 msgid "Чому Лізі краща за інші чат-боти для спілкування?"
 msgstr "Why is Lizzie better than other chatbots?"
 
-#: .\lizzie\lizapp\templates\include\slider.html:20
+#: .\templates\components\lizzie_details\slider.html:19
 msgid ""
 "Лізі спеціалізується на емоційній підтримці, що робить її унікальною серед "
 "інших чат-ботів:"
@@ -169,26 +317,26 @@ msgstr ""
 "Lizzie specializes in emotional support, making it unique among other "
 "chatbots:"
 
-#: .\lizzie\lizapp\templates\include\slider.html:23
+#: .\templates\components\lizzie_details\slider.html:22
 msgid ""
 "Вона не просто відповідає на запитання, а підтримує розмову на різні теми."
 msgstr ""
 "It doesn’t just answer questions; it maintains conversations on a wide range "
 "of topics."
 
-#: .\lizzie\lizapp\templates\include\slider.html:26
+#: .\templates\components\lizzie_details\slider.html:25
 msgid "Її діалоги більш \"людські\" завдяки продуманим сценаріям."
 msgstr "Its conversations feel more human thanks to carefully crafted scripts."
 
-#: .\lizzie\lizapp\templates\include\slider.html:29
+#: .\templates\components\lizzie_details\slider.html:28
 msgid "Лізі адаптується під настрої та потреби користувача."
 msgstr "Lizzie adapts to the moods and needs of its users."
 
-#: .\lizzie\lizapp\templates\include\slider.html:38
+#: .\templates\components\lizzie_details\slider.html:37
 msgid "Чим Лізі відрізняється від інших чат-ботів?"
 msgstr "How does Lizzie differ from other chatbots?"
 
-#: .\lizzie\lizapp\templates\include\slider.html:42
+#: .\templates\components\lizzie_details\slider.html:41
 msgid ""
 "Віртуальний друг, що поєднує технології та емоційну підтримку. Спеціально "
 "створена для тих, кому бракує уваги, і може стати справжнім помічником у "
@@ -198,7 +346,7 @@ msgstr ""
 "for those who feel neglected, it can serve as a true companion in everyday "
 "life."
 
-#: .\lizzie\lizapp\templates\include\slider.html:45
+#: .\templates\components\lizzie_details\slider.html:44
 #, python-format
 msgid ""
 "Реалістичність: 70%% функціоналу — це продумані діалоги, які імітують "
@@ -207,21 +355,21 @@ msgstr ""
 "Realism: 70%% of the functionality consists of carefully crafted dialogues "
 "that simulate conversation with a real person."
 
-#: .\lizzie\lizapp\templates\include\slider.html:48
+#: .\templates\components\lizzie_details\slider.html:47
 msgid "Емоційна підтримка: Готова вислухати, порадити чи просто побути поруч."
 msgstr "Emotional support: Ready to listen, offer advice, or simply be there."
 
-#: .\lizzie\lizapp\templates\include\slider.html:51
+#: .\templates\components\lizzie_details\slider.html:50
 msgid ""
 "Доступність: Працює 24/7 у Telegram, де користувачі проводять багато часу."
 msgstr ""
 "Availability: Operates 24/7 on Telegram, where users spend a lot of time."
 
-#: .\lizzie\lizapp\templates\include\slider.html:60
+#: .\templates\components\lizzie_details\slider.html:59
 msgid "Чому Лізі важлива саме зараз?"
 msgstr "Why is Lizzie so important right now?"
 
-#: .\lizzie\lizapp\templates\include\slider.html:64
+#: .\templates\components\lizzie_details\slider.html:63
 msgid ""
 "У сучасному світі багато людей почуваються самотніми через велику "
 "зайнятість, соціальну ізоляцію чи інші причини. Лізі стає для них тим, хто "
@@ -231,31 +379,31 @@ msgstr ""
 "isolation, or other reasons. Lizzie becomes the one who is always there for "
 "them:"
 
-#: .\lizzie\lizapp\templates\include\slider.html:67
+#: .\templates\components\lizzie_details\slider.html:66
 msgid "Не судить, не критикує і завжди готова підтримати."
 msgstr "Never judges, never criticizes, and is always ready to offer support."
 
-#: .\lizzie\lizapp\templates\include\slider.html:70
+#: .\templates\components\lizzie_details\slider.html:69
 msgid ""
 "Можна використовувати як інструмент для покращення психологічного стану."
 msgstr "It can be used as a tool to enhance mental well-being."
 
-#: .\lizzie\lizapp\templates\include\slider.html:73
+#: .\templates\components\lizzie_details\slider.html:72
 msgid "Доступна будь-коли, коли це потрібно."
 msgstr "Available whenever needed."
 
-#: .\lizzie\lizapp\templates\include\slider.html:82
+#: .\templates\components\lizzie_details\slider.html:81
 msgid "Як Лізі обробляє запити користувачів?"
 msgstr "How does Lizzie handle user requests?"
 
-#: .\lizzie\lizapp\templates\include\slider.html:86
+#: .\templates\components\lizzie_details\slider.html:85
 msgid ""
 "Користувач починає діалог, наприклад, ділиться своїми думками чи почуттями."
 msgstr ""
 "A user initiates a conversation, for example by sharing their thoughts or "
 "feelings."
 
-#: .\lizzie\lizapp\templates\include\slider.html:89
+#: .\templates\components\lizzie_details\slider.html:88
 #, python-format
 msgid ""
 "Лізі аналізує запит за допомогою ШІ (30%%) та вибирає відповідь із бази "
@@ -264,12 +412,12 @@ msgstr ""
 "Lizzie analyzes the request using AI (30%%) and selects a response from a "
 "dialogue database (70%%)."
 
-#: .\lizzie\lizapp\templates\include\slider.html:92
+#: .\templates\components\lizzie_details\slider.html:91
 msgid "Вона підтримує розмову, задає питання, сміється або дає поради."
 msgstr ""
 "It keeps the conversation going, asks questions, laughs, or offers advice."
 
-#: .\lizzie\lizapp\templates\include\slider.html:95
+#: .\templates\components\lizzie_details\slider.html:94
 msgid ""
 "Якщо запит складний, Лізі може запропонувати звернутися до фахівця або "
 "надати корисні ресурси."
@@ -277,19 +425,19 @@ msgstr ""
 "If the request is complex, Lizzie may suggest consulting a specialist or "
 "providing helpful resources."
 
-#: .\lizzie\lizapp\templates\include\slider.html:104
+#: .\templates\components\lizzie_details\slider.html:103
 msgid "Як Лізі розуміє емоції користувачів?"
 msgstr "How does Lizzie understand users' emotions?"
 
-#: .\lizzie\lizapp\templates\include\slider.html:108
+#: .\templates\components\lizzie_details\slider.html:107
 msgid "Лізі використовує комбінацію технологій:"
 msgstr "Lizzie employs a combination of technologies:"
 
-#: .\lizzie\lizapp\templates\include\slider.html:111
+#: .\templates\components\lizzie_details\slider.html:110
 msgid "Аналізує ключові слова, тон повідомлень та контекст."
 msgstr "Analyzes keywords, message tone, and context."
 
-#: .\lizzie\lizapp\templates\include\slider.html:114
+#: .\templates\components\lizzie_details\slider.html:113
 #, python-format
 msgid ""
 "База діалогів (70%%): Містить сценарії для різних емоційних станів (радість, "
@@ -298,7 +446,7 @@ msgstr ""
 "Dialogue database (70%%): Contains scenarios for various emotional states "
 "(joy, sadness, anger, etc.)."
 
-#: .\lizzie\lizapp\templates\include\slider.html:117
+#: .\templates\components\lizzie_details\slider.html:116
 msgid ""
 "Зворотний зв’язок: Користувачі можуть оцінювати відповіді, що допомагає "
 "покращувати розуміння емоцій."
@@ -306,26 +454,26 @@ msgstr ""
 "Feedback: Users can rate responses, helping to improve the understanding of "
 "emotions."
 
-#: .\lizzie\lizapp\templates\include\slider.html:126
+#: .\templates\components\lizzie_details\slider.html:125
 msgid "Як Лізі вдосконалюється?"
 msgstr "How does Lizzie improve?"
 
-#: .\lizzie\lizapp\templates\include\slider.html:130
+#: .\templates\components\lizzie_details\slider.html:129
 msgid "Лізі постійно вчиться завдяки:"
 msgstr "Lizzie is continuously learning thanks to:"
 
-#: .\lizzie\lizapp\templates\include\slider.html:133
+#: .\templates\components\lizzie_details\slider.html:132
 msgid "Аналізу даних: ШІ аналізує успішність діалогів та пропонує оптимізації."
 msgstr ""
 "Data analysis: AI evaluates the success of conversations and suggests "
 "optimizations."
 
-#: .\lizzie\lizapp\templates\include\slider.html:136
+#: .\templates\components\lizzie_details\slider.html:135
 msgid "Оновленню бази діалогів: Ми регулярно додаємо нові сценарії та репліки."
 msgstr ""
 "Updating the dialogue database: We regularly add new scenarios and responses."
 
-#: .\lizzie\lizapp\templates\include\slider.html:139
+#: .\templates\components\lizzie_details\slider.html:138
 msgid ""
 "Зворотному зв’язку: Користувачі оцінюють відповіді, що допомагає покращувати "
 "якість спілкування."
@@ -333,7 +481,7 @@ msgstr ""
 "Feedback: Users rate responses, helping to improve the quality of "
 "communication."
 
-#: .\lizzie\lizapp\templates\include\start-chatting.html:8
+#: .\templates\components\lizzie_details\start-chatting.html:8
 msgid ""
 "Наша мета — допомогти людям, які почуваються самотніми або потребують "
 "емоційної підтримки. Лізі стає для них віртуальним другом, який: вислухає "
@@ -345,6 +493,194 @@ msgstr ""
 "simply stays by their side, helping them feel better through realistic "
 "conversation."
 
-#: .\lizzie\lizapp\templates\include\start-chatting.html:16
+#: .\templates\components\lizzie_details\start-chatting.html:16
 msgid "Майбутнє тут"
 msgstr "The future is here"
+
+#: .\templates\components\order_a_consultation.html:9
+msgid "Зв’яжіться з нами, і ми підберемо для вас оптимальне рішення!"
+msgstr "Contact us and we will find the best solution for you!"
+
+#: .\templates\components\order_a_consultation.html:12
+msgid "Замовити консультацію"
+msgstr "Order a consultation"
+
+#: .\templates\components\search.html:6
+msgid "Пошук..."
+msgstr "Search..."
+
+#: .\templates\components\search.html:7
+msgid "Пошук"
+msgstr "Search"
+
+#: .\templates\components\search.html:13
+msgid "Ми створюємо цифрові рішення для вашого успіху"
+msgstr "We create digital solutions for your success"
+
+#: .\templates\components\search.html:14
+msgid ""
+"Інноваційні технології, індивідуальний підхід і перевірені стратегії для "
+"розвитку вашого бізнесу."
+msgstr ""
+"Innovative technologies, a personalized approach, and proven strategies for "
+"growing your business"
+
+#: .\templates\components\serveces_header.html:10
+msgid ""
+"Ми створюємо AI-рішення для автоматизації та оптимізації бізнес-процесів"
+msgstr "We create AI solutions to automate and optimize business processes"
+
+#: .\templates\components\serveces_header.html:15
+msgid ""
+"Наш AI-асистент адаптується під вашу систему та потреби, перетворюючи "
+"штучний інтелект на ефективний інструмент"
+msgstr ""
+"Our AI assistant adapts to your system and needs, turning artificial "
+"intelligence into an effective tool"
+
+#: .\templates\components\serveces_header.html:20
+msgid "Мінімізуйте витрати на персонал, обравши нашу AI-модель"
+msgstr "Minimize personnel costs by choosing our AI model"
+
+#: .\templates\components\services_details.html:4
+#: .\templates\include\footer.html:10 .\templates\include\header.html:26
+msgid "Послуги"
+msgstr "Services"
+
+#: .\templates\components\services_details.html:11
+msgid "Адаптація AI-моделей"
+msgstr "Adaptation of AI models"
+
+#: .\templates\components\services_details.html:14
+msgid "змінюємо алгоритми та функціонал під ваші бізнес-завдання."
+msgstr ""
+"we change algorithms and functionality to suit your business objectives."
+
+#: .\templates\components\services_details.html:17
+#: .\templates\components\services_details.html:41
+#: .\templates\components\services_details.html:58
+#: .\templates\components\services_details.html:75
+#: .\templates\components\services_details.html:99
+msgid "Card Image"
+msgstr ""
+
+#: .\templates\components\services_details.html:19
+#: .\templates\components\services_details.html:43
+#: .\templates\components\services_details.html:60
+#: .\templates\components\services_details.html:77
+#: .\templates\components\services_details.html:101
+msgid "Замовити"
+msgstr "Order"
+
+#: .\templates\components\services_details.html:35
+msgid "Інтеграція AI у ваші системи"
+msgstr "Integrating AI into your systems"
+
+#: .\templates\components\services_details.html:38
+msgid "підключаємо штучний інтелект до ваших платформ, CRM, сайтів тощо."
+msgstr ""
+"we connect artificial intelligence to your platforms, CRM, websites, etc."
+
+#: .\templates\components\services_details.html:55
+msgid ""
+"слідкуємо за стабільною роботою AI та оновлюємо відповідно до нових вимог."
+msgstr ""
+"We monitor the stable operation of AI and update it according to new "
+"requirements."
+
+#: .\templates\components\services_details.html:69
+msgid "Оптимізація та навчання AI"
+msgstr "AI optimization and training"
+
+#: .\templates\components\services_details.html:72
+msgid ""
+"покращуємо продуктивність моделі, налаштовуємо точність та швидкість роботи."
+msgstr ""
+"We improve the model's performance, adjust the accuracy and speed of work."
+
+#: .\templates\components\services_details.html:93
+msgid "Створення AI-чатботів та автоматизація"
+msgstr "AI chatbot creation and automation"
+
+#: .\templates\components\services_details.html:96
+msgid "розробляємо інтелектуальні рішення для автоматизації бізнес-процесів."
+msgstr "We develop intelligent solutions for business process automation."
+
+#: .\templates\include\footer.html:9 .\templates\include\header.html:25
+msgid "AI-набір"
+msgstr "AI Kit"
+
+#: .\templates\include\footer.html:11 .\templates\include\header.html:27
+msgid "Оновлення"
+msgstr "Updates"
+
+#: .\templates\include\footer.html:12 .\templates\include\header.html:28
+msgid "Техно-новини"
+msgstr "Tech News"
+
+#: .\templates\include\footer.html:18
+msgid "Ком\\"
+msgstr ""
+
+#: .\templates\include\footer.html:19
+msgid "Кукі"
+msgstr "Cookies"
+
+#: .\templates\include\footer.html:20
+msgid "Про нас"
+msgstr "About Us"
+
+#: .\templates\include\footer.html:21
+msgid "FAQ"
+msgstr "FAQ"
+
+#: .\templates\include\footer.html:27 .\templates\include\header.html:29
+msgid "Підтримка"
+msgstr "Support"
+
+#: .\templates\include\footer.html:28 .\templates\include\header.html:30
+msgid "Ресурси"
+msgstr "Resources"
+
+#: .\templates\include\footer.html:29 .\templates\include\header.html:31
+msgid "Преміум"
+msgstr "Premium"
+
+#: .\templates\include\footer.html:30
+msgid "Налаштування"
+msgstr "Settings"
+
+#: .\templates\include\footer.html:35
+msgid "Соціальні мережі"
+msgstr "Social Networks"
+
+#: .\templates\include\footer.html:37
+msgid "Телеграм"
+msgstr "Telegram"
+
+#: .\templates\include\footer.html:38
+msgid "X"
+msgstr "X"
+
+#: .\templates\include\footer.html:39
+msgid "Інстаграм"
+msgstr "Instagram"
+
+#: .\templates\include\footer.html:40
+msgid "Gmail"
+msgstr "Gmail"
+
+#: .\templates\include\header.html:32
+msgid "Більше"
+msgstr "More"
+
+#: .\templates\include\header.html:65
+msgid "Вхід"
+msgstr "Log In"
+
+#: .\templates\include\header.html:66
+msgid "Реєстрація"
+msgstr "Sign Up"
+
+#~ msgid "Ком'юніті"
+#~ msgstr "Community"

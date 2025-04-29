@@ -1,86 +1,85 @@
-/* Головний контейнер з перевагами */
+/* Головний контейнер з перевагами (займає всю ширину екрану) */
 .advantages-container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Lato', sans-serif;
-    margin-top: 200px;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 20px 10px; /* 20px зверху і знизу, 10px зліва та справа */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  margin-top: 200px;
+}
 
-  }
+ 
+
+/* Заголовок контейнера з перевагами */ 
+.advantages-header {
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+}
+
+.advantages-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;  /* Додаємо центроване вирівнювання тексту */
   
-  /* Заголовок контейнера з перевагами */
-  .advantages-header {
-    text-align: center;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 38px;
-    color: #FFFFFF;
-    margin-bottom: 40px;
-    
-  }
-  
-  /* Контейнер для окремої переваги */
-  .advantages-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 918px;
-    height: 80px;
-    
-    border-radius: 20px;
-    margin-bottom: 20px;  /* Проміжний простір між блоками */
-    padding: 0;
-    border: 1px solid #FFFFFF;
-  }
-  
-  /* Ліва частина: заголовок переваги */
+  width: calc(100% - 20px);
+  max-width: 918px;
+  height: 80px;
+  margin: 0 auto 20px;
+  padding: 0;
+  border: 1px solid #FFFFFF;
+  border-radius: 20px;
+}
+
+
+
+/* Ліва частина: заголовок переваги */
+.advantage-heading {
+  width: 384px;
+  height: 100%;
+  border: 1px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+  color: #FFFFFF;
+  border-radius: 20px;
+}
+
+/* Права частина: текст переваги */
+.advantage-description {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+@media (max-width: 900px) {
   .advantage-heading {
-    width: 384px;
-    height: 100%;
-    border: 1px solid #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FFFFFF;
-    font-size: 16px;
-    border-radius: 20px;
-
-
-font-family: 'Lato', sans-serif;
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 38px;
-
-color: #FFFFFF;
-
+    display: none;
 
   }
-  
-  /* Права частина: текст переваги */
-  .advantage-description {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-
-    
-
-font-family: 'Lato', sans-serif;
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 24px;
-/* identical to box height */
-
-color: #FFFFFF;
-
+  .advantages-content {
+    padding-left: 10px;
+    padding-right: 10px;
 
   }
-  
+} 

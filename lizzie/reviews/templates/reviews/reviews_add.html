@@ -13,7 +13,7 @@
     {% csrf_token %}
     <div>
       <div class="feedback-title">
-        <label for="{{ form.text.id_for_label }}">Залишити відгук</label>
+        <label for="{{ form.text.id_for_label }}">{% trans "Залишити відгук" %}</label>
       </div>
       <div class="review-background">
         
@@ -64,5 +64,3 @@
     </div>
   </form>
 </div>
-
-

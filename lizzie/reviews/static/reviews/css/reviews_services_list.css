@@ -11,10 +11,12 @@
     
 }
 /* Стилі для посилання "Передивитися всі відгуки..." */
+/* Розміщення посилання у правому нижньому куті */
 .view-all-reviews {
-    position: relative;
-    left: 975px;
-    bottom: -15px;
+    position: absolute;
+    bottom: -25px; /* Відступ від нижньої межі */
+    right: 10px;  /* Відступ від правої межі */
+    
     font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -22,5 +24,5 @@
     line-height: 19px;
     color: #ffffff;
     text-decoration: none;
-    /* За потребою додайте hover-ефекти */
+    /* За бажанням додайте hover-ефекти */
 }

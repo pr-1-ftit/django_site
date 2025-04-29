@@ -7,51 +7,43 @@
   <div class="inner-contact-us-container">
     <!-- Заголовок у верхній частині inner-contact-us-container -->
     <div class="inner-header">
-      <p>Готові покращити свій бізнес за допомогою AI?</p>
-      <p>Залиште заявку, і ми допоможемо вам знайти найкраще рішення під ваші потреби.</p>
+      <p>{% trans "Готові покращити свій бізнес за допомогою AI?" %}</p>
+      <p>{% trans "Залиште заявку, і ми допоможемо вам знайти найкраще рішення під ваші потреби." %}</p>
     </div>
     
     <!-- Новий блок з текстом, розташований нижче заголовка -->
     <div class="contact-text">
-      Зв'яжіться з нами
+      {% trans "Зв'яжіться з нами" %}
     </div>
     
-
-
     <div class="contacts-container">
       <!-- Перший стовпець: посилання на Gmail -->
       <div class="contact">
         <div class="contact_icon">
-
-          <img src="{% static 'images/mail_icon.png' %}" alt="mail">
+          <img src="{% static 'images/mail_icon.png' %}" alt="{% trans 'mail' %}">
         </div>
         <div class="contact-container mail_contact">
-  
-          <a href="https://mail.google.com/" target="_blank">liz.zie19424@gmail.com</a>
+          <a href="https://mail.google.com/" target="_blank">{% trans "liz.zie19424@gmail.com" %}</a>
         </div>
       </div>
       <!-- Другий стовпець: посилання на Telegram -->
       <div class="contact">
         <div class="contact_icon">
-
-          <img src="{% static 'images/telegram_icon.png' %}" alt="mail">
+          <img src="{% static 'images/telegram_icon.png' %}" alt="{% trans 'telegram' %}">
         </div>
         <div class="contact-container">
-          <a href="https://t.me/lizzie_officiall" target="_blank">t.me/lizzie_officiall</a>
+          <a href="https://t.me/lizzie_officiall" target="_blank">{% trans "t.me/lizzie_officiall" %}</a>
         </div>
       </div>
       <!-- Третій стовпець: номер телефону для копіювання -->
       <div class="contact">
         <div class="contact_icon">
-
-          <img src="{% static 'images/phone_icon.png' %}" alt="mail">
+          <img src="{% static 'images/phone_icon.png' %}" alt="{% trans 'phone' %}">
         </div>
         <div class="contact-container" onclick="copyText()">
-          <span id="phone-number">+380000000000</span>
+          <span id="phone-number">{% trans "+380000000000" %}</span>
         </div>
       </div>
     </div>
-
   </div>
 </div>
-

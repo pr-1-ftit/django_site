@@ -9,7 +9,7 @@
 <div class="reviews-container {{ reviews_style }} {{ services_style }}">
     <!-- Напис перед контейнером -->
     <div class="container-title {{ reviews_style }} {{ services_style }}">
-        <h2>Відгуки</h2>
+        <h2>{% trans "Відгуки" %}</h2>
     </div>
     <div class="reviews-content {{ reviews_style }} {{ services_style }}">
         {% for review in reviews %}
@@ -37,13 +37,13 @@
                 </div>
             </div>
         {% empty %}
-            <p class="no-reviews">Відгуків поки що немає.</p>
+            <p class="no-reviews">{% trans "Відгуків поки що немає." %}</p>
         {% endfor %}
+        {% if request.resolver_match.url_name == 'services' %}
+            <a href="{% url 'reviews' %}" class="view-all-reviews">{% trans "Передивитися всі відгуки..." %}</a>
+        {% endif %}
     </div>
 
-        {% if request.resolver_match.url_name == 'services' %}
-            <a href="{% url 'reviews' %}" class="view-all-reviews">Передивитися всі відгуки...</a>
-        {% endif %}
 
 </div>
 

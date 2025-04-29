@@ -1,66 +1,66 @@
 {% load static i18n %}
 
-    <link rel="stylesheet" href="{% static 'css/components/how_do_we_work.css' %}">
+<link rel="stylesheet" href="{% static 'css/components/how_do_we_work.css' %}">
 
-    <!-- Єдиний контейнер, який містить заголовок і основний блок -->
-    <div class="work-container">
-      <!-- Заголовок контейнера -->
-       <div class="container-header">
+<!-- Єдиний контейнер, який містить заголовок і основний блок -->
+<div class="work-container">
+  <!-- Заголовок контейнера -->
+  <div class="container-header">
+    <h2>{% trans "Як ми працюємо?" %}</h2>
+  </div>
 
-         <h2>Як ми працюємо?</h2>
-       </div>
-  
-      <!-- Основний контейнер з блоками, стрілками та іншими елементами -->
-      <div class="outer">
-        <!-- Блоки -->
-        <div class="box">Консультація</div>
-        <div class="box">Розробка та налаштування</div>
-        <div class="box">Інтеграція</div>
-        <div class="box">Тестування та запуск</div>
-        <div class="box">Підтримка та оновлення</div>
-        <div class="box-details detail-1">визначаємо ваші потреби</div>
-        <div class="box-details detail-2">адаптуємо AI під ваші вимоги</div>
-        <div class="box-details detail-3">
-          <p class="top-left-text">впроваджуємо рішення</p>
-          <p class="bottom-right-text">у ваші системи</p>
-        </div>
-        <div class="box-details detail-4">перевіряємо стабільність роботи</div>
-        <div class="box-details detail-5">забезпечуємо безперебійну роботу AI</div>
-  
-        <!-- Чотири контейнери із нижнім лівим кутом -->
-        <div class="arrow bottom-left corner-2 arrow-2">
-          <div class="corner-side left-side"></div>
-          <div class="corner-side bottom-side"></div>
-        </div>
-        <div class="arrow bottom-left corner-4 arrow-4">
-          <div class="corner-side left-side"></div>
-          <div class="corner-side bottom-side"></div>
-        </div>
-        <div class="arrow bottom-left corner-6 arrow-6">
-          <div class="corner-side left-side"></div>
-          <div class="corner-side bottom-side"></div>
-        </div>
-        <div class="arrow bottom-left corner-8 arrow-8">
-          <div class="corner-side left-side"></div>
-          <div class="corner-side bottom-side"></div>
-        </div>
-  
-        <!-- Чотири контейнери із верхнім правим кутом -->
-        <div class="arrow top-right corner-1 arrow-1">
-          <div class="corner-side top-side"></div>
-          <div class="corner-side right-side"></div>
-        </div>
-        <div class="arrow top-right corner-3 arrow-3">
-          <div class="corner-side top-side"></div>
-          <div class="corner-side right-side"></div>
-        </div>
-        <div class="arrow top-right corner-5 arrow-5">
-          <div class="corner-side top-side"></div>
-          <div class="corner-side right-side"></div>
-        </div>
-        <div class="arrow top-right corner-7 arrow-7">
-          <div class="corner-side top-side"></div>
-          <div class="corner-side right-side"></div>
-        </div>
-      </div>
+  <!-- Основний контейнер з блоками, стрілками та іншими елементами -->
+  <div class="outer">
+    <!-- Блоки -->
+    <div class="box">{% trans "Консультація" %}</div>
+    <div class="box">{% trans "Розробка та налаштування" %}</div>
+    <div class="box">{% trans "Інтеграція" %}</div>
+    <div class="box">{% trans "Тестування та запуск" %}</div>
+    <div class="box">{% trans "Підтримка та оновлення" %}</div>
+    
+    <div class="box-details detail-1">{% trans "визначаємо ваші потреби" %}</div>
+    <div class="box-details detail-2">{% trans "адаптуємо AI під ваші вимоги" %}</div>
+    <div class="box-details detail-3">
+      <p class="top-left-text">{% trans "впроваджуємо рішення" %}</p>
+      <p class="bottom-right-text">{% trans "у ваші системи" %}</p>
     </div>
+    <div class="box-details detail-4">{% trans "перевіряємо стабільність роботи" %}</div>
+    <div class="box-details detail-5">{% trans "забезпечуємо безперебійну роботу AI" %}</div>
+
+    <!-- Чотири контейнери із нижнім лівим кутом -->
+    <div class="arrow bottom-left corner-2 arrow-2">
+      <div class="corner-side left-side"></div>
+      <div class="corner-side bottom-side"></div>
+    </div>
+    <div class="arrow bottom-left corner-4 arrow-4">
+      <div class="corner-side left-side"></div>
+      <div class="corner-side bottom-side"></div>
+    </div>
+    <div class="arrow bottom-left corner-6 arrow-6">
+      <div class="corner-side left-side"></div>
+      <div class="corner-side bottom-side"></div>
+    </div>
+    <div class="arrow bottom-left corner-8 arrow-8">
+      <div class="corner-side left-side"></div>
+      <div class="corner-side bottom-side"></div>
+    </div>
+
+    <!-- Чотири контейнери із верхнім правим кутом -->
+    <div class="arrow top-right corner-1 arrow-1">
+      <div class="corner-side top-side"></div>
+      <div class="corner-side right-side"></div>
+    </div>
+    <div class="arrow top-right corner-3 arrow-3">
+      <div class="corner-side top-side"></div>
+      <div class="corner-side right-side"></div>
+    </div>
+    <div class="arrow top-right corner-5 arrow-5">
+      <div class="corner-side top-side"></div>
+      <div class="corner-side right-side"></div>
+    </div>
+    <div class="arrow top-right corner-7 arrow-7">
+      <div class="corner-side top-side"></div>
+      <div class="corner-side right-side"></div>
+    </div>
+  </div>
+</div>

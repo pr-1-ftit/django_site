@@ -1,18 +1,20 @@
 /* Контейнер для форми, щоб забезпечити базове позиціювання */
 .email-container {
   position: relative;
-  max-width: 943px;                /* відповідно до ширини інпут бара */
+  max-width: auto;                /* відповідно до ширини інпут бара */
   margin: 0 auto;              /* центрування по горизонталі */
-  bottom: 140px; 
+  bottom: 65px; 
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 /* Поле введення пошти (input bar) */
 .feedback-email-bar {
-  position: absolute;
+  position: relative;
   top: 200px;                  /* розташування input bar відносно контейнера */
   left: 50%;
   transform: translateX(-50%);
-  width: 943px;
+  max-width: 943px;
   height: 73px;
   background: #FFFFFF;
   border-radius: 23px;
@@ -26,7 +28,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 41.15%;
+  width: 100%;
+  max-width: 35.84%;
   height: 73px;
   background: linear-gradient(180deg, #000000 0%, #002394 100%);
   border: 1px solid #FFFFFF;
@@ -44,6 +47,11 @@
   color: #FFFFFF;
 }
 
+/* За замовчуванням текст відображається */
+.email-feedback-btn .btn-text {
+  display: inline;
+}
+
 .email-feedback-btn:hover {
   transform: scale(1.05);
 }
@@ -57,7 +65,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: calc(58.85% - 23px);
+  width: 100%;
+  max-width: calc(100% - 35.84% - 40px);
   height: 33px;
   border-radius: 23px;
   font-family: 'Lato', sans-serif;
@@ -101,3 +110,13 @@
   z-index: 1;    /* нижче input bar */
 }
 
+@media (max-width: 943px) {
+
+.email-feedback-btn .btn-text {
+  display: none;
+  }
+
+  .email-input {
+    font-size: 16px;
+  }
+}

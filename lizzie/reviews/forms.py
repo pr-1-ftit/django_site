@@ -9,12 +9,12 @@ class ReviewForm(forms.ModelForm):
         fields = ['name', 'text', 'rating']
         widgets = {
             'name': forms.TextInput(attrs={
-                'placeholder': "Ім’я користувача...",
+                'placeholder': _("Ім’я користувача..."),
                 'class': "name-container placeholder-text",
                 'id': "username",
             }),
             'text': forms.Textarea(attrs={
-                'placeholder': "Залиште своє враження від нашої роботи тут...",
+                'placeholder': _("Залиште своє враження від нашої роботи тут..."),
                 'class': "review-input placeholder-text",
                 'id': "feedback",
                 'rows': 4,

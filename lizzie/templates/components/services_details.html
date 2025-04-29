@@ -1,113 +1,114 @@
 {% load static i18n %}
-
 <link rel="stylesheet" href="{% static 'css/components/services_details.css' %}">
-  <div class="container">
-    <header>Послуги</header>
-    <div class="columns">
-      <!-- Стовпець 1 -->
-      <div class="column">
-        <!-- Елемент 1 -->
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-header">
-              <div class="card-header-inner">Адаптація AI-моделей</div>
-            </div>
-            <div class="card-description">
-              змінюємо алгоритми та функціонал під ваші бізнес-завдання.
-            </div>
-            <div class="card-image"></div>
-            <img src="{% static 'images/services_icon1.svg' %}" alt="Card Image" class="card-image">
-            <div class="card-button scrollButton">
-              <span>Замовити</span>
-            </div>
-          </div>
+<div class="container">
+  <header>{% trans "Послуги" %}</header>
+  <div class="columns">
+
+    <!-- Елемент 1 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-header">
+          <div class="card-header-inner">{% trans "Адаптація AI-моделей" %}</div>
         </div>
-        <!-- Елемент 2 -->
-        <div class="card">
-          <div class="card-inner">
-
-
-          </div>
+        <div class="card-description">
+          {% trans "змінюємо алгоритми та функціонал під ваші бізнес-завдання." %}
+        </div>
+        <div class="card-image"></div>
+        <img src="{% static 'images/services_icon1.svg' %}" alt="{% trans "Card Image" %}" class="card-image">
+        <div class="card-button scrollButton">
+          <span>{% trans "Замовити" %}</span>
         </div>
       </div>
-      <!-- Стовпець 2 -->
-      <div class="column">
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-header">
-              <div class="card-header-inner">Інтеграція AI у ваші системи</div>
-            </div>
-            <div class="card-description">
-              підключаємо штучний інтелект до ваших платформ, CRM, сайтів тощо.
-            </div>
-            <div class="card-image"></div>
-            <img src="{% static 'images/services_icon2.svg' %}" alt="Card Image" class="card-image">
-            <div class="card-button scrollButton">
-              <span>Замовити</span>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-header">
-              <div class="card-header-inner">Підтримка та оновлення</div>
-            </div>
-            <div class="card-description">
-              слідкуємо за стабільною роботою AI та оновлюємо відповідно до нових вимог.
-            </div>
-            <div class="card-image"></div>
-            <img src="{% static 'images/services_icon5.svg' %}" alt="Card Image" class="card-image">
-            <div class="card-button scrollButton">
-              <span>Замовити</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Стовпець 3 -->
-      <div class="column">
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-header">
-              <div class="card-header-inner">Оптимізація та навчання AI</div>
-            </div>
-            <div class="card-description">
-              покращуємо продуктивність моделі, налаштовуємо точність та швидкість роботи.
-            </div>
-            <div class="card-image"></div>
-            <img src="{% static 'images/services_icon3.svg' %}" alt="Card Image" class="card-image">
-            <div class="card-button scrollButton">
-              <span>Замовити</span>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner">
+    </div>
 
-          </div>
-        </div>
+    <!-- Елемент 2 -->
+    <div class="card">
+      <div class="card-inner">
+        {# Порожній блок, текст відсутній #}
       </div>
-      <!-- Стовпець 4 -->
-      <div class="column">
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-header">
-              <div class="card-header-inner">Створення AI-чатботів та автоматизація</div>
-            </div>
-            <div class="card-description">
-              розробляємо інтелектуальні рішення для автоматизації бізнес-процесів.
-            </div>
-            <div class="card-image"></div>
-            <img src="{% static 'images/services_icon4.svg' %}" alt="Card Image" class="card-image">
-            <div class="card-button scrollButton" >
-              <span>Замовити</span>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner">
+    </div>
 
-          </div>
+    <!-- Елемент 3 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-header">
+          <div class="card-header-inner">{% trans "Інтеграція AI у ваші системи" %}</div>
+        </div>
+        <div class="card-description">
+          {% trans "підключаємо штучний інтелект до ваших платформ, CRM, сайтів тощо." %}
+        </div>
+        <div class="card-image"></div>
+        <img src="{% static 'images/services_icon2.svg' %}" alt="{% trans "Card Image" %}" class="card-image">
+        <div class="card-button scrollButton">
+          <span>{% trans "Замовити" %}</span>
         </div>
       </div>
-    </div><!-- .columns -->
-  </div><!-- .container -->
+    </div>
+
+    <!-- Елемент 4 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-header">
+          <div class="card-header-inner">{% trans "Підтримка та оновлення" %}</div>
+        </div>
+        <div class="card-description">
+          {% trans "слідкуємо за стабільною роботою AI та оновлюємо відповідно до нових вимог." %}
+        </div>
+        <div class="card-image"></div>
+        <img src="{% static 'images/services_icon5.svg' %}" alt="{% trans "Card Image" %}" class="card-image">
+        <div class="card-button scrollButton">
+          <span>{% trans "Замовити" %}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Елемент 5 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-header">
+          <div class="card-header-inner">{% trans "Оптимізація та навчання AI" %}</div>
+        </div>
+        <div class="card-description">
+          {% trans "покращуємо продуктивність моделі, налаштовуємо точність та швидкість роботи." %}
+        </div>
+        <div class="card-image"></div>
+        <img src="{% static 'images/services_icon3.svg' %}" alt="{% trans "Card Image" %}" class="card-image">
+        <div class="card-button scrollButton">
+          <span>{% trans "Замовити" %}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Елемент 6 -->
+    <div class="card">
+      <div class="card-inner">
+        {# Порожній блок, текст відсутній #}
+      </div>
+    </div>
+
+    <!-- Елемент 7 -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-header">
+          <div class="card-header-inner">{% trans "Створення AI-чатботів та автоматизація" %}</div>
+        </div>
+        <div class="card-description">
+          {% trans "розробляємо інтелектуальні рішення для автоматизації бізнес-процесів." %}
+        </div>
+        <div class="card-image"></div>
+        <img src="{% static 'images/services_icon4.svg' %}" alt="{% trans "Card Image" %}" class="card-image">
+        <div class="card-button scrollButton">
+          <span>{% trans "Замовити" %}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Елемент 8 -->
+    <div class="card">
+      <div class="card-inner">
+        {# Порожній блок, текст відсутній #}
+      </div>
+    </div>
+
+  </div><!-- .columns -->
+</div><!-- .container -->

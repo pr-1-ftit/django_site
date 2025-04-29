@@ -1,7 +1,7 @@
 from django import forms
 from .models import UserEmail
 
-import requests
+from django.utils.translation import gettext_lazy as _
 
 from django.conf import settings
 
@@ -11,13 +11,13 @@ class EmailForm(forms.ModelForm):
         fields = ['email']
         error_messages = {
             'email': {
-                'invalid': 'Введена електронна адреса має некоректний формат. Будь ласка, перевірте правильність вводу.',
-                "unique": "Ця пошта вже успішно записана."
+                'invalid': _('Введена електронна адреса має некоректний формат. Будь ласка, перевірте правильність вводу.'),
+                "unique": _("Ця пошта вже успішно записана.")
             }
         }
         widgets = {
             'email': forms.EmailInput(attrs={
                 'class': 'email-input', 
-                'placeholder': 'example@email.com'
+                'placeholder': _('example@email.com')
             })
         }

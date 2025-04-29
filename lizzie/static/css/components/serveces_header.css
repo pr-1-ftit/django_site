@@ -1,8 +1,9 @@
 /* Контейнер для хедера сторінки з послугами */
 .services-header-container {
   max-width: 1200px;
-  margin: 270px auto 0; /* Вже центровано по горизонталі */
-  padding: 0 20px;
+  margin: 260px auto 0; /* Вже центровано по горизонталі */
+  margin-bottom: 200px;
+
 }
 
 /* Контейнер для сервісних блоків */
@@ -13,9 +14,12 @@
      максимальна — 329.16px (відповідає ширині .service-box) */
   grid-template-columns: repeat(auto-fit, minmax(300px, 329.16px));
   gap: 60px;
-  
+  margin-left: 10px;
+  margin-right: 10px;
+ 
   /* Центруємо всю сітку відносно контейнера */
   justify-content: center;
+
 }
 
 /* Стилі для кожного блоку послуги */
@@ -24,7 +28,7 @@
   /* Видаляємо зайве позиціювання. Не потрібне position: absolute,
      оскільки елементи сітки розташовуються автоматично */
   position: relative;
-  width: 329.16px;
+  max-width: 329.16px;
   height: 449.09px;
   border: 1px solid #FFFFFF;
   border-radius: 50px; 
@@ -45,3 +49,4 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+

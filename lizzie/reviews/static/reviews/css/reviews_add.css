@@ -8,15 +8,32 @@
   height: auto;
 }
 
-.name-container {
-  width: 510px;
-  height: 49px;
-  padding-left: 20px;
-  outline: none;
-  border: none;
-  margin: 0;
-  margin-top: 25px;
+/* Контейнер відгуків з адаптивною шириною */
+.review-background {
+  position: relative;
+  margin: 0 auto;
 
+  padding: 0; /* внутрішні відступи будемо задавати окремо для елементів */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 586px;
+  min-height: 288px;
+  z-index: 10;
+  box-sizing: border-box;
+  border: 1px solid #FFFFFF;
+  border-radius: 50px;
+}
+
+/* Контейнер для виводу імені */
+.review-background .name-container {
+  width: calc(100% - 40px - 10px);  /* 20px зліва і 20px справа */
+  height: 49px;
+  margin: 25px 20px 0;
+  padding-left: 20px;
+  border: none;
+  outline-style: none;
   font-family: 'Lato', sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -25,52 +42,22 @@
   
   background: #FFFFFF;
   border-radius: 20px;
-
-}
-
-
-
-/* Сами стилі для контейнера рейтингу */
-.rating-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;                /* Встановлюємо праву межу для розтягування */
-  display: flex;
-  justify-content: flex-end; /* Вміст вирівнюється по правій стороні */
-  align-items: center;
-  gap: 8px;
   
-  /* Відступи: 7px зверху і знизу, 20px справа, 0 зліва */
-  padding: 7px 20px 7px 0;
-  
-  border-radius: 20px;
-  /* За потребою можна додати інші стилі, наприклад, фон */
+  box-sizing: border-box;
 }
 
-
-/* Стилізація повідомлень про помилки (для імені та рейтингу) */
-.error-messdfsage {
-  color: red;
-  font-size: 14px;
-  font-family: Lato, sans-serif;
-  font-weight: 600;
-  text-align: center;
-  margin: 3px;
-  margin-left: 20px;
-  margin-right: auto;
-}
-.inner_container {
+/* Внутрішній контейнер (наприклад, для текстових полів або іншого вмісту) */
+.review-background .inner_container {
   position: relative;
   flex: 0 0 auto; 
-  margin: 0;
-  margin-top: 5px;
+  margin: 5px 20px 0;  /* відступи зверху і з боків */
   bottom: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 530px;
+  width: calc(100% - 40px); /* однакові бокові відступи */
+  max-width: 530px;
   height: 181px;
   z-index: -1;
   box-sizing: border-box;
@@ -79,75 +66,88 @@
   padding: 0;
 }
 
-
-
-
-
-
-
-
-
-/* Контейнер для зірок */
-.stars-container {
-  display: flex;
-  gap: 5px;
-}
-.star_add polygon {
-  stroke: #FF00FF;
-}
-.review-background {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 586px;
-  min-height: 288px;
-  z-index: 10;
-
-  box-sizing: border-box;
-  border: 1px solid #FFFFFF;
-  border-radius: 50px;
-}
-
-
-
-.review-input {
+/* Поле введення тексту */
+.review-background .review-input {
   position: absolute;
-  width: 490px;
-  height: 110px;
+  top: 0;
+  
+  width: 100%; /* однакові бокові відступи */
+  max-width: 530px;
+  height: 150px;
   border-radius: 20px;
   outline: none;
   border: none;
-  top: 0;
   resize: none;
   padding: 20px;
   word-wrap: break-word;
   white-space: normal;
-  scrollbar-color: #312929 transparent;
-  margin: 0;
   font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
+  box-sizing: border-box;
+
   
 }
 
-.placeholder-text::placeholder {  
-  font-family: 'Lato', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  color: #F6BAFF;
+/* Контейнер для зірок */
+.review-background .stars-container {
+  display: flex;
+  gap: 5px;
+ 
 }
 
+/* Стилізація зірок */
+.review-background .star_add polygon {
+  stroke: #FF00FF;
+}
 
+/* Стили для контейнера рейтингу */
+.review-background .rating-container {
+  position: absolute;
+  bottom: 0;
+  left: 20px;    /* відступ зліва */
+  right: 20px;   /* відступ справа */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 20px 7px 0;
+  border-radius: 20px;
+}
 
+/* Стилізація повідомлень про помилки */
+.review-background .error-messdfsage {
+  color: red;
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  text-align: center;
+  margin: 3px;
+  margin-left: 20px;
+  margin-right: auto;
+}
 
+/* Стиль заголовку відгуку */
+.review-background .feedback-title {
+  width: 175px;
+  height: 40px;
+  margin: 0 auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: white;
+  left: 50%;
+  z-index: 1;
+}
 
-.send-review-button {
+/* Кнопка для відправки відгуку */
+.review-background .send-review-button {
   position: absolute;
   bottom: -16px;
   right: -16px;
@@ -166,21 +166,30 @@
   overflow: hidden;
 }
 
-.send-review-button img {
+.review-background .send-review-button img {
   width: 38px;
   pointer-events: none;
 }
 
-.send-review-button:hover {
+.review-background .send-review-button:hover {
   background: #E046E6;
   transform: scale(1.1);
 }
 
-.send-review-button:active {
+.review-background .send-review-button:active {
   background: #C435CC;
   transform: scale(1.05);
 }
 
+/* Стиль для placeholder */
+.review-background .placeholder-text::placeholder {  
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #F6BAFF;
+}
 .feedback-title {
   width: 175px;
   height: 40px;
@@ -198,3 +207,23 @@
   z-index: 1;
 }
 
+/* Медіа-запит для адаптації на менших екранах */
+@media (max-width: 600px) {
+
+  
+  .review-background .review-input,
+  .review-background .inner_container {
+    font-size: 14px;
+  }
+  
+  .review-background .placeholder-text::placeholder {  
+    font-size: 14px;
+  }
+
+  /* Кнопка для відправки відгуку */
+.review-background .send-review-button {
+
+  right: -10px;
+  
+}
+}
