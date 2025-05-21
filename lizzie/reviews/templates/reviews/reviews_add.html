@@ -4,63 +4,115 @@
 <link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
 <link rel="stylesheet" href="{% static 'reviews/css/reviews_add.css' %}">
 
-<!-- Підключення JS -->
-<script src="{% static 'reviews/scripts/review_form_validation.js' %}"></script>
-<script src="{% static 'reviews/scripts/rating_interaction.js' %}"></script>
+<style>
+#modal {
+  position: fixed; /* Забезпечує overlay-рівень поверх усіх інших елементів */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+  /* Можна також додати фон для затемнення */
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
-<div class="review-add-container">
-  <form action="{% url 'services' %}" method="post" id="reviewForm" novalidate>
-    {% csrf_token %}
-    <div>
-      <div class="feedback-title">
-        <label for="{{ form.text.id_for_label }}">{% trans "Залишити відгук" %}</label>
-      </div>
-      <div class="review-background">
-        
-          {{ form.name }}
+
+#modal.active {
+  opacity: 1;
+  pointer-events: auto; /* дозволяємо взаємодію, коли модальне вікно активно */
+}
+
+
+</style>
+
+
+
+<!-- Модальне вікно -->
+
+
+
+  <!-- Вставте сюди форму, яку ви хочете показати -->
+  <div class="review-add-container">
+    <form id="reviewForm" novalidate>
+      {% csrf_token %}
+      <div>
+        <div class="feedback-title">
+          <label for="feedback">{% trans "Залишити відгук" %}</label>
+        </div>
+        <div class="review-background">
+          <input 
+            id="name" 
+            name="name" 
+            class="name-container placeholder-text" 
+            type="text" 
+            placeholder="Введіть своє ім'я..."
+            required
+          >
           <div class="error-message">
-            {{ form.name.errors }}
+            <div id="name-error"></div>
           </div>
-        
-        <div class="inner_container">
-            
-
-            {{ form.text }}
           
-
-          <!-- Блок для рейтингу -->
-          <div id="add-rating" class="rating-container">
-            {{ form.rating }}
-
-
-
-            <div class="stars-container">
-              <svg class="star star_add" data-value="1" width="24" height="24" viewBox="0 0 24 24">
-                <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
-              </svg>
-              <svg class="star star_add" data-value="2" width="24" height="24" viewBox="0 0 24 24">
-                <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
-              </svg>
-              <svg class="star star_add" data-value="3" width="24" height="24" viewBox="0 0 24 24">
-                <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
-              </svg>
-              <svg class="star star_add" data-value="4" width="24" height="24" viewBox="0 0 24 24">
-                <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
-              </svg>
-              <svg class="star star_add" data-value="5" width="24" height="24" viewBox="0 0 24 24">
-                <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
-              </svg>
+          <div class="inner_container">
+            <textarea 
+              id="feedback" 
+              name="text"
+              placeholder="Залиште своє враження від нашої роботи тут..."
+              class="review-input placeholder-text" 
+              rows="4" 
+              cols="50"
+              required
+            ></textarea>
+            
+            <!-- Блок для рейтингу -->
+            <div id="add-rating" class="rating-container">
+              <input type="hidden" name="rating" id="rating" value="">
+              <div class="stars-container">
+                <svg class="star star_add" data-value="1" width="24" height="24" viewBox="0 0 24 24">
+                  <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+                </svg>
+                <svg class="star star_add" data-value="2" width="24" height="24" viewBox="0 0 24 24">
+                  <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+                </svg>
+                <svg class="star star_add" data-value="3" width="24" height="24" viewBox="0 0 24 24">
+                  <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+                </svg>
+                <svg class="star star_add" data-value="4" width="24" height="24" viewBox="0 0 24 24">
+                  <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+                </svg>
+                <svg class="star star_add" data-value="5" width="24" height="24" viewBox="0 0 24 24">
+                  <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
+                </svg>
+              </div>
             </div>
           </div>
+          <div class="error-message">
+            <div id="rating-error"></div>
+            <div id="text-error"></div>
+          </div>
+          <button type="submit" class="send-review-button">
+            <img src="{% static 'images/message-paper-plane.svg' %}" alt="Відправити">
+          </button>
         </div>
-        <div class="error-message">
-          {{ form.text.errors }}
-          {{ form.rating.errors }}
-        </div>
-        <button class="send-review-button">
-          <img src="{% static 'images/message-paper-plane.svg' %}" alt="Відправити">
-        </button>
       </div>
-    </div>
-  </form>
-</div>
+    </form>
+  </div>
+  
+
+
+
+
+  
+  
+
+
+
+<!-- Підключення JS -->
+<script src="{% static 'reviews/scripts/rating_interaction.js' %}"></script>
+<script type="module" src="{% static 'reviews/scripts/reviews_create.js' %}"></script>
+<script type="module" src="{% static 'reviews/scripts/reviews_update.js' %}"></script>
+
+

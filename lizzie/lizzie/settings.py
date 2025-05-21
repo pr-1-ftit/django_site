@@ -40,10 +40,29 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'daphne',
     'django.contrib.staticfiles',
+
     'lizapp',
     'reviews',
     'newsletter',
+    'accounts',
+    'chat',
+
+    'rest_framework',
+    'rest_framework.authtoken',
+
+    'drf_yasg',
+    
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
+
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +72,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -121,6 +141,7 @@ JAZZMIN_UI_TWEAKS = {
 }
 
 WSGI_APPLICATION = 'lizzie.wsgi.application'
+ASGI_APPLICATION = 'lizzie.asgi.application'
 
 
 # Database
@@ -139,6 +160,10 @@ DATABASES = {
     }
 }
 
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -171,7 +196,7 @@ USE_I18N = True
 TIME_ZONE = 'Europe/Kiev'
 USE_TZ = True
 
-
+LOGIN_REDIRECT_URL = '/'
 
 gettext = lambda s: s
 LANGUAGES = (
@@ -192,3 +217,69 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 1
+}
+
+SITE_ID = 1
+
+
+
+
+
+# Обов’язкова наявність email
+ACCOUNT_EMAIL_REQUIRED = True
+
+# Підтвердження пошти (опції: "mandatory", "optional", "none")
+ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+
+# Обов'язкове поле username (якщо їх використовуєте)
+ACCOUNT_USERNAME_REQUIRED = True
+
+# Метод аутентифікації: за username або email або обома
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
+
+
+
+# В production-додатках налаштуйте SMTP або інший email backend, наприклад:
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.example.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'your-email@example.com'
+# EMAIL_HOST_PASSWORD = 'your-email-password'
+
+# Використовуємо SMTP бекенд для відправки реальних листів
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'           # SMTP-сервер, наприклад, для Gmail
+EMAIL_PORT = 587                        # Порт для TLS
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'testforconfirm1@gmail.com'  # Ваша email-адреса
+EMAIL_HOST_PASSWORD = 'irmr pfso glow aocn'  # Пароль або app password для Gmail
+
+
+ACCOUNT_UNIQUE_EMAIL = False
+ACCOUNT_LOGIN_METHODS = ['username']
+ACCOUNT_SIGNUP_FIELDS = ['username*', 'email*', 'password1*', 'password2*']
+
+
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'accounts.serializers.CustomRegisterSerializer',
+}
+
+ 
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [(os.environ.get("REDIS_HOST", "localhost"), int(os.environ.get("REDIS_PORT", 6379)))],
+#         },
+#     },
+# }
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer",
+    },
+}

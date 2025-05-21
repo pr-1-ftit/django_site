@@ -1,0 +1,23 @@
+{% extends "account/account.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+<div id="logoutForm">
+    <div class="form-logo">
+        <img src="{% static 'images/logo/logo.png' %}" alt="Logo">
+    </div>
+    <h2>{% trans "Are you sure you want to log out?" %}</h2>
+    <form method="post" action="{% url 'account_logout' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            <button type="submit" class="logout-button">{% trans "Log Out" %}</button>
+        </div>
+        <div class="switch-links">
+            <a href="{% url 'account_login' %}">{% trans "Cancel" %}</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

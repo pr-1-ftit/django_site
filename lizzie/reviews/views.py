@@ -1,107 +1,140 @@
+from django.shortcuts import render
+from django.http import Http404
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from django.views.decorators.cache import cache_page
+from django.utils.decorators import method_decorator
+
+from .models import Review
+from .serializers import ReviewSerializer, ReviewCreateSerializer
+from .services import PaginationReviews
 
 
-from django.shortcuts import render, redirect
-from django.views.generic import ListView
-from .forms import ReviewForm
-from .models import Reviews
-import hashlib
-import random
+class ReviewCookieMixin:
+    """
+    Міксін для роботи з кукі, пов’язаними з токеном відгуку.
+    """
+    def set_review_token_cookie(self, response, review, max_age=None):
+        """
+        Встановлює кукі з токеном для відгуку.
+        :param response: об’єкт відповіді Response
+        :param review: створений або оновлений об’єкт Review
+        :param max_age: час життя кукі в секундах (опціонально)
+        """
+        cookie_name = f"review_token_{review.id}"
+        cookie_kwargs = {
+            "key": cookie_name,
+            "value": str(review.token),
+            "httponly": True,
+            "secure": False,  # Для локальної розробки; на продакшені використовувати secure=True
+            "samesite": "Lax",
+            "path": "/"
+        }
+        if max_age is not None:
+            cookie_kwargs["max_age"] = max_age
+        response.set_cookie(**cookie_kwargs)
 
-# Міксін для обробки відгуків
-class ReviewsMixin:
-    def process_reviews(self, reviews):
-        for review in reviews:
-            review.range_rating = range(review.rating)
-            review.range_remaining = range(5 - review.rating)
-            review.avatar_color = self.generate_color(review.name)
-        return reviews
+    def delete_review_token_cookie(self, response, review):
+        """
+        Видаляє кукі з токеном для відгуку.
+        """
+        response.delete_cookie(
+            key=f"review_token_{review.id}",
+            path='/'
+        )
 
-    @staticmethod
-    def generate_color(name):
-        hash_object = hashlib.md5(name.encode('utf-8'))
-        hex_digest = hash_object.hexdigest()
-        return f"#{hex_digest[:6]}"
-
-    @staticmethod
-    def generate_random_color():
-        return "#{:06x}".format(random.randint(0, 0xFFFFFF))
+    def get_cookie_token(self, review, request):
+        """
+        Повертає значення токену з кукі для даного відгуку.
+        """
+        return request.COOKIES.get(f"review_token_{review.id}")
 
 
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+@method_decorator(cache_page(60 * 15), name='dispatch')  # кешуємо GET-відповіді на 15 хвилин
+class ReviewListCreate(ReviewCookieMixin, ListCreateAPIView):
+    queryset = Review.objects.all().order_by('-updated')
+    pagination_class = PaginationReviews
 
-
-
-
-from django.core.paginator import EmptyPage
-from django.views.generic import ListView
-
-from django.core.paginator import EmptyPage
-from django.http import HttpResponseRedirect
-from django.views.generic import ListView
-
-class ReviewsListView(ReviewsMixin, ListView):
-    model = Reviews
-    template_name = 'reviews/reviews.html'
-    context_object_name = 'reviews'
-    paginate_by = 12
+    def get_serializer_class(self):
+        if self.request.method.upper() == 'POST':
+            return ReviewCreateSerializer
+        return ReviewSerializer
 
     def get(self, request, *args, **kwargs):
+        queryset = self.filter_queryset(self.get_queryset())
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        review = serializer.save()
+        headers = self.get_success_headers(serializer.data)
+        response = Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        # Розрахунок 50 років у секундах
+        max_age_50_years = 50 * 365 * 24 * 60 * 60  
+        self.set_review_token_cookie(response, review, max_age=max_age_50_years)
+        return response
+
+
+class ReviewDetailView(ReviewCookieMixin, RetrieveUpdateDestroyAPIView):
+    queryset = Review.objects.all()
+    lookup_field = 'pk'
+    http_method_names = ['head', 'get', 'put', 'delete']
+
+    def get_serializer_class(self):
+        if self.request.method.upper() == 'PUT':
+            return ReviewCreateSerializer
+        return ReviewSerializer
+
+    def token_valid(self, review, request):
+        cookie_token = self.get_cookie_token(review, request)
+        if not cookie_token:
+            return False
+        return cookie_token == str(review.token)
+
+    def put(self, request, *args, **kwargs):
         """
-        Перевірка коректності параметра 'page' у запиті.
-        Якщо в URL вказано значення сторінки менше 1 або більше максимальної,
-        виконуємо редірект на URL з правильним номером сторінки.
+        Виконує оновлення існуючого відгуку або створює новий,
+        якщо відгук не знайдено (логіка upsert).
         """
-        # Отримуємо значення параметра 'page', за замовчуванням 1
-        page_str = request.GET.get('page', '1')
         try:
-            page_number = int(page_str)
-        except (ValueError, TypeError):
-            page_number = 1
+            instance = self.get_object()
+        except Http404:
+            instance = None
 
-        # Отримуємо queryset та створюємо пагінатор
-        queryset = self.get_queryset()
-        paginator = self.get_paginator(queryset, self.paginate_by, allow_empty_first_page=True)
-
-        # Визначаємо коректний номер сторінки
-        if page_number < 1:
-            valid_page = 1
-        elif page_number > paginator.num_pages:
-            valid_page = paginator.num_pages
+        if instance is None:
+            # Створення нового відгуку
+            serializer = ReviewCreateSerializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            review = serializer.save()
+            response = Response(serializer.data, status=status.HTTP_201_CREATED)
+            self.set_review_token_cookie(response, review)
         else:
-            valid_page = page_number
+            # Оновлення існуючого відгуку
+            serializer = self.get_serializer(instance, data=request.data, partial=False)
+            serializer.is_valid(raise_exception=True)
+            self.perform_update(serializer)
+            response = Response(serializer.data, status=status.HTTP_200_OK)
+            self.set_review_token_cookie(response, instance)
+        return response
 
-        # Якщо номер сторінки некоректний – виконуємо редірект на правильний URL
-        if valid_page != page_number:
-            query_params = request.GET.copy()
-            query_params['page'] = valid_page
-            new_url = f"{request.path}?{query_params.urlencode()}"
-            return HttpResponseRedirect(new_url)
+    def destroy(self, request, *args, **kwargs):
+        instance = self.get_object()  
+        self.perform_destroy(instance)
+        response = Response(status=status.HTTP_204_NO_CONTENT)
+        self.delete_review_token_cookie(response, instance)
+        return response
 
-        return super().get(request, *args, **kwargs)
 
-    def paginate_queryset(self, queryset, page_size):
-        """
-        Використовуємо власну логіку пагінації:
-          - Перетворюємо значення параметра 'page' у число;
-          - Якщо значення менше 1 – встановлюємо 1;
-          - Якщо номер сторінки перевищує допустимий – повертаємо останню сторінку.
-        """
-        paginator = self.get_paginator(queryset, page_size, allow_empty_first_page=True)
-        page = self.request.GET.get(self.page_kwarg, 1)
-        try:
-            page_number = int(page)
-        except (ValueError, TypeError):
-            page_number = 1
-        if page_number < 1:
-            page_number = 1
-        try:
-            page_obj = paginator.page(page_number)
-        except EmptyPage:
-            page_obj = paginator.page(paginator.num_pages)
-        return (paginator, page_obj, page_obj.object_list, page_obj.has_other_pages())
+def reviews_view(request):
+    return render(request, 'reviews/reviews.html')
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # Обробка списку відгуків через метод process_reviews (логіка обробки може бути довільною)
-        context[self.context_object_name] = self.process_reviews(context[self.context_object_name])
-        return context
+
+def reviews_add_view(request):
+    return render(request, 'reviews/reviews_add.html')

@@ -1,0 +1,63 @@
+{% extends "account/account.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<div id="signupForm">
+    <div class="form-logo">
+        <img src="{% static 'images/logo/logo.png' %}" alt="Logo">
+    </div>
+    <h2 data-lang="signupTitle">{% trans "Sign Up" %}</h2>
+    <form id="signupFormElement" action="{% url 'account_signup' %}" method="POST">
+        {% csrf_token %}
+        
+        {# Відображення глобальних помилок форми #}
+        {% if form.non_field_errors %}
+            <div class="error-messages">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
+        
+        {# Поле username #}
+        <div class="form-group">
+            {{ form.username }}
+            <label for="{{ form.username.id_for_label }}">{% trans "Username" %}</label>
+        </div>
+        
+        {# Поле email #}
+        <div class="form-group">
+            {{ form.email }}
+            <label for="{{ form.email.id_for_label }}">{% trans "Email" %}</label>
+        </div>
+        
+        {# Поле password1 #}
+        <div class="form-group">
+            {{ form.password1 }}
+            <label for="{{ form.password1.id_for_label }}">{% trans "Password" %}</label>
+        </div>
+        
+        {# Поле password2 #}
+        <div class="form-group">
+            {{ form.password2 }}
+            <label for="{{ form.password2.id_for_label }}">{% trans "Confirm Password" %}</label>
+        </div>
+
+        {# Поле additional_field (опціонально) #}
+        <div class="form-group">
+            {{ form.additional_field }}
+            <label for="{{ form.additional_field.id_for_label }}">{% trans "Additional Field" %}</label>
+        </div>
+        
+        {# Кнопка відправки форми #}
+        <div class="form-group">
+            <button type="submit">{% trans "Sign Up" %}</button>
+        </div>
+        
+        {# Перехід до форми входу #}
+        <div class="switch-links">
+            <a href="{% url 'account_login' %}">{% trans "Already signed up? Log in" %}</a>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

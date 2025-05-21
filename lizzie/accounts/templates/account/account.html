@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Сайт{% endblock %}</title>
+    <link rel="icon" href="{% static 'logo/images/logo2-removebg-preview.png' %}" type="image/x-icon">
+    <title>Account</title>
+    <link rel="stylesheet" href="{% static 'accounts/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/forms.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/footer.css' %}">
+    <script src="{% static 'account/scripts/scripts.js' %}"></script>
+</head>
+<body>
+    <!-- Floating Bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="container">
+        <main>
+            <div id="form-container" class="form-container active">
+              {% block content %}
+            
+              {% endblock %}
+            </div>
+          </main>
+    </div>
+    {% include 'include/account_footer.html' %}
+</body>
+</html>

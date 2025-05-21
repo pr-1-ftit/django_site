@@ -1,0 +1,11 @@
+{% load i18n %}
+{% autoescape off %}
+Hi {{ user.username }},
+
+Thank you for signing up at {{ site.name }}.
+
+To confirm your email address, please click on the following link:
+{{ activate_url }}
+
+If you did not sign up, please ignore this email.
+{% endautoescape %}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Чат</title>
+    <style>
+        /* Просте оформлення для зручності */
+        #chat-log {
+            border: 1px solid #ccc;
+            height: 800px;
+            background-color: grey;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Видалено поле для введення імені -->
+    <div id="chat-log"></div>
+    <input id="chat-message-input" type="text" size="100">
+    <button id="chat-message-submit">Відправити</button>
+
+    <script>
+        // Визначення схеми (ws або wss) з огляду на протокол сторінки
+        const wsScheme = window.location.protocol === "https:" ? "wss" : "ws";
+
+        // Підключення до єдиного чату
+        const chatSocket = new WebSocket(
+            wsScheme + '://' + window.location.host + '/ws/chat/'
+        );
+
+        chatSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            const chatLog = document.querySelector("#chat-log");
+            chatLog.innerHTML += "<p><strong>" + data.username + ":</strong> " + data.message + "</p>";
+            chatLog.scrollTop = chatLog.scrollHeight;
+        };
+
+        chatSocket.onclose = function(e) {
+            console.error('Chat socket closed unexpectedly');
+        };
+
+        document.querySelector("#chat-message-submit").onclick = function(e) {
+            const messageInputDom = document.querySelector("#chat-message-input");
+            const message = messageInputDom.value.trim();
+
+            if (message !== "") {
+                // Відправляємо лише текст повідомлення
+                chatSocket.send(JSON.stringify({
+                    "message": message
+                }));
+                messageInputDom.value = "";
+            }
+        };
+    </script>
+</body>
+</html>

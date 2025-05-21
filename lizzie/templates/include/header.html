@@ -62,10 +62,31 @@
             Start Chatting
           </a>
         </li>
-        <li class="{% if request.resolver_match.url_name == 'login' %}active{% endif %}"><a class="in-dev" href="{% url 'login' %}">{% trans 'Вхід' %}</a></li>
-        <li class="{% if request.resolver_match.url_name == 'signup' %}active{% endif %}"><a class="in-dev" href="{% url 'signup' %}">{% trans 'Реєстрація' %}</a></li> 
+        
+          {% if user.is_authenticated %}
+          <li>
+            <button class="ellipse-1"></button>
+          </li>    
+          <li>
+            <a href="{% url 'account_logout' %}">
+                {% trans Вихід %}
+            </a>
+          </li>
+          {% else %}
+          <li>
+            <a class="in-dev" href="{% url 'account_login' %}">
+                {% trans 'Вхід' %}
+            </a>
+          </li>
+          <li>
+            <a class="in-dev" href="{% url 'account_signup' %}">
+                {% trans 'Реєстрація' %}
+            </a>
+          </li>
+          {% endif %}
+        
         <!-- Кнопка ellipse (відкриває праве меню для мобільних) -->
-         <li><button class="ellipse-1" aria-label="Відкрити праве меню"></button></li>
+         <li><button class="ellipse-1_mobile" aria-label="Відкрити праве меню"></button></li>
       </ul>
     </nav>
   </header>

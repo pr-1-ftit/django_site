@@ -154,7 +154,6 @@ html, body {
 }
 
 .ellipse-1 {
-  display: none; /* Не відображається для десктопу */
   width: 44px;
   height: 44px;
   background: #D9D9D9;
@@ -169,7 +168,22 @@ html, body {
   background: #C0C0C0;
   transform: scale(1.1);
 }
-
+.ellipse-1_mobile {
+  display: none;
+    width: 44px;
+  height: 44px;
+  background: #D9D9D9;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  aspect-ratio: 1 / 1;
+  border: 1px solid #ffffff; /* Білий контур */
+}
+.ellipse-1_mobile:hover {
+  background: #C0C0C0;
+  transform: scale(1.1);
+}
 /* Загальні стилі для мобільного меню (спільні для лівого і правого) */
 .mobile-menu {
   position: fixed;
@@ -241,11 +255,15 @@ html, body {
   
   /* Знімаємо додаткове позиціонування для мобільних елементів */
   .hamburger-menu,
-  .ellipse-1 {
+  .ellipse-1_mobile {
     display: block;
     position: static;
   }
   
+  .ellipse-1 {
+    display: none;
+  }
+
   .logo-link-main {
     position: absolute;         /* Абсолютне позиціонування */
     left: 50%;                  /* Центрування по горизонталі */

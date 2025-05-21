@@ -1,0 +1,27 @@
+{% extends "account/account.html" %}
+
+{% load static %}
+
+{% block content %}
+<div>
+  <div class="form-logo">
+    <img src="{% static 'images/logo/logo.png' %}" alt="Logo">
+</div>
+    <form method="post" action="{% url 'account_login' %}">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group">
+            {{ field }}
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        </div>
+        {% endfor %}
+        <div class="form-group">
+            <button type="submit" id = "submitButton">Увійти</button>
+        </div>
+    </form>
+    <div class="switch-links">
+        <a href="{% url 'account_signup' %}">Реєстрація</a> |
+        <a href="{% url 'account_reset_password' %}">Забули пароль?</a>
+    </div>
+</div>
+{% endblock content %}

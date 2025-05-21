@@ -1,0 +1,148 @@
+/* Контейнер форми */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Основний контейнер форми */
+.form-container {
+    display: none;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.form-container.active {
+    display: block;
+}
+
+/* Логотип форми */
+.form-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-logo img {
+    width: 50px;
+    height: auto;
+}
+
+/* Група форми */
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+/* Оформлення поля вводу */
+.form-group input {
+    width: 100%;
+    padding: 16px 10px; /* Внутрішній відступ для тексту і місця для label */
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+
+
+/* Початковий стиль для input */
+.form-group input {
+    background-color: white; /* Початковий колір: білий */
+    color: black; /* Текст початкового кольору: чорний */
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    transition: background-color 0.5s ease-in-out; /* Плавний перехід кольору */
+}
+
+/* Стиль після зміни кольору */
+.black-bg {
+    background-color: black; /* Колір після зміни: чорний */
+    color: white; /* Текст після зміни кольору: білий */
+}
+
+
+
+
+
+/* Початкове положення label (по лівому краю input і по центру вертикалі) */
+.form-group label {
+    position: absolute;
+    top: 50%; /* Центр по вертикалі відносно input */
+    left: 10px; /* Початковий відступ по лівому краю */
+    transform: translateY(-50%); /* Центрування по вертикалі */
+    color: #888; /* Початковий сірий колір */
+    font-size: 16px; /* Звичний розмір */
+    background: #fff; /* Білий фон */
+    transition: all 0.2s ease-in-out;
+    pointer-events: none; /* label не блокує події миші */
+}
+
+/* Floating label – при focus, якщо input заповнений, або автозаповнений */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group input.filled + label {
+    top: 0; /* Піднімаємо у верхню частину input */
+    left: 10px; /* Залишаємо лівий відступ */
+    transform: translateY(-50%); /* Коригуємо позицію по вертикалі */
+    font-size: 12px; /* Зменшений розмір тексту */
+    color: green; /* Активний зелений колір */
+}
+
+/* Стилізація кнопки */
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
+
+/* Повідомлення про помилки */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+/* Посилання */
+.switch-links {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.switch-links a {
+    color: #007BFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.switch-links a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+

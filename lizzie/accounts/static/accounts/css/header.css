@@ -1,0 +1,37 @@
+    /* Стилізація header з відносним позиціюванням */
+  .header-wrapper {
+      position: relative; /* щоб кнопки можна було абсолютно позиціонувати */
+      background-color: #000000;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Контейнер для кнопок: абсолютно позиціонуємо у правому верхньому куті */
+    .header-buttons {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      display: flex;
+    }
+
+    /* Стилізація кнопок */
+    .header-buttons a {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #007BFF;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+      margin-left: 10px; /* відступ для розділення кнопок */
+    }
+
+    /* Перша кнопка не потребує маргіну зліва */
+    .header-buttons a:first-child {
+      margin-left: 0;
+    }
+
+    .header-buttons a:hover {
+      background-color: #0056b3;
+    }

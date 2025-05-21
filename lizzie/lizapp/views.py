@@ -76,53 +76,11 @@ def resources_view(request):
 def settings_view(request):
     return render(request, 'pages/settings.html')
 
+def services_view(request):
+    return render(request, 'pages/services.html')
 
-from reviews.forms import ReviewForm
-from newsletter.forms import EmailForm
-from reviews.models import Reviews
-from reviews.views import ReviewsMixin
+
 
 # Представлення для URL /services/ обробляє як GET, так і POST
 
-class ServicesListView(ReviewsMixin, ListView):
-    model = Reviews
-    template_name = 'pages/services.html'
-    context_object_name = 'reviews'
-    
-    def get_queryset(self):
-        # Отримуємо 4 останні відгуки
-        return Reviews.objects.order_by('-id')[:4]
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # Додаємо форму відгуків, якщо вона не передана
-        if 'form' not in kwargs:
-            context['form'] = ReviewForm()
-        # Додаємо форму для email, якщо вона не передана
-        if 'email_form' not in kwargs:
-            context['email_form'] = EmailForm()
-        context[self.context_object_name] = self.process_reviews(context[self.context_object_name])
-        return context
 
-    def post(self, request, *args, **kwargs):
-        # Якщо була надіслана форма email
-        if "email_submit" in request.POST:
-            email_form = EmailForm(request.POST)
-            if email_form.is_valid():
-                email_form.save()
-                return redirect('services')
-            else:
-                # Перед формуванням контексту встановлюємо object_list, щоб запобігти AttributeError
-                self.object_list = self.get_queryset()
-                context = self.get_context_data(email_form=email_form)
-                return self.render_to_response(context)
-        else:
-            # Обробка форми відгуків
-            review_form = ReviewForm(request.POST)
-            if review_form.is_valid():
-                review_form.save()
-                return redirect('services')
-            else:
-                self.object_list = self.get_queryset()
-                context = self.get_context_data(form=review_form)
-                return self.render_to_response(context)

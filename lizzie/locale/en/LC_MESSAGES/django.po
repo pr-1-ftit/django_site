@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-28 19:36+0300\n"
+"POT-Creation-Date: 2025-05-14 13:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,132 +18,85 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\lizzie\settings.py:178
-msgid "English"
+#: .\accounts\templates\accounts\logout.html:5
+msgid "Sign Out"
 msgstr ""
 
-#: .\lizzie\settings.py:179
-msgid "Ukrainian"
+#: .\accounts\templates\accounts\logout.html:12
+msgid "Are you sure you want to log out?"
 msgstr ""
 
-#: .\newsletter\forms.py:14
-msgid ""
-"Введена електронна адреса має некоректний формат. Будь ласка, перевірте "
-"правильність вводу."
-msgstr ""
-"The email address you entered is not in the correct format. Please check the "
-"format."
-
-#: .\newsletter\forms.py:15
-msgid "Ця пошта вже успішно записана."
-msgstr "This email has already been successfully recorded."
-
-#: .\newsletter\forms.py:21
-msgid "example@email.com"
+#: .\accounts\templates\accounts\logout.html:16
+msgid "Log Out"
 msgstr ""
 
-#: .\newsletter\models.py:15 .\newsletter\models.py:21
-msgid "Невірний формат електронної пошти."
-msgstr "Invalid email format."
+#: .\accounts\templates\accounts\logout.html:19
+msgid "Cancel"
+msgstr ""
 
-#: .\newsletter\models.py:27
-msgid "Для вказаного домену не знайдено MX-записів."
-msgstr "No MX records were found for the specified domain."
+#: .\accounts\templates\accounts\password_reset.html:5
+#: .\accounts\templates\accounts\password_reset.html:12
+msgid "Reset Your Password"
+msgstr ""
 
-#: .\newsletter\models.py:29
-msgid "Домен не містить необхідних MX-записів або не існує."
-msgstr "The domain does not contain the required MX records or does not exist."
+#: .\accounts\templates\accounts\password_reset.html:31
+msgid "Send Password Reset Email"
+msgstr ""
 
-#: .\newsletter\models.py:31
-#, python-format
-msgid "Помилка при отриманні DNS-записів: %(error)s"
-msgstr "Error retrieving DNS records: %(error)s"
+#: .\accounts\templates\accounts\password_reset.html:35
+msgid "Back to Login"
+msgstr ""
 
-#: .\newsletter\models.py:37
-msgid "Поштова адреса"
-msgstr "Mailing address"
+#: .\accounts\templates\accounts\signup.html:10
+#: .\accounts\templates\accounts\signup.html:53
+msgid "Sign Up"
+msgstr ""
 
-#: .\newsletter\models.py:38
-msgid "Введіть дійсну електронну адресу"
-msgstr "Please enter a valid email address."
+#: .\accounts\templates\accounts\signup.html:24
+msgid "Username"
+msgstr ""
 
-#: .\newsletter\models.py:43
-msgid "Дата створення"
-msgstr "Creation date"
+#: .\accounts\templates\accounts\signup.html:30
+#, fuzzy
+#| msgid "Gmail"
+msgid "Email"
+msgstr "Gmail"
 
-#: .\newsletter\models.py:60
-msgid "Користувацька пошта"
-msgstr "Custom mail"
+#: .\accounts\templates\accounts\signup.html:36
+msgid "Password"
+msgstr ""
 
-#: .\newsletter\models.py:61
-msgid "Користувацькі пошти"
-msgstr "Custom mails"
+#: .\accounts\templates\accounts\signup.html:42
+msgid "Confirm Password"
+msgstr ""
+
+#: .\accounts\templates\accounts\signup.html:48
+msgid "Additional Field"
+msgstr ""
+
+#: .\accounts\templates\accounts\signup.html:58
+msgid "Already signed up? Log in"
+msgstr ""
 
 #: .\newsletter\templates\newsletter\email_form.html:13
 msgid "Отримати зворотній зв’язок"
 msgstr "Get feedback"
 
-#: .\reviews\forms.py:12
-msgid "Ім’я користувача..."
-msgstr "User name..."
-
-#: .\reviews\forms.py:17
-msgid "Залиште своє враження від нашої роботи тут..."
-msgstr "Leave your impression of our work here..."
-
-#: .\reviews\forms.py:31
-msgid "Поле 'Ім’я' є обов'язковим."
-msgstr "The 'Name' field is required."
-
-#: .\reviews\forms.py:34
-msgid "Поле 'Текст' є обов'язковим."
-msgstr "The 'Text' field is required."
-
-#: .\reviews\forms.py:37
-msgid "Поле 'Рейтинг' є обов'язковим."
-msgstr "The 'Rating' field is required."
-
-#: .\reviews\forms.py:38
-msgid "Введіть коректне значення для рейтингу."
-msgstr "Please enter a valid rating value."
-
-#: .\reviews\models.py:22
-msgid "Ім’я не може бути порожнім."
-msgstr "The name cannot be empty."
-
-#: .\reviews\models.py:30
-msgid "Ім’я повинно містити принаймні 2 символи."
-msgstr "The name must contain at least 2 characters."
-
-#: .\reviews\models.py:37
-msgid "Ім’я може містити лише літери, пробіли, апострофи та дефіси."
-msgstr "The name can only contain letters, spaces, apostrophes, and hyphens."
-
-#: .\reviews\models.py:62
-msgid "Текст відгуку не може бути порожнім."
-msgstr "The response string cannot be empty."
-
-#: .\reviews\models.py:70
-msgid "Текст відгуку повинен містити щонайменше 10 символів."
-msgstr "The review text must contain at least 10 characters."
-
-#: .\reviews\models.py:77
-msgid "Текст відгуку повинен містити хоча б один символ з алфавіту."
-msgstr "The review text must contain at least one character from the alphabet."
-
-#: .\reviews\templates\reviews\reviews_add.html:16
+#: .\reviews\templates\reviews\reviews_add.html:44
 msgid "Залишити відгук"
 msgstr "Leave a review"
 
-#: .\reviews\templates\reviews\reviews_list.html:12
+#: .\reviews\templates\reviews\reviews_list.html:64
 msgid "Відгуки"
 msgstr "Reviews"
 
-#: .\reviews\templates\reviews\reviews_list.html:40
-msgid "Відгуків поки що немає."
-msgstr "There are no reviews yet."
+#: .\reviews\templates\reviews\reviews_list.html:68
+#, fuzzy
+#| msgid "Залишити відгук"
+msgid "Завантаження відгуків..."
+msgstr "Leave a review"
 
-#: .\reviews\templates\reviews\reviews_list.html:43
+#: .\reviews\templates\reviews\reviews_list.html:71
 msgid "Передивитися всі відгуки..."
 msgstr "See all reviews..."
 
@@ -674,13 +627,93 @@ msgstr "Gmail"
 msgid "Більше"
 msgstr "More"
 
-#: .\templates\include\header.html:65
+#: .\templates\include\header.html:78
 msgid "Вхід"
 msgstr "Log In"
 
-#: .\templates\include\header.html:66
+#: .\templates\include\header.html:83
 msgid "Реєстрація"
 msgstr "Sign Up"
+
+#~ msgid ""
+#~ "Введена електронна адреса має некоректний формат. Будь ласка, перевірте "
+#~ "правильність вводу."
+#~ msgstr ""
+#~ "The email address you entered is not in the correct format. Please check "
+#~ "the format."
+
+#~ msgid "Ця пошта вже успішно записана."
+#~ msgstr "This email has already been successfully recorded."
+
+#~ msgid "Невірний формат електронної пошти."
+#~ msgstr "Invalid email format."
+
+#~ msgid "Для вказаного домену не знайдено MX-записів."
+#~ msgstr "No MX records were found for the specified domain."
+
+#~ msgid "Домен не містить необхідних MX-записів або не існує."
+#~ msgstr ""
+#~ "The domain does not contain the required MX records or does not exist."
+
+#, python-format
+#~ msgid "Помилка при отриманні DNS-записів: %(error)s"
+#~ msgstr "Error retrieving DNS records: %(error)s"
+
+#~ msgid "Поштова адреса"
+#~ msgstr "Mailing address"
+
+#~ msgid "Введіть дійсну електронну адресу"
+#~ msgstr "Please enter a valid email address."
+
+#~ msgid "Дата створення"
+#~ msgstr "Creation date"
+
+#~ msgid "Користувацька пошта"
+#~ msgstr "Custom mail"
+
+#~ msgid "Користувацькі пошти"
+#~ msgstr "Custom mails"
+
+#~ msgid "Ім’я користувача..."
+#~ msgstr "User name..."
+
+#~ msgid "Залиште своє враження від нашої роботи тут..."
+#~ msgstr "Leave your impression of our work here..."
+
+#~ msgid "Поле 'Ім’я' є обов'язковим."
+#~ msgstr "The 'Name' field is required."
+
+#~ msgid "Поле 'Текст' є обов'язковим."
+#~ msgstr "The 'Text' field is required."
+
+#~ msgid "Поле 'Рейтинг' є обов'язковим."
+#~ msgstr "The 'Rating' field is required."
+
+#~ msgid "Введіть коректне значення для рейтингу."
+#~ msgstr "Please enter a valid rating value."
+
+#~ msgid "Ім’я не може бути порожнім."
+#~ msgstr "The name cannot be empty."
+
+#~ msgid "Ім’я повинно містити принаймні 2 символи."
+#~ msgstr "The name must contain at least 2 characters."
+
+#~ msgid "Ім’я може містити лише літери, пробіли, апострофи та дефіси."
+#~ msgstr ""
+#~ "The name can only contain letters, spaces, apostrophes, and hyphens."
+
+#~ msgid "Текст відгуку не може бути порожнім."
+#~ msgstr "The response string cannot be empty."
+
+#~ msgid "Текст відгуку повинен містити щонайменше 10 символів."
+#~ msgstr "The review text must contain at least 10 characters."
+
+#~ msgid "Текст відгуку повинен містити хоча б один символ з алфавіту."
+#~ msgstr ""
+#~ "The review text must contain at least one character from the alphabet."
+
+#~ msgid "Відгуків поки що немає."
+#~ msgstr "There are no reviews yet."
 
 #~ msgid "Ком'юніті"
 #~ msgstr "Community"

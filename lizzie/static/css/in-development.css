@@ -22,7 +22,7 @@
 /* Базовий псевдоелемент ::after для .in-dev */
 .in-dev::after {
     content: "In dev";
-    top: 0;
+    top: -2px;
     right: 0;
     transform: translate(75%, -90%);
 }
@@ -35,7 +35,7 @@
     background-color: #4CAF50;
     width: 43px;
     content: "testing"; /* або будь-який інший текст */
-    top: 0;
+    top: -2px;
     right: 0;
     transform: translate(75%, -90%);
     /* За необхідності можна перевизначити додаткові властивості */

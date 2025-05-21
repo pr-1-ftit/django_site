@@ -86,29 +86,7 @@
   color: #808080;
 }
 
-/* Стиль повідомлення про помилку */
-.error-message {
-  color: red;
-  font-size: 14px;
-  font-family: Lato, sans-serif;
-  font-weight: 600;
-  text-align: left;
-  margin: 3px;
-  margin-left: 20px;
-  margin-right: auto;
-}
 
-/* Блок для помилок, розташований точно під input bar:
- Висота input bar – 73px, розташування відносно контейнера – top:200px,
- тому повідомлення розташовуємо на top: (200 + 73 + 10)px = 283px, де 10px – це відступ */
-.error-messages {
-  position: absolute;
-  top: calc(200px + 73px + 1px);  /* 283px */
-  left: 40%;
-  transform: translateX(-50%);
-  width: 770px;
-  z-index: 1;    /* нижче input bar */
-}
 
 @media (max-width: 943px) {
 

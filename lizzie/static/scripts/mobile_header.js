@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeButtonLeft = document.querySelector('#mobileMenuLeft .close-btn');
   
     // Елементи для правого меню
-    const ellipseButton = document.querySelector('.ellipse-1');
+    const ellipseButton = document.querySelector('.ellipse-1_mobile');
     const mobileMenuRight = document.getElementById("mobileMenuRight");
     const closeButtonRight = document.querySelector('#mobileMenuRight .close-btn');
   
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   
     // Видаляємо кнопку ellipse з правого меню
-    const ellipseElement = navRightClone.querySelector('.ellipse-1');
+    const ellipseElement = navRightClone.querySelector('.ellipse-1_mobile');
     if (ellipseElement) {
       ellipseElement.remove();
     }

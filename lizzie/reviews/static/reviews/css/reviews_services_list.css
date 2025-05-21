@@ -26,3 +26,7 @@
     text-decoration: none;
     /* За бажанням додайте hover-ефекти */
 }
+
+.no-reviews.services_style {
+    color: white;
+}

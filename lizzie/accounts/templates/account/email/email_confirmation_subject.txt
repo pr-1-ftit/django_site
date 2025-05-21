@@ -1,0 +1,6 @@
+{% load i18n %}
+{% block subject %}
+{% autoescape off %}
+Confirm your email address for {{ site.name }}
+{% endautoescape %}
+{% endblock %}

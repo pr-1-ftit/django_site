@@ -1,52 +1,81 @@
 {% load static i18n %}
+<style>
+.button-container {
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  display: flex;
+  gap: 5px; /* Розміщення кнопок з інтервалом */
+}
 
-<link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
-<link rel="stylesheet" href="{% static 'reviews/css/reviews_list.css' %}">
+.delete-review-btn {
+  background: url("../../static/reviews/images/delete.svg") no-repeat center center;
+  width: 20px;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+.delete-review-btn :hover {
+  background-color: #c9302c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.update-review-btn {
+  background: url("../../static/reviews/images/edit.svg") no-repeat center center;
+  width: 20px;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1000;
+}
+
+.update-review-btn :hover {
+  background-color: #c9302c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Стиль для контейнера з датою створення */
+.updated {
+  position: absolute;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  top: 10px;
+  right: 10px;
+}
 
 
+</style>
+    <link rel="stylesheet" href="{% static 'reviews/css/reviews.css' %}">
+    <link rel="stylesheet" href="{% static 'reviews/css/reviews_list.css' %}">
+        <script type="module"  src="{% static 'reviews/scripts/reviews_list.js' %}"></script>
+    <script src="{% static 'reviews/scripts/pagination.js' %}"></script>
 
-<!-- Контейнер для вертикальної прокрутки -->
-<div class="reviews-container {{ reviews_style }} {{ services_style }}">
-    <!-- Напис перед контейнером -->
-    <div class="container-title {{ reviews_style }} {{ services_style }}">
-        <h2>{% trans "Відгуки" %}</h2>
-    </div>
-    <div class="reviews-content {{ reviews_style }} {{ services_style }}">
-        {% for review in reviews %}
-            <div class="review-item">
-                <div class="user-info">
-                    <h5>{{ review.name }}</h5>
-                </div>
-                <div class="avatar" style="background-color: {{ review.avatar_color }};">
-                    {{ review.name|slice:":1" }}
-                </div>
-                <div class="feedback-container">
-                    <p>{{ review.text }}</p>
-                </div>
-                <div class="rating-container-view">
-                    {% for i in review.range_rating %}
-                        <svg class="star star_list active" width="24" height="24" viewBox="0 0 24 24">
-                            <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
-                        </svg>
-                    {% endfor %}
-                    {% for i in review.range_remaining %}
-                        <svg class="star star_list" width="24" height="24" viewBox="0 0 24 24">
-                            <polygon points="12,17.27 18.18,21 16.54,13.97 22,9.24 14.81,8.63 12,2 9.19,8.63 2,9.24 7.46,13.97 5.82,21"/>
-                        </svg>
-                    {% endfor %}
-                </div>
-            </div>
-        {% empty %}
-            <p class="no-reviews">{% trans "Відгуків поки що немає." %}</p>
-        {% endfor %}
+    <div class="reviews-container reviews_style services_style">
+        <!-- Заголовок секції -->
+        <div class="container-title reviews_style services_style">
+            <h2>{% trans "Відгуки" %}</h2>
+        </div>
+        <!-- Контейнер, куди JavaScript вставить відгуки -->
+        <div class="reviews-content reviews_style services_style" id="reviews-content">
+            <p>{% trans "Завантаження відгуків..." %}</p>
+        </div>
         {% if request.resolver_match.url_name == 'services' %}
-            <a href="{% url 'reviews' %}" class="view-all-reviews">{% trans "Передивитися всі відгуки..." %}</a>
+        <a href="{% url 'reviews' %}" class="view-all-reviews">{% trans "Передивитися всі відгуки..." %}</a>
         {% endif %}
     </div>
 
 
-</div>
+    
+<link rel="stylesheet" href="{% static 'css/include/paginate.css' %}">
 
+<ul class="pagination">
 
-<!-- {% include "include/paginate.html" %} -->
-
+</ul>
